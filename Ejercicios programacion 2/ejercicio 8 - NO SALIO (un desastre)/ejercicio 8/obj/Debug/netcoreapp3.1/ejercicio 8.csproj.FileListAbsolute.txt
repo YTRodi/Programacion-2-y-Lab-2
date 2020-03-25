@@ -1,0 +1,13 @@
+C:\Users\YAGO\Desktop\ejercicio programacion 2\ejercicio 8\ejercicio 8\obj\Debug\netcoreapp3.1\ejercicio 8.csprojAssemblyReference.cache
+C:\Users\YAGO\Desktop\ejercicio programacion 2\ejercicio 8\ejercicio 8\obj\Debug\netcoreapp3.1\ejercicio 8.csproj.CoreCompileInputs.cache
+C:\Users\YAGO\Desktop\ejercicio programacion 2\ejercicio 8\ejercicio 8\obj\Debug\netcoreapp3.1\ejercicio 8.AssemblyInfoInputs.cache
+C:\Users\YAGO\Desktop\ejercicio programacion 2\ejercicio 8\ejercicio 8\obj\Debug\netcoreapp3.1\ejercicio 8.AssemblyInfo.cs
+C:\Users\YAGO\Desktop\ejercicio programacion 2\ejercicio 8\ejercicio 8\bin\Debug\netcoreapp3.1\ejercicio 8.exe
+C:\Users\YAGO\Desktop\ejercicio programacion 2\ejercicio 8\ejercicio 8\bin\Debug\netcoreapp3.1\ejercicio 8.deps.json
+C:\Users\YAGO\Desktop\ejercicio programacion 2\ejercicio 8\ejercicio 8\bin\Debug\netcoreapp3.1\ejercicio 8.runtimeconfig.json
+C:\Users\YAGO\Desktop\ejercicio programacion 2\ejercicio 8\ejercicio 8\bin\Debug\netcoreapp3.1\ejercicio 8.runtimeconfig.dev.json
+C:\Users\YAGO\Desktop\ejercicio programacion 2\ejercicio 8\ejercicio 8\bin\Debug\netcoreapp3.1\ejercicio 8.dll
+C:\Users\YAGO\Desktop\ejercicio programacion 2\ejercicio 8\ejercicio 8\bin\Debug\netcoreapp3.1\ejercicio 8.pdb
+C:\Users\YAGO\Desktop\ejercicio programacion 2\ejercicio 8\ejercicio 8\obj\Debug\netcoreapp3.1\ejercicio 8.dll
+C:\Users\YAGO\Desktop\ejercicio programacion 2\ejercicio 8\ejercicio 8\obj\Debug\netcoreapp3.1\ejercicio 8.pdb
+C:\Users\YAGO\Desktop\ejercicio programacion 2\ejercicio 8\ejercicio 8\obj\Debug\netcoreapp3.1\ejercicio 8.genruntimeconfig.cache

@@ -1,0 +1,13 @@
+C:\Users\YAGO\Desktop\ejercicio programacion 2\ejercicio 9\ejercicio 9\bin\Debug\netcoreapp3.1\ejercicio 9.exe
+C:\Users\YAGO\Desktop\ejercicio programacion 2\ejercicio 9\ejercicio 9\bin\Debug\netcoreapp3.1\ejercicio 9.deps.json
+C:\Users\YAGO\Desktop\ejercicio programacion 2\ejercicio 9\ejercicio 9\bin\Debug\netcoreapp3.1\ejercicio 9.runtimeconfig.json
+C:\Users\YAGO\Desktop\ejercicio programacion 2\ejercicio 9\ejercicio 9\bin\Debug\netcoreapp3.1\ejercicio 9.runtimeconfig.dev.json
+C:\Users\YAGO\Desktop\ejercicio programacion 2\ejercicio 9\ejercicio 9\bin\Debug\netcoreapp3.1\ejercicio 9.dll
+C:\Users\YAGO\Desktop\ejercicio programacion 2\ejercicio 9\ejercicio 9\bin\Debug\netcoreapp3.1\ejercicio 9.pdb
+C:\Users\YAGO\Desktop\ejercicio programacion 2\ejercicio 9\ejercicio 9\obj\Debug\netcoreapp3.1\ejercicio 9.csprojAssemblyReference.cache
+C:\Users\YAGO\Desktop\ejercicio programacion 2\ejercicio 9\ejercicio 9\obj\Debug\netcoreapp3.1\ejercicio 9.csproj.CoreCompileInputs.cache
+C:\Users\YAGO\Desktop\ejercicio programacion 2\ejercicio 9\ejercicio 9\obj\Debug\netcoreapp3.1\ejercicio 9.AssemblyInfoInputs.cache
+C:\Users\YAGO\Desktop\ejercicio programacion 2\ejercicio 9\ejercicio 9\obj\Debug\netcoreapp3.1\ejercicio 9.AssemblyInfo.cs
+C:\Users\YAGO\Desktop\ejercicio programacion 2\ejercicio 9\ejercicio 9\obj\Debug\netcoreapp3.1\ejercicio 9.dll
+C:\Users\YAGO\Desktop\ejercicio programacion 2\ejercicio 9\ejercicio 9\obj\Debug\netcoreapp3.1\ejercicio 9.pdb
+C:\Users\YAGO\Desktop\ejercicio programacion 2\ejercicio 9\ejercicio 9\obj\Debug\netcoreapp3.1\ejercicio 9.genruntimeconfig.cache
