@@ -1,0 +1,6 @@
+C:\Users\YAGO\Desktop\Solucion_Ejercicios_Basicos\ejercicio_10\bin\Debug\ejercicio_10.exe.config
+C:\Users\YAGO\Desktop\Solucion_Ejercicios_Basicos\ejercicio_10\bin\Debug\ejercicio_10.exe
+C:\Users\YAGO\Desktop\Solucion_Ejercicios_Basicos\ejercicio_10\bin\Debug\ejercicio_10.pdb
+C:\Users\YAGO\Desktop\Solucion_Ejercicios_Basicos\ejercicio_10\obj\Debug\ejercicio_10.csproj.CoreCompileInputs.cache
+C:\Users\YAGO\Desktop\Solucion_Ejercicios_Basicos\ejercicio_10\obj\Debug\ejercicio_10.exe
+C:\Users\YAGO\Desktop\Solucion_Ejercicios_Basicos\ejercicio_10\obj\Debug\ejercicio_10.pdb

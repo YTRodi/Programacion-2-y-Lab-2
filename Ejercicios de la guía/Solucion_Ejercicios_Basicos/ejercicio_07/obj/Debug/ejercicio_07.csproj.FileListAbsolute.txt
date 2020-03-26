@@ -1,0 +1,7 @@
+C:\Users\YAGO\Desktop\Solucion_Ejercicios_Basicos\ejercicio_07\bin\Debug\ejercicio_07.exe.config
+C:\Users\YAGO\Desktop\Solucion_Ejercicios_Basicos\ejercicio_07\bin\Debug\ejercicio_07.exe
+C:\Users\YAGO\Desktop\Solucion_Ejercicios_Basicos\ejercicio_07\bin\Debug\ejercicio_07.pdb
+C:\Users\YAGO\Desktop\Solucion_Ejercicios_Basicos\ejercicio_07\obj\Debug\ejercicio_07.csproj.CoreCompileInputs.cache
+C:\Users\YAGO\Desktop\Solucion_Ejercicios_Basicos\ejercicio_07\obj\Debug\ejercicio_07.exe
+C:\Users\YAGO\Desktop\Solucion_Ejercicios_Basicos\ejercicio_07\obj\Debug\ejercicio_07.pdb
+C:\Users\YAGO\Desktop\Solucion_Ejercicios_Basicos\ejercicio_07\obj\Debug\ejercicio_07.csprojAssemblyReference.cache
