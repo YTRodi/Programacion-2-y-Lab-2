@@ -1,0 +1,7 @@
+C:\Users\YAGO\Desktop\Programacion-2-y-Lab-2\Clase a clase\02_POO\Solución_POO\Ejemplo_01\bin\Debug\Ejemplo_01.exe.config
+C:\Users\YAGO\Desktop\Programacion-2-y-Lab-2\Clase a clase\02_POO\Solución_POO\Ejemplo_01\bin\Debug\Ejemplo_01.exe
+C:\Users\YAGO\Desktop\Programacion-2-y-Lab-2\Clase a clase\02_POO\Solución_POO\Ejemplo_01\bin\Debug\Ejemplo_01.pdb
+C:\Users\YAGO\Desktop\Programacion-2-y-Lab-2\Clase a clase\02_POO\Solución_POO\Ejemplo_01\obj\Debug\Ejemplo_01.csprojAssemblyReference.cache
+C:\Users\YAGO\Desktop\Programacion-2-y-Lab-2\Clase a clase\02_POO\Solución_POO\Ejemplo_01\obj\Debug\Ejemplo_01.csproj.CoreCompileInputs.cache
+C:\Users\YAGO\Desktop\Programacion-2-y-Lab-2\Clase a clase\02_POO\Solución_POO\Ejemplo_01\obj\Debug\Ejemplo_01.exe
+C:\Users\YAGO\Desktop\Programacion-2-y-Lab-2\Clase a clase\02_POO\Solución_POO\Ejemplo_01\obj\Debug\Ejemplo_01.pdb
