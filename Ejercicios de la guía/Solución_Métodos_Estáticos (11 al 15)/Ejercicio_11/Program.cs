@@ -13,7 +13,7 @@ namespace Ejercicio_11
         {
             #region Variables
                 int numero;
-                int iteracionesFor = 3;
+                int iteracionesFor = 10;
                 int limiteMinimo = -100;
                 int LimiteMaximo = 100;
                 int min = 0;
@@ -21,16 +21,17 @@ namespace Ejercicio_11
                 int acumulador = 0;
                 bool flag = false;
             #endregion
+            
 
             for (int i=0;i< iteracionesFor; i++)
             {
                 Console.Write("Ingrese numero:");
                 if (int.TryParse(Console.ReadLine(), out numero) && Validacion.Validar(numero, limiteMinimo, LimiteMaximo))
                 {
-                    int.TryParse()
                     flag = false;
                     break;
                 }
+                    
                 else
                 {
                     acumulador += numero;

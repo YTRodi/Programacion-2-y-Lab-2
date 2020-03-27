@@ -1,0 +1,7 @@
+C:\Users\YAGO\Desktop\Programacion-2-y-Lab-2\Ejercicios de la guía\Solución_Métodos_Estáticos (11 al 15)\Ejercicio_13\obj\Debug\Ejercicio_13.csprojAssemblyReference.cache
+C:\Users\YAGO\Desktop\Programacion-2-y-Lab-2\Ejercicios de la guía\Solución_Métodos_Estáticos (11 al 15)\Ejercicio_13\obj\Debug\Ejercicio_13.csproj.CoreCompileInputs.cache
+C:\Users\YAGO\Desktop\Programacion-2-y-Lab-2\Ejercicios de la guía\Solución_Métodos_Estáticos (11 al 15)\Ejercicio_13\bin\Debug\Ejercicio_13.exe.config
+C:\Users\YAGO\Desktop\Programacion-2-y-Lab-2\Ejercicios de la guía\Solución_Métodos_Estáticos (11 al 15)\Ejercicio_13\bin\Debug\Ejercicio_13.exe
+C:\Users\YAGO\Desktop\Programacion-2-y-Lab-2\Ejercicios de la guía\Solución_Métodos_Estáticos (11 al 15)\Ejercicio_13\bin\Debug\Ejercicio_13.pdb
+C:\Users\YAGO\Desktop\Programacion-2-y-Lab-2\Ejercicios de la guía\Solución_Métodos_Estáticos (11 al 15)\Ejercicio_13\obj\Debug\Ejercicio_13.exe
+C:\Users\YAGO\Desktop\Programacion-2-y-Lab-2\Ejercicios de la guía\Solución_Métodos_Estáticos (11 al 15)\Ejercicio_13\obj\Debug\Ejercicio_13.pdb

@@ -5,3 +5,10 @@ C:\Users\YAGO\Desktop\Programacion-2-y-Lab-2\Clase a clase\02_POO\Solución_Mét
 C:\Users\YAGO\Desktop\Programacion-2-y-Lab-2\Clase a clase\02_POO\Solución_Métodos_Estáticos\Ejercicio_11\obj\Debug\Ejercicio_11.csproj.CoreCompileInputs.cache
 C:\Users\YAGO\Desktop\Programacion-2-y-Lab-2\Clase a clase\02_POO\Solución_Métodos_Estáticos\Ejercicio_11\obj\Debug\Ejercicio_11.exe
 C:\Users\YAGO\Desktop\Programacion-2-y-Lab-2\Clase a clase\02_POO\Solución_Métodos_Estáticos\Ejercicio_11\obj\Debug\Ejercicio_11.pdb
+C:\Users\YAGO\Desktop\Programacion-2-y-Lab-2\Ejercicios de la guía\Solución_Métodos_Estáticos (11 al 15)\Ejercicio_11\obj\Debug\Ejercicio_11.csprojAssemblyReference.cache
+C:\Users\YAGO\Desktop\Programacion-2-y-Lab-2\Ejercicios de la guía\Solución_Métodos_Estáticos (11 al 15)\Ejercicio_11\obj\Debug\Ejercicio_11.csproj.CoreCompileInputs.cache
+C:\Users\YAGO\Desktop\Programacion-2-y-Lab-2\Ejercicios de la guía\Solución_Métodos_Estáticos (11 al 15)\Ejercicio_11\obj\Debug\Ejercicio_11.exe
+C:\Users\YAGO\Desktop\Programacion-2-y-Lab-2\Ejercicios de la guía\Solución_Métodos_Estáticos (11 al 15)\Ejercicio_11\obj\Debug\Ejercicio_11.pdb
+C:\Users\YAGO\Desktop\Programacion-2-y-Lab-2\Ejercicios de la guía\Solución_Métodos_Estáticos (11 al 15)\Ejercicio_11\bin\Debug\Ejercicio_11.exe.config
+C:\Users\YAGO\Desktop\Programacion-2-y-Lab-2\Ejercicios de la guía\Solución_Métodos_Estáticos (11 al 15)\Ejercicio_11\bin\Debug\Ejercicio_11.exe
+C:\Users\YAGO\Desktop\Programacion-2-y-Lab-2\Ejercicios de la guía\Solución_Métodos_Estáticos (11 al 15)\Ejercicio_11\bin\Debug\Ejercicio_11.pdb
