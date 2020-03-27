@@ -11,7 +11,7 @@ namespace Ejercicio_15
     {
         static void Main(string[] args)
         {
-            //TODO: meter un while para que el usuario elija cuando dejar de ingresar datos.
+            Console.Title = "Ejercicio 15";
             double num1;
             double num2;
             string opcion = string.Empty;

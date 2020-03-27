@@ -26,10 +26,26 @@ namespace Ejercicio_15
             }
             if (operacion == "/")
             {
+                if(ValidarDiv(num2))
+                {
+                    resultado = num1 / num2;
+                }
+                else
+                {
+                    Console.WriteLine("No se puede dividir por 0.");
+                }
                 //VALIDAR DIVISIONNN CON METODO VALIDAR!!
-                resultado = num1 / num2;
             }
             return resultado;
+        }
+
+        private static bool ValidarDiv(double num2)
+        {
+            if (num2 != 0)
+            {
+                return true;
+            }
+            return false;
         }
     }
 }
