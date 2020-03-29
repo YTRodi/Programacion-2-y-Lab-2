@@ -48,7 +48,6 @@ namespace Ejercicio_16
         {
             if(nota1 >= 4 && nota2 >=4)
             {
-                
                 notaFinal = numeroRandom.Next(1, 10);
             }
             else
