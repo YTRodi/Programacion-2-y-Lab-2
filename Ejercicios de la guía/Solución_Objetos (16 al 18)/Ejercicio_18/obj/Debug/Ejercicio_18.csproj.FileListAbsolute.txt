@@ -1,0 +1,7 @@
+C:\Users\YAGO\Desktop\Programacion-2-y-Lab-2\Ejercicios de la guía\Solución_Objetos (16 al 18)\Ejercicio_18\obj\Debug\Ejercicio_18.csprojAssemblyReference.cache
+C:\Users\YAGO\Desktop\Programacion-2-y-Lab-2\Ejercicios de la guía\Solución_Objetos (16 al 18)\Ejercicio_18\obj\Debug\Ejercicio_18.csproj.CoreCompileInputs.cache
+C:\Users\YAGO\Desktop\Programacion-2-y-Lab-2\Ejercicios de la guía\Solución_Objetos (16 al 18)\Ejercicio_18\bin\Debug\Ejercicio_18.exe.config
+C:\Users\YAGO\Desktop\Programacion-2-y-Lab-2\Ejercicios de la guía\Solución_Objetos (16 al 18)\Ejercicio_18\bin\Debug\Ejercicio_18.exe
+C:\Users\YAGO\Desktop\Programacion-2-y-Lab-2\Ejercicios de la guía\Solución_Objetos (16 al 18)\Ejercicio_18\bin\Debug\Ejercicio_18.pdb
+C:\Users\YAGO\Desktop\Programacion-2-y-Lab-2\Ejercicios de la guía\Solución_Objetos (16 al 18)\Ejercicio_18\obj\Debug\Ejercicio_18.exe
+C:\Users\YAGO\Desktop\Programacion-2-y-Lab-2\Ejercicios de la guía\Solución_Objetos (16 al 18)\Ejercicio_18\obj\Debug\Ejercicio_18.pdb
