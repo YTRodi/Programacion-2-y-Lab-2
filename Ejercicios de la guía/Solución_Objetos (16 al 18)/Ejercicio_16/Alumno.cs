@@ -49,7 +49,7 @@ namespace Ejercicio_16
             if(nota1 >= 4 && nota2 >=4)
             {
                 
-                notaFinal = numeroRandom.Next(0, 10);
+                notaFinal = numeroRandom.Next(1, 10);
             }
             else
             {
@@ -60,21 +60,25 @@ namespace Ejercicio_16
         /// <summary>
         /// Muestra los datos del alumno.
         /// </summary>
-        public void Mostrar()
+        public string Mostrar()
         {
+            string retornoStr = string.Empty;
+
             if(notaFinal != -1)
             {
-                Console.WriteLine("Nota 1: " + nota1);
-                Console.WriteLine("Nota 2: " + nota2);
-                Console.WriteLine("NotaFinal: " + notaFinal);
-                Console.WriteLine("Apellido: " + apellido);
-                Console.WriteLine("Legajo: " + legajo);
-                Console.WriteLine("Nombre: " + nombre + "\n");
+                retornoStr = 
+                    "\nApellido: " + apellido + "\n" +
+                    "Nombre: " + nombre + "\n" +
+                    "Legajo: " + legajo + "\n" +
+                    "Primer nota: " + nota1.ToString() + "\n" +
+                    "Segunda nota: " + nota2.ToString() + "\n" +
+                    "Nota Final: " + notaFinal.ToString() + "\n";
             }
             else
             {
-                Console.WriteLine("Alumno desaprobado: " + nombre + "\n");
+                retornoStr = "Alumno desaprobado.";
             }
+            return retornoStr;
         }
     }
 }
