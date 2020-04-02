@@ -13,7 +13,6 @@ namespace Ejercicio_17
         {
             Boligrafo boliUno = new Boligrafo(100, ConsoleColor.Blue);
             //Boligrafo boliDos = new Boligrafo(50, ConsoleColor.Red);
-            bool variable;
             string lele = string.Empty;
 
 
