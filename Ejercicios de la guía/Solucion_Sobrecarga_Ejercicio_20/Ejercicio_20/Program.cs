@@ -24,16 +24,16 @@ namespace Ejercicio_20
 
 
             //PRUEBA 2 - OPERACION == Y !=
-            //if (dolarcito == eurito)
-            //{
-            //    Console.WriteLine("Son iguales");
-            //}
-            //else
-            //{
-            //    Console.WriteLine("no son iguales");
-            //}
+            if (dolarcito == eurito)
+            {
+                Console.WriteLine("Son iguales");
+            }
+            else
+            {
+                Console.WriteLine("no son iguales");
+            }
 
-            
+
             //PRUEBA 3 - OPERACIONES + Y -
             Dolar sumaDolar = dolarcito + eurito;
             Console.WriteLine("dolarcito + dolarcito " + dolarcito.GetCantidad() + dolarcito.GetCantidad());//concatena????
