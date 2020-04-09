@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Billetes
+namespace Moneda
 {
     public class Euro
     {
@@ -39,6 +39,10 @@ namespace Billetes
             return Euro.cotizRespectoDolar;
         }
 
+        public static void SetCotizacion(double paramCotizacion)
+        {
+            Euro.cotizRespectoDolar = paramCotizacion;
+        }
         #endregion
 
         #region Conversiones

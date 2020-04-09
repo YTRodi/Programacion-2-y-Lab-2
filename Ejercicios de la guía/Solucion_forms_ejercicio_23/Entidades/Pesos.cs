@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Billetes
+namespace Moneda
 {
     public class Pesos
     {
@@ -37,6 +37,11 @@ namespace Billetes
         public static double GetCotizacion()
         {
             return Pesos.cotizRespectoDolar;
+        }
+
+        public static void SetCotizacion(double paramCotizacion)
+        {
+            Pesos.cotizRespectoDolar = paramCotizacion;
         }
 
         #endregion

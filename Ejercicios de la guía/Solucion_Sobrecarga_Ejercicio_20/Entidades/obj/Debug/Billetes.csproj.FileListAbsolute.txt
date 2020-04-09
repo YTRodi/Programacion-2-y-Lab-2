@@ -4,3 +4,9 @@ C:\Users\YAGO\Desktop\REPASO_Solucion_Sobrecarga\Entidades\obj\Debug\Billetes.cs
 C:\Users\YAGO\Desktop\REPASO_Solucion_Sobrecarga\Entidades\obj\Debug\Billetes.csproj.CoreCompileInputs.cache
 C:\Users\YAGO\Desktop\REPASO_Solucion_Sobrecarga\Entidades\obj\Debug\Entidades.dll
 C:\Users\YAGO\Desktop\REPASO_Solucion_Sobrecarga\Entidades\obj\Debug\Entidades.pdb
+C:\Users\YAGO\Desktop\Programacion-2-y-Lab-2\Ejercicios de la guía\Solucion_Sobrecarga_Ejercicio_20\Entidades\bin\Debug\Entidades.dll
+C:\Users\YAGO\Desktop\Programacion-2-y-Lab-2\Ejercicios de la guía\Solucion_Sobrecarga_Ejercicio_20\Entidades\bin\Debug\Entidades.pdb
+C:\Users\YAGO\Desktop\Programacion-2-y-Lab-2\Ejercicios de la guía\Solucion_Sobrecarga_Ejercicio_20\Entidades\obj\Debug\Billetes.csprojAssemblyReference.cache
+C:\Users\YAGO\Desktop\Programacion-2-y-Lab-2\Ejercicios de la guía\Solucion_Sobrecarga_Ejercicio_20\Entidades\obj\Debug\Billetes.csproj.CoreCompileInputs.cache
+C:\Users\YAGO\Desktop\Programacion-2-y-Lab-2\Ejercicios de la guía\Solucion_Sobrecarga_Ejercicio_20\Entidades\obj\Debug\Entidades.dll
+C:\Users\YAGO\Desktop\Programacion-2-y-Lab-2\Ejercicios de la guía\Solucion_Sobrecarga_Ejercicio_20\Entidades\obj\Debug\Entidades.pdb
