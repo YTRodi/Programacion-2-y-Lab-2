@@ -58,6 +58,7 @@
             this.txtEuro = new System.Windows.Forms.TextBox();
             this.btnConvertirEuro = new System.Windows.Forms.Button();
             this.btnConvertirDolar = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,7 +72,7 @@
             // lblPesoCentro
             // 
             this.lblPesoCentro.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPesoCentro.Location = new System.Drawing.Point(542, 41);
+            this.lblPesoCentro.Location = new System.Drawing.Point(542, 57);
             this.lblPesoCentro.Name = "lblPesoCentro";
             this.lblPesoCentro.Size = new System.Drawing.Size(94, 28);
             this.lblPesoCentro.TabIndex = 63;
@@ -81,7 +82,7 @@
             // lblDolarCentro
             // 
             this.lblDolarCentro.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDolarCentro.Location = new System.Drawing.Point(430, 41);
+            this.lblDolarCentro.Location = new System.Drawing.Point(430, 57);
             this.lblDolarCentro.Name = "lblDolarCentro";
             this.lblDolarCentro.Size = new System.Drawing.Size(94, 28);
             this.lblDolarCentro.TabIndex = 62;
@@ -91,7 +92,7 @@
             // lblEuroCentro
             // 
             this.lblEuroCentro.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEuroCentro.Location = new System.Drawing.Point(319, 41);
+            this.lblEuroCentro.Location = new System.Drawing.Point(319, 57);
             this.lblEuroCentro.Name = "lblEuroCentro";
             this.lblEuroCentro.Size = new System.Drawing.Size(94, 28);
             this.lblEuroCentro.TabIndex = 61;
@@ -101,7 +102,7 @@
             // lblPeso
             // 
             this.lblPeso.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPeso.Location = new System.Drawing.Point(12, 143);
+            this.lblPeso.Location = new System.Drawing.Point(12, 168);
             this.lblPeso.Name = "lblPeso";
             this.lblPeso.Size = new System.Drawing.Size(90, 27);
             this.lblPeso.TabIndex = 60;
@@ -111,7 +112,7 @@
             // LblDolar
             // 
             this.LblDolar.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblDolar.Location = new System.Drawing.Point(12, 109);
+            this.LblDolar.Location = new System.Drawing.Point(12, 134);
             this.LblDolar.Name = "LblDolar";
             this.LblDolar.Size = new System.Drawing.Size(90, 27);
             this.LblDolar.TabIndex = 59;
@@ -121,7 +122,7 @@
             // lblEuro
             // 
             this.lblEuro.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEuro.Location = new System.Drawing.Point(12, 74);
+            this.lblEuro.Location = new System.Drawing.Point(12, 99);
             this.lblEuro.Name = "lblEuro";
             this.lblEuro.Size = new System.Drawing.Size(90, 28);
             this.lblEuro.TabIndex = 58;
@@ -158,6 +159,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 79;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // txtCotizacionEuro
             // 
@@ -172,7 +174,7 @@
             // txtEuroAEuro
             // 
             this.txtEuroAEuro.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEuroAEuro.Location = new System.Drawing.Point(319, 75);
+            this.txtEuroAEuro.Location = new System.Drawing.Point(319, 100);
             this.txtEuroAEuro.Multiline = true;
             this.txtEuroAEuro.Name = "txtEuroAEuro";
             this.txtEuroAEuro.Size = new System.Drawing.Size(94, 28);
@@ -181,7 +183,7 @@
             // txtDolarAEuro
             // 
             this.txtDolarAEuro.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDolarAEuro.Location = new System.Drawing.Point(319, 108);
+            this.txtDolarAEuro.Location = new System.Drawing.Point(319, 133);
             this.txtDolarAEuro.Multiline = true;
             this.txtDolarAEuro.Name = "txtDolarAEuro";
             this.txtDolarAEuro.Size = new System.Drawing.Size(94, 28);
@@ -190,7 +192,7 @@
             // txtPesoAEuro
             // 
             this.txtPesoAEuro.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPesoAEuro.Location = new System.Drawing.Point(319, 143);
+            this.txtPesoAEuro.Location = new System.Drawing.Point(319, 168);
             this.txtPesoAEuro.Multiline = true;
             this.txtPesoAEuro.Name = "txtPesoAEuro";
             this.txtPesoAEuro.Size = new System.Drawing.Size(94, 27);
@@ -199,7 +201,7 @@
             // txtPesoADolar
             // 
             this.txtPesoADolar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPesoADolar.Location = new System.Drawing.Point(430, 143);
+            this.txtPesoADolar.Location = new System.Drawing.Point(430, 168);
             this.txtPesoADolar.Multiline = true;
             this.txtPesoADolar.Name = "txtPesoADolar";
             this.txtPesoADolar.Size = new System.Drawing.Size(94, 27);
@@ -208,7 +210,7 @@
             // txtDolarADolar
             // 
             this.txtDolarADolar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDolarADolar.Location = new System.Drawing.Point(430, 109);
+            this.txtDolarADolar.Location = new System.Drawing.Point(430, 134);
             this.txtDolarADolar.Multiline = true;
             this.txtDolarADolar.Name = "txtDolarADolar";
             this.txtDolarADolar.Size = new System.Drawing.Size(94, 28);
@@ -217,7 +219,7 @@
             // txtEuroADolar
             // 
             this.txtEuroADolar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEuroADolar.Location = new System.Drawing.Point(430, 75);
+            this.txtEuroADolar.Location = new System.Drawing.Point(430, 100);
             this.txtEuroADolar.Multiline = true;
             this.txtEuroADolar.Name = "txtEuroADolar";
             this.txtEuroADolar.Size = new System.Drawing.Size(94, 28);
@@ -226,7 +228,7 @@
             // txtPesoAPeso
             // 
             this.txtPesoAPeso.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPesoAPeso.Location = new System.Drawing.Point(542, 143);
+            this.txtPesoAPeso.Location = new System.Drawing.Point(542, 168);
             this.txtPesoAPeso.Multiline = true;
             this.txtPesoAPeso.Name = "txtPesoAPeso";
             this.txtPesoAPeso.Size = new System.Drawing.Size(94, 27);
@@ -235,7 +237,7 @@
             // txtDolarAPeso
             // 
             this.txtDolarAPeso.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDolarAPeso.Location = new System.Drawing.Point(542, 109);
+            this.txtDolarAPeso.Location = new System.Drawing.Point(542, 134);
             this.txtDolarAPeso.Multiline = true;
             this.txtDolarAPeso.Name = "txtDolarAPeso";
             this.txtDolarAPeso.Size = new System.Drawing.Size(94, 28);
@@ -244,7 +246,7 @@
             // txtEuroAPeso
             // 
             this.txtEuroAPeso.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEuroAPeso.Location = new System.Drawing.Point(542, 75);
+            this.txtEuroAPeso.Location = new System.Drawing.Point(542, 100);
             this.txtEuroAPeso.Multiline = true;
             this.txtEuroAPeso.Name = "txtEuroAPeso";
             this.txtEuroAPeso.Size = new System.Drawing.Size(94, 28);
@@ -273,7 +275,7 @@
             // btnConvertirPeso
             // 
             this.btnConvertirPeso.ImageIndex = 1;
-            this.btnConvertirPeso.Location = new System.Drawing.Point(233, 142);
+            this.btnConvertirPeso.Location = new System.Drawing.Point(233, 167);
             this.btnConvertirPeso.Name = "btnConvertirPeso";
             this.btnConvertirPeso.Size = new System.Drawing.Size(70, 28);
             this.btnConvertirPeso.TabIndex = 100;
@@ -284,7 +286,7 @@
             // txtPeso
             // 
             this.txtPeso.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPeso.Location = new System.Drawing.Point(120, 142);
+            this.txtPeso.Location = new System.Drawing.Point(120, 167);
             this.txtPeso.Multiline = true;
             this.txtPeso.Name = "txtPeso";
             this.txtPeso.Size = new System.Drawing.Size(94, 28);
@@ -293,7 +295,7 @@
             // txtDolar
             // 
             this.txtDolar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDolar.Location = new System.Drawing.Point(120, 108);
+            this.txtDolar.Location = new System.Drawing.Point(120, 133);
             this.txtDolar.Multiline = true;
             this.txtDolar.Name = "txtDolar";
             this.txtDolar.Size = new System.Drawing.Size(94, 28);
@@ -302,7 +304,7 @@
             // txtEuro
             // 
             this.txtEuro.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEuro.Location = new System.Drawing.Point(120, 74);
+            this.txtEuro.Location = new System.Drawing.Point(120, 99);
             this.txtEuro.Multiline = true;
             this.txtEuro.Name = "txtEuro";
             this.txtEuro.Size = new System.Drawing.Size(94, 28);
@@ -311,7 +313,7 @@
             // btnConvertirEuro
             // 
             this.btnConvertirEuro.ImageIndex = 1;
-            this.btnConvertirEuro.Location = new System.Drawing.Point(233, 74);
+            this.btnConvertirEuro.Location = new System.Drawing.Point(233, 99);
             this.btnConvertirEuro.Name = "btnConvertirEuro";
             this.btnConvertirEuro.Size = new System.Drawing.Size(70, 28);
             this.btnConvertirEuro.TabIndex = 98;
@@ -322,7 +324,7 @@
             // btnConvertirDolar
             // 
             this.btnConvertirDolar.ImageIndex = 1;
-            this.btnConvertirDolar.Location = new System.Drawing.Point(233, 108);
+            this.btnConvertirDolar.Location = new System.Drawing.Point(233, 133);
             this.btnConvertirDolar.Name = "btnConvertirDolar";
             this.btnConvertirDolar.Size = new System.Drawing.Size(70, 28);
             this.btnConvertirDolar.TabIndex = 99;
@@ -330,11 +332,22 @@
             this.btnConvertirDolar.UseVisualStyleBackColor = true;
             this.btnConvertirDolar.Click += new System.EventHandler(this.btnConvertirDolar_Click);
             // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 65);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(202, 28);
+            this.label1.TabIndex = 104;
+            this.label1.Text = "Limpiar (toque imagen)";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // FormMonedas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(648, 180);
+            this.ClientSize = new System.Drawing.Size(646, 205);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPeso);
             this.Controls.Add(this.txtDolar);
             this.Controls.Add(this.txtEuro);
@@ -404,6 +417,7 @@
         private System.Windows.Forms.TextBox txtEuro;
         private System.Windows.Forms.Button btnConvertirEuro;
         private System.Windows.Forms.Button btnConvertirDolar;
+        private System.Windows.Forms.Label label1;
     }
 }
 

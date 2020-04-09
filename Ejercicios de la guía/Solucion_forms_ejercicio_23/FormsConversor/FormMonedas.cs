@@ -19,11 +19,12 @@ namespace FormsConversor
             txtCotizacionEuro.Text = Euro.GetCotizacion().ToString();
             txtCotizacionDolar.Text = Dolar.GetCotizacion().ToString();
             txtCotizacionPeso.Text = Pesos.GetCotizacion().ToString();
+
         }
 
         private void btnLockCotizacion_Click(object sender, EventArgs e)
         {
-            if(pictureBox1.Enabled)
+            if(txtCotizacionEuro.Enabled)
             {
                 txtCotizacionEuro.Enabled = false;
                 txtCotizacionDolar.Enabled = false;
@@ -113,6 +114,21 @@ namespace FormsConversor
                 txtPesoAPeso.Text = pesito.GetCantidad().ToString();
             }
 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            txtEuroAEuro.Clear();
+            txtEuroADolar.Clear();
+            txtEuroAPeso.Clear();
+
+            txtDolarAEuro.Clear();
+            txtDolarADolar.Clear();
+            txtDolarAPeso.Clear();
+
+            txtPesoAEuro.Clear();
+            txtPesoADolar.Clear();
+            txtPesoAPeso.Clear();
         }
     }
 }
