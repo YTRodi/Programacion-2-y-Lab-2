@@ -15,26 +15,31 @@ namespace Ejercicio_20
             Euro eurito = new Euro(10);
             Pesos pesito = new Pesos(10);
 
-            //PASAMANOS EURO A DOLAR Y EURO A PESO.
-            Dolar aux = (Dolar)eurito;
-            Console.WriteLine(aux.GetCantidad());
-            Pesos auxx = (Pesos)aux;
-            Console.WriteLine(auxx.GetCantidad());
+            if(dolarcito == eurito)
+            {
+                Console.WriteLine("son iguales");
+            }
+
+            ////PASAMANOS EURO A DOLAR Y EURO A PESO.
+            //Dolar aux = (Dolar)eurito;
+            //Console.WriteLine(aux.GetCantidad());
+            //Pesos auxx = (Pesos)aux;
+            //Console.WriteLine(auxx.GetCantidad());
 
 
 
-            //PASAMOS DOLAR A EURO Y DOLAR A PESO.
-            Euro auxEuro = (Euro)dolarcito;
-            Console.WriteLine(auxEuro.GetCantidad());
-            Pesos auxPeso = (Pesos)dolarcito;
-            Console.WriteLine(auxPeso.GetCantidad());
+            ////PASAMOS DOLAR A EURO Y DOLAR A PESO.
+            //Euro auxEuro = (Euro)dolarcito;
+            //Console.WriteLine(auxEuro.GetCantidad());
+            //Pesos auxPeso = (Pesos)dolarcito;
+            //Console.WriteLine(auxPeso.GetCantidad());
 
 
-            //PASAMOS PESO A EURO Y PESO A DOLAR
-            auxEuro = (Euro)pesito;
-            Console.WriteLine(auxEuro.GetCantidad());
-            aux = (Dolar)pesito;
-            Console.WriteLine(aux.GetCantidad());
+            ////PASAMOS PESO A EURO Y PESO A DOLAR
+            //auxEuro = (Euro)pesito;
+            //Console.WriteLine(auxEuro.GetCantidad());
+            //aux = (Dolar)pesito;
+            //Console.WriteLine(aux.GetCantidad());
             
             //PRUEBA 1.
             //dolarcito = 5;//ESTO GRACIAS A LA CONVERSION IMPLICITA DE DOLAR. (PASA UN DOUBLE A DOLAR).
