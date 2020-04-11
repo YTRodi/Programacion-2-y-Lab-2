@@ -16,8 +16,6 @@ namespace FormsConversorNumeros
         public FormularioConversor()
         {
             InitializeComponent();
-            txtResultadoBin.Enabled = false;
-            txtResultadoDec.Enabled = false;
         }
 
         private void btnBinToDec_Click(object sender, EventArgs e)
@@ -34,6 +32,12 @@ namespace FormsConversorNumeros
             {
                 txtResultadoBin.Text = Conversor.DecimalBinario(aux);
             }
+        }
+
+        private void FormularioConversor_Load(object sender, EventArgs e)
+        {
+            txtResultadoBin.Enabled = false;
+            txtResultadoDec.Enabled = false;
         }
     }
 }

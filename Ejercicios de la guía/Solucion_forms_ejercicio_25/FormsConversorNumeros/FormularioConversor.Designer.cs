@@ -135,6 +135,7 @@
             this.Name = "FormularioConversor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Conversor de números";
+            this.Load += new System.EventHandler(this.FormularioConversor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
