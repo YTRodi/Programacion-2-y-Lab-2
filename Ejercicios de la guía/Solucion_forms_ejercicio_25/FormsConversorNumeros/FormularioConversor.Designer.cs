@@ -45,7 +45,7 @@
             this.lblBinADec.Location = new System.Drawing.Point(12, 9);
             this.lblBinADec.Name = "lblBinADec";
             this.lblBinADec.Size = new System.Drawing.Size(144, 36);
-            this.lblBinADec.TabIndex = 0;
+            this.lblBinADec.TabIndex = 1;
             this.lblBinADec.Text = "Binario a Decimal";
             this.lblBinADec.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -55,7 +55,7 @@
             this.lblDecABin.Location = new System.Drawing.Point(12, 54);
             this.lblDecABin.Name = "lblDecABin";
             this.lblDecABin.Size = new System.Drawing.Size(144, 36);
-            this.lblDecABin.TabIndex = 1;
+            this.lblDecABin.TabIndex = 4;
             this.lblDecABin.Text = "Decimal a Binario";
             this.lblDecABin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -64,7 +64,7 @@
             this.btnBinToDec.Location = new System.Drawing.Point(298, 9);
             this.btnBinToDec.Name = "btnBinToDec";
             this.btnBinToDec.Size = new System.Drawing.Size(104, 36);
-            this.btnBinToDec.TabIndex = 4;
+            this.btnBinToDec.TabIndex = 3;
             this.btnBinToDec.Text = "-->";
             this.btnBinToDec.UseVisualStyleBackColor = true;
             this.btnBinToDec.Click += new System.EventHandler(this.btnBinToDec_Click);
@@ -74,7 +74,7 @@
             this.btnDecToBin.Location = new System.Drawing.Point(298, 55);
             this.btnDecToBin.Name = "btnDecToBin";
             this.btnDecToBin.Size = new System.Drawing.Size(104, 36);
-            this.btnDecToBin.TabIndex = 5;
+            this.btnDecToBin.TabIndex = 6;
             this.btnDecToBin.Text = "-->";
             this.btnDecToBin.UseVisualStyleBackColor = true;
             this.btnDecToBin.Click += new System.EventHandler(this.btnDecToBin_Click);
@@ -86,7 +86,7 @@
             this.txtDecimal.Multiline = true;
             this.txtDecimal.Name = "txtDecimal";
             this.txtDecimal.Size = new System.Drawing.Size(130, 36);
-            this.txtDecimal.TabIndex = 9;
+            this.txtDecimal.TabIndex = 5;
             // 
             // txtBinario
             // 
@@ -95,7 +95,7 @@
             this.txtBinario.Multiline = true;
             this.txtBinario.Name = "txtBinario";
             this.txtBinario.Size = new System.Drawing.Size(130, 36);
-            this.txtBinario.TabIndex = 12;
+            this.txtBinario.TabIndex = 2;
             // 
             // txtResultadoDec
             // 
@@ -104,7 +104,7 @@
             this.txtResultadoDec.Multiline = true;
             this.txtResultadoDec.Name = "txtResultadoDec";
             this.txtResultadoDec.Size = new System.Drawing.Size(130, 36);
-            this.txtResultadoDec.TabIndex = 14;
+            this.txtResultadoDec.TabIndex = 1000;
             // 
             // txtResultadoBin
             // 
@@ -113,7 +113,7 @@
             this.txtResultadoBin.Multiline = true;
             this.txtResultadoBin.Name = "txtResultadoBin";
             this.txtResultadoBin.Size = new System.Drawing.Size(130, 36);
-            this.txtResultadoBin.TabIndex = 13;
+            this.txtResultadoBin.TabIndex = 1001;
             // 
             // FormularioConversor
             // 
