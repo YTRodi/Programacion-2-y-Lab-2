@@ -26,7 +26,7 @@ namespace Entidades
         {
             set
             {
-                bool retorno = (this + value);
+                bool retorno = this + value;//value es el cliente.
             }
             get
             {
@@ -45,15 +45,15 @@ namespace Entidades
 
         public static bool operator ==(Negocio negocio, Cliente cliente)
         {
-            bool retorno = false;
+            bool seEncuenta = false;
             foreach(Cliente aux in negocio.clientes)
             {
                 if(aux == cliente)//uso el == de cliente.
                 {
-                    retorno = true;
+                    seEncuenta = true;
                 }
             }
-            return retorno;
+            return seEncuenta;
         }
 
         public static bool operator !=(Negocio negocio, Cliente cliente)
