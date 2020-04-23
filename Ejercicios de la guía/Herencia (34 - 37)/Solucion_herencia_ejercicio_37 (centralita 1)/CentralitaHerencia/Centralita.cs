@@ -57,7 +57,6 @@ namespace CentralitaHerencia
         }
         #endregion
 
-
         #region Métodos
         private float CalcularGanancias(Llamada.TipoLLamada tipo)
         {
