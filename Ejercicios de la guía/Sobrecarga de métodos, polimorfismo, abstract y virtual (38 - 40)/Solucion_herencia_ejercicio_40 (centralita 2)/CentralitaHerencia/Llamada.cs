@@ -15,7 +15,7 @@ namespace CentralitaHerencia
             Provincial,
             Todas
         }
-
+        
         protected float duracion;
         protected string nroDestino;
         protected string nroOrigen;
@@ -84,10 +84,9 @@ namespace CentralitaHerencia
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine("\n-------Datos desde la Llamada-------");
             sb.AppendLine("Duración: " + this.Duracion);
             sb.AppendLine("Número destino: " + this.NroDestino);
-            sb.AppendLine("Número origen: " + this.NroOrigen);
+            sb.Append("Número origen: " + this.NroOrigen);
             
             return sb.ToString();
         }

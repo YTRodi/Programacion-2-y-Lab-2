@@ -24,6 +24,12 @@ namespace Ejercicio_36
             Competencia compeDeAutos = new Competencia(15, 2, Competencia.TipoCompetencia.F1);//del tipo AutoF1
             Competencia compeDeMotos = new Competencia(20, 2, Competencia.TipoCompetencia.MotoCross);
 
+
+            //Console.WriteLine(compeDeAutos[0].MostrarDatos());//PROBAR ESTO.
+
+
+
+
             //COMPETENCIA DE MOTOS, NO DEJA AGREGAR AUTOS.
             //if(compeDeMotos + auto1)
             //{
@@ -94,7 +100,7 @@ namespace Ejercicio_36
                 Console.WriteLine("No se pudo agregar");
             }
 
-            if(compeDeAutos + auto3)//PRUEBO LA CAPACIDAD DE LA COMPETENCIA.
+            if (compeDeAutos + auto3)//PRUEBO LA CAPACIDAD DE LA COMPETENCIA.
             {
                 Console.WriteLine("Auto agregado con éxito");
             }

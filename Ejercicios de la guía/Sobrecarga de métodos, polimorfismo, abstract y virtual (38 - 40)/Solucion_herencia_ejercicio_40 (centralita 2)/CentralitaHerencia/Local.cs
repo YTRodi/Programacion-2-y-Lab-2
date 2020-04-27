@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -33,16 +34,15 @@ namespace CentralitaHerencia
         #endregion
 
         #region Métodos
-        protected override string Mostrar()//arreglarlo la clase que viene.
-        {
-            StringBuilder sb = new StringBuilder();
-            sb.AppendLine(base.Mostrar());
-            sb.AppendLine("-------Datos desde Local-------");
-            sb.AppendLine("Costo de la llamada: $" + this.CostoLlamada);
-            //sb.AppendLine("Costo: " + this.costo);
+        //protected override string Mostrar()//arreglarlo la clase que viene.
+        //{
+        //    StringBuilder sb = new StringBuilder();
+        //    sb.AppendLine(base.Mostrar());
+        //    sb.AppendLine("Costo de la llamada: $" + this.CostoLlamada);
+        //    //sb.AppendLine("Costo: " + this.costo);
 
-            return sb.ToString();
-        }
+        //    return sb.ToString();
+        //}
 
 
         private float CalcularCosto()
@@ -60,7 +60,13 @@ namespace CentralitaHerencia
 
         public override string ToString()
         {
-            return this.Mostrar();
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine(base.Mostrar());
+            sb.AppendLine("Tipo de llamada: " + this.GetType());
+            sb.AppendLine("Costo de la llamada: $" + this.CostoLlamada);
+            //sb.AppendLine("Costo: " + this.costo);
+
+            return sb.ToString();
         }
         #endregion
     }

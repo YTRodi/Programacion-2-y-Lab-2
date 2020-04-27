@@ -41,17 +41,17 @@ namespace CentralitaHerencia
         #endregion
 
         #region Métodos
-        protected string Mostrar()
-        {
-            StringBuilder sb = new StringBuilder();
+        //protected string Mostrar()
+        //{
+        //    StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine(base.Mostrar());
-            sb.AppendLine("-------Datos desde Provincial-------");
-            sb.AppendLine("Franja horaria:" + this.franjaHoraria);
-            sb.AppendLine("Costo llamada: $" + this.CostoLlamada);
+        //    sb.AppendLine(base.Mostrar());
+        //    sb.AppendLine("-------Datos desde Provincial-------");
+        //    sb.AppendLine("Franja horaria:" + this.franjaHoraria);
+        //    sb.AppendLine("Costo llamada: $" + this.CostoLlamada);
 
-            return sb.ToString();
-        }
+        //    return sb.ToString();
+        //}
 
 
         /// <summary>
@@ -88,7 +88,15 @@ namespace CentralitaHerencia
 
         public override string ToString()
         {
-            return this.Mostrar();
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine(base.Mostrar());
+            //sb.AppendLine("-------Datos desde Provincial-------");
+            sb.AppendLine("Tipo de llamada: " + this.GetType());
+            sb.AppendLine("Franja horaria: " + this.franjaHoraria);
+            sb.AppendLine("Costo llamada: $" + this.CostoLlamada);
+
+            return sb.ToString();
         }
         #endregion
     }

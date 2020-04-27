@@ -105,35 +105,35 @@ namespace CentralitaHerencia
             return valorRecaudado;
         }
 
-        private string Mostrar()
-        {
-            StringBuilder sb = new StringBuilder();
+        //private string Mostrar()
+        //{
+        //    StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine("Razon Social: " + this.razonSocial);
-            sb.AppendLine("*******************************");
-            sb.AppendLine("Ganacia por Local: " + this.GananciasPorLocal);
-            sb.AppendLine("Ganacia por Provincial: " + this.GananciasPorProvincial);
-            sb.AppendLine("Ganacia Totales: " + this.GananciasPorTodas);
-            sb.AppendLine("*******************************");
+        //    sb.AppendLine("Razon Social: " + this.razonSocial);
+        //    sb.AppendLine("*******************************");
+        //    sb.AppendLine("Ganacia por Local: " + this.GananciasPorLocal);
+        //    sb.AppendLine("Ganacia por Provincial: " + this.GananciasPorProvincial);
+        //    sb.AppendLine("Ganacia Totales: " + this.GananciasPorTodas);
+        //    sb.AppendLine("*******************************");
 
-            sb.AppendLine("Detalle de llamadas realizadas:");
-            foreach(Llamada item in this.listaDeLLamadas)
-            {
-                sb.AppendLine(item.ToString());
+        //    sb.AppendLine("Detalle de llamadas realizadas:");
+        //    foreach(Llamada item in this.listaDeLLamadas)
+        //    {
+        //        sb.AppendLine(item.ToString());
 
-                //if(item is Local)
-                //{
-                //    sb.AppendLine("Llamadas realizadas Locales: " + ((Local)item).Mostrar());
-                //}
-                ////else if(item is Provincial)
-                //if(item is Provincial)
-                //{
-                //    sb.AppendLine("Llamadas realizadas Provinciales: " + ((Provincial)item).Mostrar());
-                //}
-            }
+        //        //if(item is Local)
+        //        //{
+        //        //    sb.AppendLine("Llamadas realizadas Locales: " + ((Local)item).Mostrar());
+        //        //}
+        //        ////else if(item is Provincial)
+        //        //if(item is Provincial)
+        //        //{
+        //        //    sb.AppendLine("Llamadas realizadas Provinciales: " + ((Provincial)item).Mostrar());
+        //        //}
+        //    }
 
-            return sb.ToString();
-        }
+        //    return sb.ToString();
+        //}
 
 
         public void OrdenarLlamadas()
@@ -182,7 +182,24 @@ namespace CentralitaHerencia
         #region Override
         public override string ToString()
         {
-            return this.Mostrar();
+            //return this.Mostrar();
+            StringBuilder sb = new StringBuilder();
+
+            sb.AppendLine("Razon Social: " + this.razonSocial);
+            sb.AppendLine("*******************************");
+            sb.AppendLine("Ganacia por Local: " + this.GananciasPorLocal);
+            sb.AppendLine("Ganacia por Provincial: " + this.GananciasPorProvincial);
+            sb.AppendLine("Ganacia Totales: " + this.GananciasPorTodas);
+            sb.AppendLine("*******************************");
+
+            sb.AppendLine("-------Detalle de llamadas realizadas-------");
+            foreach (Llamada item in this.listaDeLLamadas)
+            {
+                sb.AppendLine(item.ToString());
+            }
+            sb.AppendLine("Total de llamadas realizadas: " + this.listaDeLLamadas.Count);
+
+            return sb.ToString();
         }
         #endregion
     }

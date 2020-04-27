@@ -49,8 +49,15 @@ namespace Entidades
             get
             {
                 //if(i >=0 && i < this.listaAutos.Count)
-                return this.listaAutos[i];
+                
+                    return this.listaAutos[i];//VERIFICAR.
+                
             }
+
+            //set
+            //{
+            //    this.listaAutos[i] = value;
+            //}
         }
 
 
