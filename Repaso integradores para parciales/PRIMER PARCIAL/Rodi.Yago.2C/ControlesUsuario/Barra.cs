@@ -17,6 +17,16 @@ namespace ControlCantina
         private int offset;
         private const int CORRIMIENTO_OFFSET = 56;
 
+
+        //PARTE 2 PARCIAL
+        public Cantina BarraGetCantina
+        {
+            get
+            {
+                return this.cantina;
+            }
+        }
+
         public Barra()
         {
             InitializeComponent();
@@ -27,10 +37,10 @@ namespace ControlCantina
             set
             {
                 this.cantina = value;
-                this.cantina.Botellas.Add(new Cerveza(2000, "", Botella.Tipo.Vidrio, 2000));
-                //this.cantina.Botellas.Add(new Cerveza(792, "lelel", Botella.Tipo.Vidrio, 1000));
-                this.cantina.Botellas.Add(new Agua(2000, "", 2000));
-                this.cantina.Botellas.Add(new Cerveza(2000, "", Botella.Tipo.Plastico, 2000));
+                //this.cantina.Botellas.Add(new Cerveza(2000, "", Botella.Tipo.Vidrio, 2000));
+                ////this.cantina.Botellas.Add(new Cerveza(792, "lelel", Botella.Tipo.Vidrio, 1000));
+                //this.cantina.Botellas.Add(new Agua(2000, "", 2000));
+                //this.cantina.Botellas.Add(new Cerveza(2000, "", Botella.Tipo.Plastico, 2000));
                 this.DibujarBotellas();
             }
         }
@@ -40,6 +50,17 @@ namespace ControlCantina
             if (this.cantina + b)
             {
                 this.BotellaEnBarra(b);
+                MessageBox.Show("Botella agregada con éxito.\n           !!A beber!!",
+                    "NOTIFICACIÓN",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("No se pudo agregar la botella por falta espacio.",
+                    "ERROR",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
             }
         }
 
@@ -94,16 +115,21 @@ namespace ControlCantina
 
             int cantidadServida = 0;// = botella.ServirMedida();
 
-            //PARA VER EL 100 PORCIENTO 
+            //PARA VER EL 100 PORCIENTO DESTILDAR
             //MessageBox.Show(string.Format("SIRVIENDO! {1}ml\n{0}", botella.ToString(), cantidadServida), "Cantinero", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
             if ((cantidadServida = botella.ServirMedida()) == 0)
             {
                 MessageBox.Show(string.Format("No queda más líquido!", "Cantinero", MessageBoxButtons.OK, MessageBoxIcon.Exclamation));
+
+                //FUNCIONALIDAD AGREGADA(Cuando no hay más líquido, me borra la botella)
+                cantina.Botellas.Remove(botella);
+                this.Controls.Remove(pb);
             }
             else
             {
-                MessageBox.Show(string.Format("SIRVIENDO! {1}ml\n{0}", botella.ToString(), cantidadServida), "Cantinero", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                //MessageBox.Show(string.Format("SIRVIENDO! {1}ml\n{0}", botella.ToString(), cantidadServida), "Cantinero", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(string.Format("SIRVIENDO! {1}ml\n{0}", (string)botella, cantidadServida), "Cantinero", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
             pb.Location = ubicacion;

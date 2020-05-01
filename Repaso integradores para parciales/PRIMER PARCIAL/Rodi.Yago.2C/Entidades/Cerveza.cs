@@ -52,6 +52,8 @@ namespace Entidades
             StringBuilder sb = new StringBuilder();
             sb.AppendLine(base.GenerarInforme());
             sb.AppendLine("Medida de Cerveza: " + Cerveza.MEDIDA);
+            sb.AppendLine("Tipo de envase: " + this.tipo);
+            sb.AppendLine("<---------------------------------------->");
             return sb.ToString();
         }
         #endregion

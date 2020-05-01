@@ -12,18 +12,47 @@ using Entidades;
 
 namespace FormCantina
 {
-    public partial class Form1 : Form
+    public partial class FormCantina : Form
     {
         private Botella.Tipo tipo;
 
-        public Form1()
+        public string GetInforme
+        {
+            get
+            {
+                StringBuilder botellaEnLista = new StringBuilder();
+                foreach (Botella item in this.barra1.BarraGetCantina.Botellas)
+                {
+                    botellaEnLista.AppendLine(item);
+                    //llama a operador implicito nuevo que cree en botella.
+                    //no hace falta castear, porque el item sería botella.
+                }
+                return botellaEnLista.ToString();
+            }
+
+        }
+
+        public Cantina GetCantina
+        {
+            get
+            {
+                return this.barra1.BarraGetCantina;
+            }
+        }
+
+        public FormCantina(int cantidadEspacios)
         {
             InitializeComponent();
+            this.barra1.SetCantina = new Cantina(cantidadEspacios);
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.barra1.SetCantina = Cantina.GetCantina(10);
+            //this.barra1.SetCantina = Cantina.GetCantina(10);
+            //this.barra1.SetCantina = new Cantina((int)numUDCapacidad.Value);
+            //this.barra1.SetCantina = new Cantina(FrmCantidadEspaciosCantina);
+
+
             cmbBotellaTipo.DataSource = Enum.GetValues(typeof(Botella.Tipo));
         }
 
@@ -44,7 +73,6 @@ namespace FormCantina
                 if(!(cervecita is null))
                 {
                     barra1.AgregarBotella(cervecita);
-                    MessageBox.Show("AGREGADO CON EXITOOOOO");
                     txtBoxMarca.Text = string.Empty;
                 }
             }
@@ -54,7 +82,6 @@ namespace FormCantina
                 if (!(aguita is null))
                 {
                     barra1.AgregarBotella(aguita);
-                    MessageBox.Show("AGREGADO CON EXITOOOOO");
                     txtBoxMarca.Text = string.Empty;
                 }
 
@@ -75,6 +102,17 @@ namespace FormCantina
         private void radioBtnCerveza_CheckedChanged(object sender, EventArgs e)
         {
             cmbBotellaTipo.Enabled = true;
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(e.CloseReason == CloseReason.UserClosing)
+            {
+                //el usuario esta queriendo cerrar el formulario.
+                //si la razon del cierre, el usuario quiere cerrarlo, no lo cierres.
+                //FormClosingEventArgs = el tipo que venia asociado con el evento
+                e.Cancel = true;
+            }
         }
     }
 }

@@ -18,7 +18,10 @@ namespace FormCantina
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            //Application.Run(new FormCantina());
+            //Application.Run(new FrmCantidadEspaciosCantina());
+            Application.Run(new FrmBar());
+
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -76,19 +77,48 @@ namespace Entidades
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendFormat("Porcentaje de contenido: {0:0#}% \n", this.PorcentajeContenido);
-            sb.AppendLine("Capacidad de mililitros: " + this.capacidadML);
-            sb.AppendLine("Capacidad de litros: " + this.CapacidadLitros);
-            sb.AppendLine("Contenido de mililitros: " + this.Contenido);
-            sb.AppendLine("Marca: " + this.marca);
+            //sb.AppendLine(string.Format("DATOS DEL FORMULARIO NÚMERO: ", this.))´;
+            //sb.AppendLine(string.Format("BEBIDA NÚMERO: ", this.));
+            sb.AppendLine(string.Format("Porcentaje de contenido: {0:0#}%", this.PorcentajeContenido));
+            sb.AppendLine(string.Format("Capacidad de mililitros: {0}", this.capacidadML));
+            sb.AppendLine(string.Format("Capacidad de litros: {0}", this.CapacidadLitros));
+            sb.AppendLine(string.Format("Contenido de mililitros: {0}", this.Contenido));
+            sb.AppendLine(string.Format("Marca: " + this.marca));
+
             return sb.ToString();
+
+
+            //sb.AppendFormat("Porcentaje de contenido: {0:0#}% \n", this.PorcentajeContenido);
+            //sb.AppendLine("Capacidad de mililitros: " + this.capacidadML);
+            //sb.AppendLine("Capacidad de litros: " + this.CapacidadLitros);
+            //sb.AppendLine("Contenido de mililitros: " + this.Contenido);
+            //sb.AppendLine("Marca: " + this.marca);
+            //return sb.ToString();
         }
         #endregion
 
         #region Override
-        public override string ToString()
+        //4)a)
+        //public override string ToString()
+        //{
+        //    return this.GenerarInforme();
+        //}
+        #endregion
+
+        //PARTE 2 PARCIAL
+        #region Conversiones
+        public static bool operator ==(Botella b1, Botella b2)
         {
-            return this.GenerarInforme();
+            return (b1.marca == b2.marca);
+        }
+        public static bool operator !=(Botella b1, Botella b2)
+        {
+            return !(b1 == b2);
+        }
+
+        public static implicit operator string(Botella botellita)
+        {
+            return botellita.GenerarInforme();
         }
         #endregion
     }

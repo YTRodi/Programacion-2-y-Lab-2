@@ -45,6 +45,7 @@
     <Compile Include="Botella.cs" />
     <Compile Include="Cantina.cs" />
     <Compile Include="Cerveza.cs" />
+    <Compile Include="Edificio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

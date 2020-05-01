@@ -15,7 +15,8 @@ namespace Entidades
         private static Cantina singleton;
 
         #region Constructores
-        private Cantina(int espacios)
+        //private Cantina(int espacios)
+        public Cantina(int espacios)
         {
             this.listaBotellas = new List<Botella>();
             this.espaciosTotales = espacios;
@@ -33,18 +34,18 @@ namespace Entidades
         #endregion
 
         #region Métodos
-        public static Cantina GetCantina(int espacios)
-        {
-            if(Cantina.singleton is null)
-            {
-                Cantina.singleton = new Cantina(espacios);
-            }
-            else
-            {
-                singleton.espaciosTotales = espacios;
-            }
-            return Cantina.singleton;
-        }
+        //public static Cantina GetCantina(int espacios)
+        //{
+        //    if(Cantina.singleton is null)
+        //    {
+        //        Cantina.singleton = new Cantina(espacios);
+        //    }
+        //    else
+        //    {
+        //        singleton.espaciosTotales = espacios;
+        //    }
+        //    return Cantina.singleton;
+        //}
         #endregion
 
         #region Operaciones
@@ -57,6 +58,7 @@ namespace Entidades
                 if(!(cantinita.listaBotellas.Contains(botellita)))
                 {
                     esta = true;
+                    cantinita.listaBotellas.Add(botellita);
                 }
                 //foreach (Botella item in cantinita.listaBotellas)
                 //{
@@ -70,6 +72,35 @@ namespace Entidades
             }
             return esta;
         }
+        #endregion
+
+        //2DA PARTE PARCIAL
+        #region Conversiones
+        public static bool operator ==(Cantina cantinita, Botella botellita)
+        {
+            bool retorno = false;
+
+            //if (!(cantinita.listaBotellas.Contains(botellita)))
+            //{
+            //    retorno = true;
+            //}
+
+            for (int i = 0; i < cantinita.listaBotellas.Count; i++)
+            {
+                if (cantinita.listaBotellas[i] == botellita)
+                {
+                    retorno = true;
+                }
+            }
+
+            return retorno;
+        }
+
+        public static bool operator !=(Cantina cantinita, Botella botellita)
+        {
+            return !(cantinita == botellita);
+        }
+
         #endregion
     }
 }
