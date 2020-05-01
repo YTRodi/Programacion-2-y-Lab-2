@@ -37,6 +37,7 @@ namespace FormCantina
                 FormCantina frm_Cantina = new FormCantina(cantidadEspacios.CantidadEspacios);
                 if (this.tower + frm_Cantina.GetCantina)
                 {
+                    //el frm_Cantina va a ser contenedor del frmBar
                     frm_Cantina.MdiParent = this;//establece el formulario MDI principal actual de este formulario.
                     frm_Cantina.Show();
                 }
@@ -68,6 +69,7 @@ namespace FormCantina
                 ////SIEMPRE ME MUESTRA LA ULTIMA CAPACIDAD DE BOTELLAS
                 ////ME LAS PISA, TENDRIA QUE USAR UN FOR...
                 //sb.AppendLine("");
+
                 MessageBox.Show(item.GetInforme,
                     "DATOS DE LAS BEBIDAS",
                     MessageBoxButtons.OK,
