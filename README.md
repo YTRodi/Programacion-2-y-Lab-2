@@ -7,11 +7,11 @@
 
 >                            El repositorio consta de proyectos desarrollados en el lenguaje C# .NET
 
-# Guía de ejercicios 2020:
+# *Guía de ejercicios 2020:*
 * [Guía de ejercicios C# 2020](https://github.com/YTRodi/Programacion-2-y-Lab-2/blob/master/Gu%C3%ADa%20de%20Ejercicios%20-%20Laboratorio%20II%20-%202017.v6.0.6.pdf)
 
 
-# Temario de la materia:
+# *Temario de las materias:*
 
 # 1) Introducción a .NET y C#.
 * Pilares de la POO.
