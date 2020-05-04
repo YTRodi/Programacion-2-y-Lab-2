@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+	<CodeSnippet Format="1.0.0">
+		<Header>
+			<Title>Properties Custom</Title>
+			<Author>YTRodi</Author>
+			<Description>Inseta propiedades set y get.</Description>
+			<Shortcut>pr</Shortcut>
+		</Header>
+		<Snippet>
+			<Code Language="CSharp">
+				<![CDATA[
+				public string $Prop$
+				{
+					get
+					{
+						return this.$atrib$;
+					}
+					set
+					{
+						this.$atrib$ = value;
+					}
+				}
+				]]>
+			</Code>
+			<Declarations>
+				<Literal>
+					<ID>Prop</ID>
+					<ToolTip>Nombre de la propiedad.</ToolTip>
+					<Default>Prop</Default>
+				</Literal>
+				<Literal>
+					<ID>atrib</ID>
+					<ToolTip>Nombre del atributo.</ToolTip>
+					<Default>atrib</Default>
+				</Literal>
+			</Declarations>
+		</Snippet>
+	</CodeSnippet>
+</CodeSnippets>
