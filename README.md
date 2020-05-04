@@ -8,24 +8,25 @@
 >                            El repositorio consta de proyectos desarrollados en el lenguaje C# .NET
 
 # Temario de la materia:
-* 1) Introducción a .NET y C#.
-- Pilares de la POO.
-   
-* 2) Clases y métodos estáticos.
-   
-* 3) Programación orientada a objetos (POO).
 
-* 4) Sobrecarga.
+# 1) Introducción a .NET y C#.
+* Pilares de la POO.
+
+# 2) Clases y métodos estáticos.
+   
+# 3) Programación orientada a objetos (POO).
+
+# 4) Sobrecarga.
 - Constructores
 - Métodos
 - Operadores
 - Conversiones implícitas y explícitas
    
-* 5) Repaso integrador (de lo visto hasta ese entonces)
+# 5) Repaso integrador (de lo visto hasta ese entonces).
    
-* 6) Windows Forms. Arrays. Strings.
+# 6) Windows Forms. Arrays. Strings.
    
-* 7) Colecciones.
+# 7) Colecciones.
 * Genéricas
 - List
 - Stack
@@ -39,12 +40,12 @@
 - Stack
 - Queue
    
-* 8) Encapsulamiento. Propiedades, enumerados e indexadores.
+# 8) Encapsulamiento. Propiedades, enumerados e indexadores.
 
-* 9 Herencia.
+# 9 Herencia.
    
-* 10) Clases y métodos abstractos. Métodos virtuales.
+# 10) Clases y métodos abstractos. Métodos virtuales.
 
-* 11) Polimorfismo.
+# 11) Polimorfismo.
 
-* 12) Repaso Integrador.
+# 12) Repaso Integrador (de lo visto hasta ese entonces).
