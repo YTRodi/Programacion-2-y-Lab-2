@@ -44,7 +44,6 @@ namespace Entidades
                 return this.cantidadVueltas;
             }
         }
-
         public List<VehiculoDeCarrera> ListaVehiculos
         {
             get
@@ -140,9 +139,6 @@ namespace Entidades
         {
             bool retorno = false;
 
-            //foreach(VehiculoDeCarrera item in competencia.listaAutos)
-            //{
-
             switch (competencia.Tipo)
             {
                 case Competencia.TipoCompetencia.MotoCross://si es una motocross
@@ -171,12 +167,6 @@ namespace Entidades
                     }
                     break;
             }
-            
-            
-                //throw new CompetenciaNoDisponibleException("El vehiculo no corresponde a la competencia",
-                //                "Clase:" + ex.NombreClase, "Método: " + ex.NombreMetodo,ex);
-
-
             return retorno;
         }
 
@@ -220,34 +210,14 @@ namespace Entidades
             
             return retorno;
         }
-        //public static bool operator +(Competencia competencia, AutoF1 auto)
-        //{
-        //    bool retorno = false;
-        //    Random numRandom = new Random();
 
-        //    if (competencia.listaAutos.Count < competencia.CantidadCompetidores)
-        //    {
-        //        if (!(competencia.listaAutos.Contains(auto)))
-        //        {
-        //            competencia.listaAutos.Add(auto);
-
-        //            auto.EnCompetencia = true;
-        //            auto.VueltasRestantes = competencia.CantidadVueltas;
-        //            auto.CantidadCombustible = (short)numRandom.Next(15, 100);
-
-        //            retorno = true;
-        //        }
-        //    }
-        //    return retorno;
-        //}
-
-        public static bool operator -(Competencia competencia, AutoF1 auto)
+        public static bool operator -(Competencia competencia, VehiculoDeCarrera vehiculo)
         {
             bool retorno = false;
 
-            if (competencia.listaVehiculos.Contains(auto))
+            if (competencia.listaVehiculos.Contains(vehiculo))
             {
-                competencia.listaVehiculos.Remove(auto);
+                competencia.listaVehiculos.Remove(vehiculo);
                 retorno = true;
             }
 

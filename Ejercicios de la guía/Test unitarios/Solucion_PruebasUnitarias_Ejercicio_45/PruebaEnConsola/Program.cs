@@ -23,9 +23,22 @@ namespace PruebaEnConsola
                 //Console.WriteLine(miEx.InnerException); //SI DEJO ESTO MUESTRA TODO EL PATH DE LOS ERRORES.
                 Console.WriteLine(miEx.InnerException.Message);
 
+                //if(!(miEx is null))
+                //{
+                //    Exception auxiliar = miEx.InnerException;
+                //    do
+                //    {
+                //        Console.WriteLine(auxiliar.Message);
+                //        auxiliar = auxiliar.InnerException;
 
-                Exception ex = miEx.InnerException;
-                Console.WriteLine($"MENSAJE: {ex.Message}\nEN: {ex.Source}");//Muestro solo la InnerException.
+                //    } while (!(auxiliar is null));
+                //}
+
+
+
+
+                //Exception ex = miEx.InnerException;
+                //Console.WriteLine($"MENSAJE: {ex.Message}\nEN: {ex.Source}");//Muestro solo la InnerException.
 
 
 
