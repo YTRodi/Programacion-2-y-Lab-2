@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30002.166
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Entidades.csproj", "{8EDEE699-201A-4657-BB11-CB26D3E21E56}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormReceta", "FormReceta\FormReceta.csproj", "{26B93E00-00FB-4C35-8552-E74928DF1E32}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8EDEE699-201A-4657-BB11-CB26D3E21E56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EDEE699-201A-4657-BB11-CB26D3E21E56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EDEE699-201A-4657-BB11-CB26D3E21E56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EDEE699-201A-4657-BB11-CB26D3E21E56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26B93E00-00FB-4C35-8552-E74928DF1E32}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26B93E00-00FB-4C35-8552-E74928DF1E32}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26B93E00-00FB-4C35-8552-E74928DF1E32}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26B93E00-00FB-4C35-8552-E74928DF1E32}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5F7FF1AE-F238-449C-9847-BEC2FAB70FC1}
+	EndGlobalSection
+EndGlobal
