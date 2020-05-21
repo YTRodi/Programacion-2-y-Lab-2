@@ -36,12 +36,12 @@ namespace Entidades
             get
             {
                 string control = string.Empty;
-                int primerIndexRnd = rnd.Next(0, this.equipos.Count - 1);
-                int segundoIndexRnd = rnd.Next(0, this.equipos.Count - 1);
+                int primerIndexRnd = rnd.Next(0, this.equipos.Count);
+                int segundoIndexRnd = rnd.Next(0, this.equipos.Count);
 
                 while (this.equipos.Count >= 2 && primerIndexRnd == segundoIndexRnd)
                 {
-                    segundoIndexRnd = rnd.Next(0, this.equipos.Count - 1);
+                    segundoIndexRnd = rnd.Next(0, this.equipos.Count);
                 }
 
                 return this.CalcularPartido(this.equipos[primerIndexRnd], this.equipos[segundoIndexRnd]);
