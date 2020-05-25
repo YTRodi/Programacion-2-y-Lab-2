@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Entidades
 {
-    class Boligrafo : IAcciones
+    public class Boligrafo : IAcciones
     {
         #region Atributos
         private ConsoleColor colorTinta;
@@ -55,19 +55,30 @@ namespace Entidades
         #region Métodos
         public EscrituraWrapper Escribir(string texto)
         {
-            
+            this.UnidadesDeEscritura -= texto.Length * 0.3f;
+            return new EscrituraWrapper(texto, this.Color);
         }
 
         public bool Recargar(int unidades)
         {
-            
+            bool recargo = false;
+            if (unidades == 100)
+                this.tinta = 100;
+            else
+                this.tinta += unidades;
+
+            return recargo;
         }
         #endregion
 
         #region Override
         public override string ToString()
         {
-            return base.ToString();
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("Tipo: Boligrafo");
+            sb.AppendLine($"Color de escritura: {this.Color}");
+            sb.AppendLine($"Nivel de tinta: {this.UnidadesDeEscritura}%");
+            return sb.ToString();
         }
         #endregion
     }
