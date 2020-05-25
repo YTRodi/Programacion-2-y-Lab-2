@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CentralitaHerencia
 {
-    public class Local<T> : Llamada, IGuardar<T>
+    public class Local : Llamada, IGuardar<Local>
     {
         protected float costo;
 
@@ -47,7 +47,7 @@ namespace CentralitaHerencia
         #region Override
         public override bool Equals(object obj)
         {
-            return (obj is Local<T>);
+            return (obj is Local);
         }
 
         public override string ToString()
@@ -63,6 +63,7 @@ namespace CentralitaHerencia
 
 
         #endregion
+
         #region Interface
         public string RutaDeArchivo
         {
@@ -81,7 +82,7 @@ namespace CentralitaHerencia
             throw new NotImplementedException();
         }
 
-        public T Leer()
+        public Local Leer()
         {
             throw new NotImplementedException();
         }

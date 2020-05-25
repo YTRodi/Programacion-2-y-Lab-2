@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CentralitaHerencia
 {
-    public class Provincial<T> : Llamada, IGuardar<T>
+    public class Provincial : Llamada, IGuardar<Provincial>
     {
         public enum Franja
         {
@@ -73,7 +73,7 @@ namespace CentralitaHerencia
         #region Override
         public override bool Equals(object obj)
         {
-            return (obj is Provincial<T>);
+            return (obj is Provincial);
         }
 
         public override string ToString()
@@ -89,6 +89,7 @@ namespace CentralitaHerencia
             return sb.ToString();
         }
         #endregion
+
         #region Intereface
         public string RutaDeArchivo
         {
@@ -106,7 +107,7 @@ namespace CentralitaHerencia
             throw new NotImplementedException();
         }
 
-        public T Leer()
+        public Provincial Leer()
         {
             throw new NotImplementedException();
         }
