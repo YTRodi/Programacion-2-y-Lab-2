@@ -60,6 +60,10 @@ namespace MyNotepad
                     sw = new StreamWriter(lastPath);
                     sw.WriteLine(rTextBox.Text);
                 }
+                else
+                {
+                    this.abrirToolStripMenuItem_Click(sender, e);
+                }
             }
             catch (Exception)
             {
