@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -9,25 +10,59 @@ namespace Entidades
 {
     public class PuntoTxt : Archivo, IArchivo<string>
     {
+        private string lastPath;
         #region Métodos
         public bool Guardar(string ruta, string objeto)
         {
-            //if (this.ValidarArchivo(ruta, true) && !(objeto is null))
-            //{
-            //    return true;
-            //}
-            return true;
-
+            bool pudoGuardar = false;
+            ruta = lastPath;
+            if (this.ValidarArchivo(ruta,true) && !(objeto is null))
+            {
+                StreamWriter sw = new StreamWriter(ruta);
+                sw.WriteLine(objeto);
+                sw.Close();
+                pudoGuardar = true;
+            }
+            else
+            {
+                this.GuardarComo(ruta, objeto);
+            }
+            return pudoGuardar;
         }
 
         public bool GuardarComo(string ruta, string objeto)
         {
-            throw new NotImplementedException();
+            return this.Guardar(ruta, objeto);
+            //bool pudoGuardar = false;
+            //ruta = lastPath;
+
+            //if (this.ValidarArchivo(ruta, true) && !(objeto is null))
+            //{
+            //    StreamWriter sw = new StreamWriter(ruta);
+            //    sw.WriteLine(objeto);
+            //    sw.Close();
+                
+            //    pudoGuardar = true;
+            //}
+            //return pudoGuardar;
         }
 
+        /// <summary>
+        /// Lee un archivo de texto, lo cierra y retorna el contenido del .txt
+        /// </summary>
+        /// <param name="ruta"></param>
+        /// <returns></returns>
         public string Leer(string ruta)
         {
-            throw new NotImplementedException();
+            string contenidoLeido = string.Empty;
+            if(this.ValidarArchivo(ruta,true))
+            {
+                StreamReader sr = new StreamReader(ruta);
+                contenidoLeido = sr.ReadToEnd();
+                lastPath = Directory.GetCurrentDirectory();
+                sr.Close();
+            }
+            return contenidoLeido;
         }
         #endregion
 

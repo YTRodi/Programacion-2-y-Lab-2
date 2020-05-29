@@ -12,6 +12,7 @@ namespace Entidades
     public class PuntoDat : Archivo, IArchivo<PuntoDat>
     {
         #region Atributos
+        //con el "@" no te corta la clausula de escape "\".
         private string contenido;
         #endregion
 
@@ -33,7 +34,7 @@ namespace Entidades
         public PuntoDat()
         {
         }
-        public PuntoDat(string contenido) : this()
+        public PuntoDat(string contenido)// : this()
         {
             this.contenido = contenido;
         }
@@ -42,16 +43,19 @@ namespace Entidades
         #region Métodos
         public bool Guardar(string ruta, PuntoDat objeto)
         {
-            bool guardado = false;
-            if (this.ValidarArchivo(ruta, true) && !(objeto is null))
+            FileStream fs = null;
+            BinaryFormatter serBN = null;
+            bool pudoSerializar = false;
+
+            if (this.ValidarArchivo(ruta, true))// && !(objeto is null))
             {
-                //objeto = new PuntoDat();//obj a serializar.
-                FileStream file = new FileStream(ruta, FileMode.Create);
-                BinaryFormatter serializacionBN = new BinaryFormatter();
-                serializacionBN.Serialize(file, objeto.Contenido);//.contenido);
-                guardado = true;
+                fs = new FileStream(ruta, FileMode.OpenOrCreate, FileAccess.Write, FileShare.None);
+                serBN = new BinaryFormatter();
+                serBN.Serialize(fs, objeto);
+                fs.Close();
+                pudoSerializar = true;
             }
-            return guardado;
+            return pudoSerializar;
         }
 
         public bool GuardarComo(string ruta, PuntoDat objeto)
@@ -61,19 +65,17 @@ namespace Entidades
 
         public PuntoDat Leer(string ruta)
         {
-            PuntoDat pD = new PuntoDat();//obj a deserializar.
-            Stream file = null;//obj que leera en binario.
-            BinaryFormatter serializacionBN = null;//obj que deserializará.
+            PuntoDat pD = null;//obj a deserializar.
+            FileStream fs;//obj que leera en binario.
+            BinaryFormatter deserBN;//obj que deserializará.
 
-            if (this.ValidarArchivo(ruta, true))
+            if (this.ValidarArchivo(ruta, true))// && !(pD is null))
             {
-                //pD = new PuntoDat();
-                //FileStream file = new FileStream(ruta, FileMode.Open);
-                file = new FileStream(ruta, FileMode.Open);
-                serializacionBN = new BinaryFormatter();
-                pD = (PuntoDat)serializacionBN.Deserialize(file);
-
-                file.Close();
+                pD = new PuntoDat();
+                fs = new FileStream(ruta, FileMode.Open);//, FileAccess.Read, FileShare.ReadWrite);
+                deserBN = new BinaryFormatter();
+                pD = (PuntoDat)deserBN.Deserialize(fs);
+                fs.Close();
             }
             return pD;
         }
@@ -90,9 +92,13 @@ namespace Entidades
                 {
                     if (Path.GetExtension(ruta) is ".dat")
                         extensionCorrecta = true;
+                    else
+                        throw new ArchivoIncorrectoException("El archivo no es un .dat");
                 }
-                else
-                    throw new ArchivoIncorrectoException("El archivo no es un .dat");
+            }
+            catch (FileNotFoundException fNotFound)
+            {
+                throw new FileNotFoundException("El archivo no existe", fNotFound);
             }
             catch (ArchivoIncorrectoException aE)
             {

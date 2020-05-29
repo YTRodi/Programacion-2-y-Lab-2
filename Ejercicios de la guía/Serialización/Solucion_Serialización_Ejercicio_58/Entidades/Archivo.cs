@@ -13,12 +13,16 @@ namespace Entidades
         #region Métodos
         protected virtual bool ValidarArchivo(string ruta, bool validaExistencia)
         {
+            bool retorno = false;
+
             if (validaExistencia)
-                return File.Exists(ruta);
-            //if (File.Exists(ruta))
-            //    return validaExistencia;
-            else
-                throw new FileNotFoundException();
+            {
+                if (File.Exists(ruta))
+                    retorno = true;
+                else
+                    throw new FileNotFoundException(); 
+            }
+            return retorno;
         }
         #endregion
     }
