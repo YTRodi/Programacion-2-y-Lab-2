@@ -43,13 +43,13 @@ namespace Entidades
         #region Métodos
         public bool Guardar(string ruta, PuntoDat objeto)
         {
-            FileStream fs = null;
-            BinaryFormatter serBN = null;
+            FileStream fs;
+            BinaryFormatter serBN;
             bool pudoSerializar = false;
 
             if (this.ValidarArchivo(ruta, true))// && !(objeto is null))
             {
-                fs = new FileStream(ruta, FileMode.OpenOrCreate, FileAccess.Write, FileShare.None);
+                fs = new FileStream(ruta, FileMode.OpenOrCreate);//OrCreate, FileAccess.Write, FileShare.None);
                 serBN = new BinaryFormatter();
                 serBN.Serialize(fs, objeto);
                 fs.Close();
@@ -96,9 +96,13 @@ namespace Entidades
                         throw new ArchivoIncorrectoException("El archivo no es un .dat");
                 }
             }
-            catch (FileNotFoundException fNotFound)
+            catch (FileNotFoundException)
             {
-                throw new FileNotFoundException("El archivo no existe", fNotFound);
+                if (Path.GetExtension(ruta) is ".dat")
+                    extensionCorrecta = true;
+                else
+                    throw new ArchivoIncorrectoException("El archivo no es un .dat");
+                //throw new FileNotFoundException("El archivo no existe", fNotFound);
             }
             catch (ArchivoIncorrectoException aE)
             {

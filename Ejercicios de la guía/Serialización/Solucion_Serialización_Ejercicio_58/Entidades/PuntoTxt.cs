@@ -15,7 +15,7 @@ namespace Entidades
         public bool Guardar(string ruta, string objeto)
         {
             bool pudoGuardar = false;
-            ruta = lastPath;
+            //ruta = lastPath;
             if (this.ValidarArchivo(ruta,true) && !(objeto is null))
             {
                 StreamWriter sw = new StreamWriter(ruta);
@@ -59,7 +59,7 @@ namespace Entidades
             {
                 StreamReader sr = new StreamReader(ruta);
                 contenidoLeido = sr.ReadToEnd();
-                lastPath = Directory.GetCurrentDirectory();
+                lastPath = ruta;
                 sr.Close();
             }
             return contenidoLeido;
@@ -78,6 +78,15 @@ namespace Entidades
                     if (Path.GetExtension(ruta) is ".txt")
                         extensionCorrecta = true;
                 }
+                else
+                    throw new ArchivoIncorrectoException("El archivo no es un .txt");
+            }
+            catch (FileNotFoundException)
+            {
+                //Manejo la excepción, si no existe el archivo pero 
+                //tiene la extensión correcta, el método retorna true.
+                if (Path.GetExtension(ruta) is ".txt")
+                    extensionCorrecta = true;
                 else
                     throw new ArchivoIncorrectoException("El archivo no es un .txt");
             }

@@ -15,8 +15,10 @@ namespace MyNotepad
     public partial class FrmNotePad : Form
     {
         private PuntoDat pDat = null;
+        private PuntoDat pDatAux = null;
         private PuntoTxt pTxt = null;
         private string lastPath;
+        string filePath = string.Empty;
 
         public FrmNotePad()
         {
@@ -25,30 +27,38 @@ namespace MyNotepad
 
         private void abrirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            openFileDialog1 = new OpenFileDialog();
-            openFileDialog1.Title = "Elija el archivo";
-            openFileDialog1.InitialDirectory = "C:\\Desktop";
             string filtro = "txt files (*.txt)|*.txt|dat files (*.dat)|*.dat|All files (*.*)|*.*";
-            openFileDialog1.Filter = filtro;
+            string filePath = string.Empty;
+            OpenFileDialog opFD = new OpenFileDialog();
+            opFD.Title = "Elija el archivo";
+            opFD.InitialDirectory = "C:\\Desktop";
+            opFD.Filter = filtro;
 
             try
             {
-                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                if (opFD.ShowDialog() == DialogResult.OK)
                 {
-                    //pTxt = new PuntoTxt();
-                    //rTextBox.Text = pTxt.Leer(openFileDialog1.FileName);
-
-                    pDat = new PuntoDat();
-                    PuntoDat pDatAux = new PuntoDat();
-                    pDatAux = pDat.Leer(openFileDialog1.FileName);
-                    rTextBox.Text = pDatAux.Contenido;
-
-                    //sr = new StreamReader(openFileDialog1.FileName);
-                    //rTextBox.Text = sr.ReadToEnd();
-                    //lastPath = openFileDialog1.FileName;
-
-                    //pDat = new PuntoDat();
-                    //pDat = pDat.Leer(openFileDialog1.FileName);
+                    filePath = opFD.FileName;
+                    try
+                    {
+                        if (Path.GetExtension(filePath) is ".txt")
+                        {
+                            pTxt = new PuntoTxt();
+                            rTextBox.Text = pTxt.Leer(filePath);
+                        }
+                        else
+                        {
+                            pDat = new PuntoDat();
+                            //pDat.Contenido = rTextBox.Text;
+                            pDat = pDat.Leer(filePath);
+                            rTextBox.Text = pDat.Contenido;
+                            //pDat.GuardarComo(filePath, pDat);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                 }
             }
             catch (Exception)
@@ -56,40 +66,6 @@ namespace MyNotepad
 
                 throw;
             }
-
-            //try
-            //{
-            //    if (openFileDialog1.ShowDialog() == DialogResult.OK)
-            //    {
-            //        //pDat = new PuntoDat();
-            //        pDat = new PuntoDat();
-            //        //VALIDA SI EXISTE EL ARCHIVO EL METODO VALIDARARCHIVO DE LA CLASE ARCHIVO.CS
-
-            //        if (File.Exists(openFileDialog1.FileName))
-            //        {
-            //            sr = new StreamReader(openFileDialog1.FileName);
-            //            rTextBox.Text = sr.ReadToEnd();
-            //            lastPath = openFileDialog1.FileName;
-
-            //            //pDatAux.Contenido = rTextBox.Text;
-            //            pDat.Leer(openFileDialog1.FileName);
-
-            //            MessageBox.Show("Deserealizado con éxito",
-            //                "Notificación",
-            //                MessageBoxButtons.OK,
-            //                MessageBoxIcon.Information);
-            //        }
-            //    }
-            //}
-            //catch (Exception)
-            //{
-            //    throw;
-            //}
-            //finally
-            //{
-            //    if (!(sr is null))
-            //        sr.Close();
-            //}
         }
 
         private void guardarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -101,8 +77,6 @@ namespace MyNotepad
                 {
                     sw = new StreamWriter(lastPath);
                     sw.WriteLine(rTextBox.Text);
-
-                    
                 }
                 else
                     this.guardarComoToolStripMenuItem_Click(sender, e);
@@ -123,47 +97,69 @@ namespace MyNotepad
         }
         private void guardarComoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            saveFileDialog1 = new SaveFileDialog();
-            openFileDialog1.Title = "Elija el archivo";
-            saveFileDialog1.InitialDirectory = "C:\\Desktop";
             string filtro = "txt files (*.txt)|*.txt|dat files (*.dat)|*.dat|All files (*.*)|*.*";
-            openFileDialog1.Filter = filtro;
+            SaveFileDialog svFD = new SaveFileDialog();
+            svFD.Title = "Elija el archivo";
+            svFD.InitialDirectory = "C:\\Desktop";
+            svFD.Filter = filtro;
 
-            StreamWriter sw = null;
 
-            try
+            if (svFD.ShowDialog() == DialogResult.OK)
             {
-                if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+                filePath = svFD.FileName;
+                try
                 {
-                    if (File.Exists(saveFileDialog1.FileName))
-                    {
-                        sw = new StreamWriter(saveFileDialog1.FileName);//,true);
-                        sw.WriteLine(rTextBox.Text);
-
-                        pDat = new PuntoDat(rTextBox.Text);
-                        pDat.Guardar(saveFileDialog1.FileName, pDat);
-                    }
-                    else
-                    {
-                        sw = new StreamWriter(saveFileDialog1.FileName);//,true);
-                        sw.WriteLine(rTextBox.Text);
-
-                        pDat = new PuntoDat(rTextBox.Text);
-                        pDat.Guardar(saveFileDialog1.FileName, pDat);
-                    }
+                    //if (Path.GetExtension(filePath) is ".txt")
+                    //{
+                        pTxt = new PuntoTxt();
+                        if (pTxt.GuardarComo(filePath, rTextBox.Text))
+                        {
+                            MessageBox.Show("queotaTXTTTTTTTTTT");
+                        }
+                        else
+                        {
+                            MessageBox.Show("error = archivo no existeTXTTTTTTTTTTTTT");
+                        }
+                        //Path.ChangeExtension();
+                    //}
+                    //else
+                    //{
+                        pDat = new PuntoDat();
+                        pDatAux = new PuntoDat();
+                        pDatAux.Contenido = rTextBox.Text;
+                        if (pDat.GuardarComo(filePath, pDatAux))
+                        {
+                            MessageBox.Show("queotaDATTTTTTTTTTTTTTTT");
+                        }
+                        else
+                        {
+                            MessageBox.Show("error = archivo no existeDATTTTTTTTT");
+                        }
+                        //pDat = new PuntoDat();
+                        //pDat.Contenido = rTextBox.Text;
+                        //pDat.GuardarComo(filePath, pDat);
+                    //}
                 }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            finally
-            {
-                if (!(sw is null))
+                catch (Exception ex)
                 {
-                    this.MsgArchivoGuardadoSuccess();
-                    sw.Close();
+                    MessageBox.Show(ex.Message);
                 }
+                //if (File.Exists(saveFileDialog1.FileName))
+                //{
+                //    sw = new StreamWriter(saveFileDialog1.FileName);//,true);
+                //    sw.WriteLine(rTextBox.Text);
+
+                //    pDat = new PuntoDat(rTextBox.Text);
+                //    pDat.Guardar(saveFileDialog1.FileName, pDat);
+                //}
+                //else
+                //{
+                //    sw = new StreamWriter(saveFileDialog1.FileName);//,true);
+                //    sw.WriteLine(rTextBox.Text);
+
+                //    pDat = new PuntoDat(rTextBox.Text);
+                //    pDat.Guardar(saveFileDialog1.FileName, pDat);
+                //}
             }
 
         }
