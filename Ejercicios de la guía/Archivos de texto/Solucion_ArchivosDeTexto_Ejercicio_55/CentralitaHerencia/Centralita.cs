@@ -133,6 +133,7 @@ namespace CentralitaHerencia
                 if (item == llamada)
                 {
                     retorno = true;
+                    break;
                 }
             }
             return retorno;
@@ -149,7 +150,6 @@ namespace CentralitaHerencia
             if (c != nuevaLlamada)
             {
                 c.AgregarLlamada(nuevaLlamada);
-                c.RutaDeArchivo = @"C:\Users\YAGO\Desktop\llamadas.txt";
                 if (c.Guardar())
                 {
 
@@ -196,7 +196,7 @@ namespace CentralitaHerencia
         {
             get
             {
-                return this.path;//@"C:\Users\YAGO\Desktop\llamadas.txt";
+                return this.path;
             }
             set
             {
@@ -209,24 +209,11 @@ namespace CentralitaHerencia
             bool pudoGuardarLlamada = false;
             StreamWriter sw;
             bool append = true;
-            string fechaLlamada = DateTime.Now.Date.ToShortDateString();
-            string lele = $"{DateTime.Now.DayOfWeek} {DateTime.Now.Day}";
-
-
-            //string fecha = DateTime.Now.ToString("dddd, dd MMMM yyyy");
-            string fecha = DateTime.Now.ToString($"dddd dd 'de' MMMM 'de' yyyy");
+            string fecha = DateTime.Now.ToString($"dddd dd 'de' MMMM 'de' yyyy HH:mm 'hr'");
             //dddd = nombre del día de la semana
             //dd = día del mes
             //MMMM = nombre del mes
             //yyyy = numero del año.
-
-
-            //string diaDeLaSemanaNum = fecha.DayOfWeek.ToString();
-            //string diaDelMes = fecha.Day.ToString();
-            //int mesDelAño = fecha.Month;
-
-
-
 
             if (!(this is null))
             {
