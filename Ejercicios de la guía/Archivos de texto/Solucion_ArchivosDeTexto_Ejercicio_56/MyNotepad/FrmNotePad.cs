@@ -62,7 +62,7 @@ namespace MyNotepad
                 }
                 else
                 {
-                    this.abrirToolStripMenuItem_Click(sender, e);
+                    this.guardarComoToolStripMenuItem_Click(sender, e);
                 }
             }
             catch (Exception)
