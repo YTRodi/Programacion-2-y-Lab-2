@@ -29,6 +29,10 @@ namespace PruebaConsola
             string path = Directory.GetCurrentDirectory() + @"\lista.xml";
             try
             {
+                //Pretty XML
+                XmlWriterSettings xmlSettings = new XmlWriterSettings();
+                xmlSettings.OmitXmlDeclaration = true;
+
                 //Guardar
                 using (XmlTextWriter xmlTW = new XmlTextWriter(path, Encoding.UTF8))
                 {
