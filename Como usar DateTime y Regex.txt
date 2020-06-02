@@ -1,0 +1,5 @@
+Como usar DATETIME
+https://www.c-sharpcorner.com/blogs/date-and-time-format-in-c-sharp-programming1
+
+COMO USAR REGEX
+//https://codetrainers.wordpress.com/2016/10/15/validando-campos-con-expresiones-regulares-en-c/
