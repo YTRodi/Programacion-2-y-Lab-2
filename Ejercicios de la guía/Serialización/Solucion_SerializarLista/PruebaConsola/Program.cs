@@ -1,6 +1,4 @@
-﻿using CentralitaHerencia;
-using Excepciones;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -29,20 +27,17 @@ namespace PruebaConsola
             string path = Directory.GetCurrentDirectory() + @"\lista.xml";
             try
             {
-                //Pretty XML
-                XmlWriterSettings xmlSettings = new XmlWriterSettings();
-                xmlSettings.OmitXmlDeclaration = true;
-
                 //Guardar
                 using (XmlTextWriter xmlTW = new XmlTextWriter(path, Encoding.UTF8))
                 {
+                    xmlTW.Formatting = Formatting.Indented;
                     XmlSerializer xmlSer = new XmlSerializer(typeof(Lista));
                     xmlSer.Serialize(xmlTW, miLista);
                 }
 
                 Console.WriteLine("Serializado con éxito");
                 Console.WriteLine("Cargando datos del archivo...");
-                Console.Beep();
+                Console.Beep(500, 500);
                 Thread.Sleep(1500);
 
                 //Leer
