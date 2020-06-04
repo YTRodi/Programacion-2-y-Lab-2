@@ -1,0 +1,3 @@
+SELECT *
+FROM Alumnos AS A
+WHERE A.legajo = 1642070223999

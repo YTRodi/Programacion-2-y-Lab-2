@@ -1,0 +1,1 @@
+SELECT A.nombre FROM Alumnos AS A
