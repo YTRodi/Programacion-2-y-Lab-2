@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<!-- saved from url=(0054)https://diego.com.es/principales-tipos-de-joins-en-sql -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        
+                        <link rel="stylesheet" type="text/css" href="./Principales tipos de JOINS en SQL_files/semantic.css">
+            <link rel="stylesheet" type="text/css" href="./Principales tipos de JOINS en SQL_files/sem2.css">
+        
+    <script async="" src="./Principales tipos de JOINS en SQL_files/analytics.js.descargar"></script><script src="./Principales tipos de JOINS en SQL_files/highlight.js.descargar"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <link rel="stylesheet" href="./Principales tipos de JOINS en SQL_files/agate.css">
+
+        <link rel="icon" type="image/x-icon" href="https://diego.com.es/favicon.ico">
+
+        <title>
+        Principales tipos de JOINS en SQL        </title>
+
+        <meta name="description" content="
+        Los JOINS en SQL permiten combinar las filas de dos o más tablas para poder mostrar result-sets de forma relacional">
+                    <script>
+                (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+                ga('create', 'UA-62157855-1', 'auto');
+                ga('send', 'pageview');
+            </script>
+            </head>
+
+    <body class="pushable">
+
+        <div class="ui large top fixed hidden menu">
+    <div class="ui container">
+
+        <a class="active item" href="https://diego.com.es/">Diego Lázaro</a>
+        <a class="active red item" href="https://angular.diego.com.es/">Angular</a>
+        <a class="item" href="https://leanpub.com/guiadephp">Libro de PHP</a>
+
+        <div class="right item">
+            <a href="https://diego.com.es/principales-tipos-de-joins-en-sql#"><i class="arrow up icon"></i></a>
+        </div>
+    </div>
+</div>
+
+<div class="ui left vertical inverted sidebar labeled icon menu">
+    <a class="item" href="https://diego.com.es/">
+        <i class="home icon"></i>
+        Inicio
+    </a>
+    <a class="active red item" href="https://angular.diego.com.es/">
+        <i class="circle icon"></i>
+        Angular
+    </a>
+</div>
+        <div class="pusher">
+                <div class="ui inverted vertical masthead center aligned segment">
+        <div class="ui container">
+    <div class="ui large secondary inverted pointing menu">
+
+        <a class="toc item">
+            <i class="sidebar icon"></i>
+        </a>
+
+        <a class="active item" href="https://diego.com.es/">Diego Lázaro</a>
+        <a class="item" href="https://diego.com.es/contacto">Contacto</a>
+        <a class="active red item" href="https://angular.diego.com.es/">Angular</a>
+
+        <div class="right item">
+            <a class="ui inverted button" href="https://leanpub.com/guiadephp">Libro de PHP</a>
+        </div>
+
+    </div>
+</div>
+
+            
+                 <div class="ui text container">
+
+                        <div class="ui inverted segment">
+                                                    </div>
+
+                        <h1 class="ui inverted header">
+                            Principales tipos de JOINS en SQL                        </h1>
+
+                        <div class="ui text container diego-subheader">
+                            <h2>Los JOINS en SQL permiten combinar las filas de dos o más tablas para poder mostrar result-sets de forma relacional</h2>
+                        </div>
+
+                 </div>
+
+                </div>
+
+        <div class="main ui container">
+        <div class="ui basic segment">
+
+            
+            
+    
+    <div class="ui yellow message">
+        <i class="close icon"></i>
+        <div class="header">
+            Contenido modificable
+        </div>
+
+        <p>Si ves errores o quieres modificar/añadir contenidos, puedes
+                    <a href="https://github.com/diegotham/certificacion-php/blob/master/7-Databases/2-principales-tipos-de-joins-en-sql.md"><i class="github icon"></i>crear un pull request</a>. Gracias</p>
+            </div>
+
+    
+    <div class="ui basic segment">
+        <p>Los <strong>JOINs</strong> en <strong>SQL</strong> sirven para <strong>combinar filas de dos o más tablas</strong> basándose en un campo común entre ellas, devolviendo por tanto datos de diferentes tablas. Un JOIN se produce cuando dos o más tablas se juntan en una sentencia SQL.</p>
+<p>Existen más <strong>tipos de joins en SQL</strong> que los que aquí se explican, como <strong>CROSS JOIN</strong>, O <strong>SELF JOIN</strong>, pero no todos ellos están soportados por todos los <strong>sistemas de bases de datos</strong>. Los más importantes son los siguientes:</p>
+<ol>
+<li>INNER JOIN: Devuelve <strong>todas las filas</strong> cuando hay al menos <strong>una coincidencia</strong> en <strong>ambas</strong> tablas.</li>
+<li>LEFT JOIN: Devuelve todas las filas de la tabla de la <strong>izquierda</strong>, y las filas coincidentes de la tabla de la <strong>derecha</strong>.</li>
+<li>RIGHT JOIN: Devuelve todas las filas de la tabla de la <strong>derecha</strong>, y las filas coincidentes de la tabla de la <strong>izquierda</strong>.</li>
+<li>OUTER JOIN: Devuelve <strong>todas las filas</strong> de las dos tablas, la izquierda y la derecha. También se llama FULL OUTER JOIN.</li>
+</ol>
+<h3>1. INNER JOIN</h3>
+<p><strong>INNER JOIN</strong> selecciona todas las filas de las dos columnas siempre y cuando haya <strong>una coincidencia entre las columnas en ambas tablas</strong>. Es el tipo de JOIN más común. </p>
+<pre><code class="hljs sql"><span class="hljs-operator"><span class="hljs-keyword">SELECT</span> nombreColumna(s)
+<span class="hljs-keyword">FROM</span> tabla1
+<span class="hljs-keyword">INNER</span> <span class="hljs-keyword">JOIN</span> tabla2
+<span class="hljs-keyword">ON</span> tabla1.nombreColumna=table2.nombreColumna;</span></code></pre>
+<p>Se ve más claro utilizando una <strong>imagen</strong>:</p>
+<p><img src="./Principales tipos de JOINS en SQL_files/sql-inner-jon.gif" alt="SQL INNER JOIN"></p>
+<p>Vamos a verlo también con un ejemplo, mediante las tablas <strong>Clientes</strong> y <strong>Pedidos</strong>:</p>
+<p>Clientes:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>ClienteID</strong></td>
+<td><strong>NombreCliente</strong></td>
+<td><strong>Contacto</strong></td>
+</tr>
+<tr>
+<td>1</td>
+<td>Marco Lambert</td>
+<td>456443552</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Lydia Roderic</td>
+<td>445332221</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Ebbe Therese</td>
+<td>488982635</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Sofie Mariona</td>
+<td>412436773</td>
+</tr>
+</tbody>
+</table>
+<p>Pedidos:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PedidoID</strong></td>
+<td><strong>ClienteID</strong></td>
+<td><strong>Factura</strong></td>
+</tr>
+<tr>
+<td>234</td>
+<td>4</td>
+<td>160</td>
+</tr>
+<tr>
+<td>235</td>
+<td>2</td>
+<td>48</td>
+</tr>
+<tr>
+<td>236</td>
+<td>3</td>
+<td>64</td>
+</tr>
+<tr>
+<td>237</td>
+<td>4</td>
+<td>92</td>
+</tr>
+</tbody>
+</table>
+<p>La siguiente <strong>sentencia SQL</strong> devolverá <strong>todos los clientes con pedidos</strong>:</p>
+<pre><code class="hljs sql"><span class="hljs-operator"><span class="hljs-keyword">SELECT</span> Clientes.NombreCliente, Pedidos.PedidoID <span class="hljs-keyword">FROM</span> Clientes
+<span class="hljs-keyword">INNER</span> <span class="hljs-keyword">JOIN</span> Pedidos <span class="hljs-keyword">ON</span> Clientes.ClienteID=Pedidos.ClienteID
+<span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> Clientes.NombreCliente;</span></code></pre>
+<p>Si hay filas en Clientes que no tienen coincidencias en Pedidos, los Clientes no se mostrarán. La sentencia anterior mostrará el siguiente resultado:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>NombreCliente</strong></td>
+<td><strong>PedidoID</strong></td>
+</tr>
+<tr>
+<td>Ebbe Therese</td>
+<td>236</td>
+</tr>
+<tr>
+<td>Lydia Roderic</td>
+<td>235</td>
+</tr>
+<tr>
+<td>Sofie Mariona</td>
+<td>234</td>
+</tr>
+<tr>
+<td>Sofie Mariona</td>
+<td>237</td>
+</tr>
+</tbody>
+</table>
+<p><em>Sofie Mariona</em> aparece dos veces ya que ha realizado dos pedidos. No aparece <em>Marco Lambert</em>, pues no ha realizado ningún pedido.</p>
+<h3>2. LEFT JOIN</h3>
+<p><strong>LEFT JOIN</strong> mantiene <strong>todas las filas de la tabla izquierda</strong> (la tabla1). Las filas de la tabla derecha se mostrarán si hay una coincidencia con las de la izquierda. Si existen valores en la tabla izquierda pero no en la tabla derecha, ésta mostrará null.</p>
+<pre><code class="hljs sql"><span class="hljs-operator"><span class="hljs-keyword">SELECT</span> nombreColumna(s)
+<span class="hljs-keyword">FROM</span> tabla1
+<span class="hljs-keyword">LEFT</span> <span class="hljs-keyword">JOIN</span> tabla2
+<span class="hljs-keyword">ON</span> tabla1.nombreColumna=tabla2.nombreColumna;</span></code></pre>
+<p>La <strong>representación de LEFT JOIN en una imagen</strong> es:</p>
+<p><img src="./Principales tipos de JOINS en SQL_files/sql-left-jon.png" alt="SQL LEFT JOIN"></p>
+<p>Tomando de nuevo las tablas de <strong>Productos</strong> y <strong>Pedidos</strong>, ahora queremos mostrar <strong>todos los clientes</strong>, <strong>y cualquier pedido</strong> que pudieran haber encargado:</p>
+<pre><code class="hljs sql"><span class="hljs-operator"><span class="hljs-keyword">SELECT</span> Clientes.NombreCliente, Pedidos.PedidoID
+<span class="hljs-keyword">FROM</span> Clientes <span class="hljs-keyword">LEFT</span> <span class="hljs-keyword">JOIN</span> Pedidos
+<span class="hljs-keyword">ON</span> Clientes.ClienteID=Pedidos.ClienteID
+<span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> Clientes.NombreCliente;</span></code></pre>
+<p>La sentencia anterior devolverá lo siguiente:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>NombreCliente</strong></td>
+<td><strong>PedidoID</strong></td>
+</tr>
+<tr>
+<td>Ebbe Therese</td>
+<td>236</td>
+</tr>
+<tr>
+<td>Lydia Roderic</td>
+<td>235</td>
+</tr>
+<tr>
+<td>Marco Lambert</td>
+<td>(null)</td>
+</tr>
+<tr>
+<td>Sofie Mariona</td>
+<td>234</td>
+</tr>
+<tr>
+<td>Sofie Mariona</td>
+<td>237</td>
+</tr>
+</tbody>
+</table>
+<p>Ahora vemos que se muestran todas las filas de la tabla <strong>Clientes</strong>, que es la tabla de la izquierda, tantas veces como haya coincidencias con el lado derecho. <em>Marco Lambert</em> no ha realizado ningún pedido, por lo que se muestra <strong>null</strong>.</p>
+<h3>3. RIGHT JOIN</h3>
+<p>Es igual que <strong>LEFT JOIN</strong> pero al revés. Ahora <strong>se mantienen todas las filas de la tabla derecha</strong> (tabla2). Las filas de la tabla izquierda se mostrarán si hay una coincidencia con las de la derecha. Si existen valores en la tabla derecha pero no en la tabla izquierda, ésta se mostrará <strong>null</strong>.</p>
+<pre><code class="hljs sql"><span class="hljs-operator"><span class="hljs-keyword">SELECT</span> nombreColumna(s)
+<span class="hljs-keyword">FROM</span> tabla1
+<span class="hljs-keyword">RIGHT</span> <span class="hljs-keyword">JOIN</span> tabla2
+<span class="hljs-keyword">ON</span> tabla1.nombreColumna=tabla2.nombreColumna;</span></code></pre>
+<p>La <strong>imagen que representa a RIGHT JOIN</strong> es:</p>
+<p><img src="./Principales tipos de JOINS en SQL_files/sql-right-jon.gif" alt="SQL RIGHT JOIN"></p>
+<p>De nuevo tomamos el ejemplo de <strong>Clientes</strong> y <strong>Pedidos</strong>, y vamos a hacer el mismo ejemplo anterior, pero cambiado LEFT por RIGHT:</p>
+<pre><code class="hljs sql"><span class="hljs-operator"><span class="hljs-keyword">SELECT</span> Pedidos.PedidoID, Clientes.NombreCliente
+<span class="hljs-keyword">FROM</span> Clientes <span class="hljs-keyword">RIGHT</span> <span class="hljs-keyword">JOIN</span> Pedidos
+<span class="hljs-keyword">ON</span> Clientes.ClienteID=Pedidos.ClienteID
+<span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> Pedidos.PedidoID;</span></code></pre>
+<p>Ahora van a aparecer todos los pedidos, y los nombres de los clientes <strong>que han realizado un pedido</strong>. Nótese que también se ha cambiado el orden, y se han ordenado los datos por PedidoID.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>PedidoID</strong></td>
+<td><strong>NombreCliente</strong></td>
+</tr>
+<tr>
+<td>234</td>
+<td>Sofie Mariona</td>
+</tr>
+<tr>
+<td>235</td>
+<td>Lydia Roderic</td>
+</tr>
+<tr>
+<td>236</td>
+<td>Ebbe Therese</td>
+</tr>
+<tr>
+<td>237</td>
+<td>Sofie Mariona</td>
+</tr>
+</tbody>
+</table>
+<h3>4. OUTER JOIN</h3>
+<p><strong>OUTER JOIN</strong> o <strong>FULL OUTER JOIN</strong> devuelve todas las filas de la tabla izquierda (tabla1) y de la tabla derecha (tabla2). Combina el resultado de los joins <strong>LEFT</strong> y <strong>RIGHT</strong>. Aparecerá null en cada una de las tablas alternativamente cuando no haya una coincidencia.</p>
+<pre><code class="hljs sql"><span class="hljs-operator"><span class="hljs-keyword">SELECT</span> nombreColumna(s)
+<span class="hljs-keyword">FROM</span> tabla1
+<span class="hljs-keyword">OUTER</span> <span class="hljs-keyword">JOIN</span> tabla2
+<span class="hljs-keyword">ON</span> tabla1.nombreColumna=tabla2.nombreColumna;</span></code></pre>
+<p>La <strong>imagen que representa el OUTER JOIN</strong> es la siguiente:</p>
+<p><img src="./Principales tipos de JOINS en SQL_files/sql-full-outer-join.gif" alt="SQL FULL OUTER JOIN"></p>
+<p>Vamos a obtener <strong>todas las filas</strong> de las tablas <strong>Clientes</strong> y <strong>Pedidos</strong>:</p>
+<pre><code class="hljs sql"><span class="hljs-operator"><span class="hljs-keyword">SELECT</span> Clientes.NombreCliente, Pedidos.PedidoID
+<span class="hljs-keyword">FROM</span> Clientes <span class="hljs-keyword">OUTER</span> <span class="hljs-keyword">JOIN</span> Pedidos
+<span class="hljs-keyword">ON</span> Clientes.ClienteID=Pedidos.ClienteID
+<span class="hljs-keyword">ORDER</span> <span class="hljs-keyword">BY</span> Clientes.NombreCliente;</span></code></pre>
+<p>La sentencia devolverá <strong>todos los Clientes</strong> y <strong>todos los Pedidos</strong>, si un cliente no tiene pedidos mostrará <strong>null</strong> en <strong>PedidoID</strong>, y si un pedido no tuviera un cliente mostraría <strong>null</strong> en <strong>NombreCliente</strong> (en este ejemplo no sería lógico que un Pedido no tuviera un cliente).</p>
+<p>La sintaxis de <strong>OUTER JOIN o FULL OUTER JOIN no existen en MySQL</strong>, pero se puede conseguir el mismo resultado de diferentes formas, esta es una:</p>
+<pre><code class="hljs sql"><span class="hljs-operator"><span class="hljs-keyword">SELECT</span> Clientes.NombreCliente, Pedidos.PedidoID
+<span class="hljs-keyword">FROM</span> Clientes
+<span class="hljs-keyword">LEFT</span> <span class="hljs-keyword">JOIN</span> Pedidos <span class="hljs-keyword">ON</span> Clientes.ClienteID=Pedidos.ClienteID
+
+<span class="hljs-keyword">UNION</span>
+
+<span class="hljs-keyword">SELECT</span> Clientes.NombreCliente, Pedidos.PedidoID
+<span class="hljs-keyword">FROM</span> Clientes
+<span class="hljs-keyword">RIGHT</span> <span class="hljs-keyword">JOIN</span> Pedidos <span class="hljs-keyword">ON</span> Clientes.ClienteID=Pedidos.ClienteID;</span></code></pre>
+    </div>
+
+        </div>
+    </div>
+
+            <div class="ui vertical footer segment">
+    <div class="ui grid container">
+        <div class="row">
+            <div class="ui one column centered grid">
+                <div class="ui secondary segment">
+                    <div class="ui mini images">
+                        <a href="http://twitter.com/diegotham" target="_blank"><img class="ui image" alt="Twitter Diego Lázaro" src="./Principales tipos de JOINS en SQL_files/twitter.jpg"></a>
+                        <a href="http://github.com/diegotham" target="_blank"><img class="ui image" alt="Github Diego Lázaro" src="./Principales tipos de JOINS en SQL_files/github.jpg"></a>
+                    </div>
+                <p>Copyright © Diego Lázaro 2018</p>
+                    <p>Sitio construido con
+                        <a href="http://symfony.com/" rel="nofollow" target="_blank">Symfony</a> &amp;
+                        <a href="http://semantic-ui.com/" rel="nofollow" target="_blank">Semantic-UI</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>    
+        </div>
+
+                    <script src="./Principales tipos de JOINS en SQL_files/jquery.min.js.descargar"></script>
+            <script src="./Principales tipos de JOINS en SQL_files/semantic.min.js.descargar"></script>
+            <script src="./Principales tipos de JOINS en SQL_files/sem.js.descargar"></script>
+        
+    
+
+
+</body></html>

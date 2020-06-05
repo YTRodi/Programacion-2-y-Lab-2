@@ -1,5 +1,6 @@
+--USE utnfra
 ---------------------- Query 01 --------------------
-SELECT * FROM Alumnos
+--SELECT * FROM Alumnos
 
 ---------------------- Query 02 --------------------
 --SELECT A.nombre FROM Alumnos AS A
@@ -41,19 +42,22 @@ SELECT * FROM Alumnos
 --DELETE FROM Alumnos WHERE Alumnos.legajo = 1642070223999
 
 ---------------------- Query 08 --------------------
---SELECT A.nombre + ' ' + A.apellido AS 'Nombre y Apellido' ,
+--SELECT A.legajo AS 'Legajo',
+--	   A.nombre + ' ' + A.apellido AS 'Nombre y Apellido' ,
+--	   Cursos.id,
 --	   Cursos.nombre
 --FROM Alumnos AS A
---INNER JOIN Cursos ON A.curso = Cursos.id --Conecto tablas
---WHERE A.curso = 1 --1 = 2ºC-1
-
+----INNER JOIN Cursos ON A.curso = Cursos.id --Conecto tablas
+----WHERE A.curso = 1 --1 = 2ºC-1
+--INNER JOIN Cursos ON Cursos.id = A.curso
+--WHERE Cursos.nombre = '2ºC-1'
 
 ---------------------- Query 09 --------------------
---SELECT A.nombre + ' ' + A.apellido AS 'Nombre y Apellido' ,
---	   C.nombre AS 'Curso',
---	   P.nombre AS 'Nombre profesor'--,
---	   --P.legajo AS 'Legajo profesor'
---FROM Alumnos AS A
---INNER JOIN Cursos AS C ON A.curso = C.id --Conecto tablas
---INNER JOIN Profesores AS P ON C.profesor = P.legajo
---WHERE A.curso = 1
+SELECT A.nombre + ' ' + A.apellido AS 'Nombre y Apellido' ,
+	   C.nombre AS 'Curso',
+	   P.nombre AS 'Nombre profesor'--,
+	   --P.legajo AS 'Legajo profesor'
+FROM Alumnos AS A
+INNER JOIN Cursos AS C ON A.curso = C.id
+INNER JOIN Profesores AS P ON C.profesor = P.legajo--IZQUIERDA = CURSO // DERECHA = PROFESORES
+WHERE C.nombre = '2ºC-1'
