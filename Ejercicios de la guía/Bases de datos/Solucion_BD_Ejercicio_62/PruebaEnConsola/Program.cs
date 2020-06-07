@@ -21,6 +21,8 @@ namespace PruebaEnConsola
             Local l3 = new Local("Lanús", 45, "San Rafael", 1.99f);
             Provincial l4 = new Provincial("Quilmes", Provincial.Franja.Franja_3, 12, "CABA");
 
+            Local miLlamadaLocal = new Local("Berazategui", 21, "Bariloche", 10f);
+
             //Lista que contiene las llamadas que fueron subidas a la base de datos.
             List<Llamada> listaLLamadasDB = new List<Llamada>();
             try
@@ -29,6 +31,7 @@ namespace PruebaEnConsola
                 central += l2;
                 central += l3;
                 central += l4;
+                central += miLlamadaLocal;
 
                 //Traigo las llamadas de la BD
                 listaLLamadasDB = LocalDAO.Leer();
