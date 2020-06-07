@@ -149,12 +149,16 @@ namespace CentralitaHerencia
             if (c != nuevaLlamada)
             {
                 c.AgregarLlamada(nuevaLlamada);
+                if (nuevaLlamada is Local)
+                    LocalDAO.Guardar(nuevaLlamada);
+                else
+                    provincialDAO.Guardar(nuevaLlamada);
                 //if (c.Guardar())
                 //{
 
-                //}
-                //else
-                //    throw new FallaLogException("No se pudo guardar en el archivo");
+                    //}
+                    //else
+                    //    throw new FallaLogException("No se pudo guardar en el archivo");
             }
             else
             {

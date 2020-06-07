@@ -26,7 +26,7 @@ namespace EntidadesDAO
         #endregion
 
         #region Methods
-        public static bool Guardar(Provincial llamadaProvincial)
+        public static bool Guardar(Llamada llamadaProvincial)
         {
             bool pudoAgregar = false;
             string queryInsertarLLamada = $"INSERT INTO Llamadas (Duracion,Origen,Destino,Costo,Tipo) " +

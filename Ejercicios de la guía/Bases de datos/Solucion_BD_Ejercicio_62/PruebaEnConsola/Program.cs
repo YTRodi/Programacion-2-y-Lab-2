@@ -30,18 +30,6 @@ namespace PruebaEnConsola
                 central += l3;
                 central += l4;
 
-                if (LocalDAO.Guardar(l1) && LocalDAO.Guardar(l3))
-                    Console.WriteLine("La llamada LOCAL se cargó correctamente en la base de datos");
-                else
-                    Console.WriteLine("ERROR");
-
-
-                if (provincialDAO.Guardar(l2) && provincialDAO.Guardar(l4))
-                    Console.WriteLine("La llamada LOCAL se cargó correctamente en la base de datos");
-                else
-                    Console.WriteLine("ERROR");
-
-
                 //Traigo las llamadas de la BD
                 listaLLamadasDB = LocalDAO.Leer();
                 Console.WriteLine("Llamadas leídas correctamente");
