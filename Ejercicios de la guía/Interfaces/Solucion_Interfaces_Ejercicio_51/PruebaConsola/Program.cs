@@ -31,7 +31,7 @@ namespace PruebaConsola
         static void Main(string[] args)
         {
             // Mi central 
-            Centralita c = new Centralita("Yago Center");
+            Centralita<Llamada> c = new Centralita<Llamada>("Yago Center");
 
             // Mis 4 llamadas 
             Local l1 = new Local("Bernal", 30, "Rosario", 2.65f);
@@ -40,6 +40,8 @@ namespace PruebaConsola
             Provincial l4 = new Provincial(Provincial.Franja.Franja_3, l2);
             Provincial l4_COPIA = new Provincial(Provincial.Franja.Franja_3, l2);
 
+            c += l1;
+            c += l3;
             // Las llamadas se irán registrando en la Centralita. 
             // La centralita mostrará por pantalla todas las llamadas según las vaya registrando. 
 

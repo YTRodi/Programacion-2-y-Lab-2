@@ -50,7 +50,7 @@ namespace Entidades
 			}
 			catch (DivideByZeroException exDiv)//Siempre capturo la misma excepción.
 			{
-				throw exDiv;
+                throw exDiv;
 			}
 		}
 		#endregion

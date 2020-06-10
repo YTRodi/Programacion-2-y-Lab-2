@@ -1,0 +1,1714 @@
+<!DOCTYPE html>
+<!-- saved from url=(0094)https://es.stackoverflow.com/questions/85750/c%C3%B3mo-evitar-inyecci%C3%B3n-de-sql-en-asp-net -->
+<html itemscope="" itemtype="http://schema.org/QAPage" class="html__responsive"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+        <title>c# - ¿Cómo evitar inyección de sql en asp.net? - Stack Overflow en español</title>
+        <link rel="shortcut icon" href="https://cdn.sstatic.net/Sites/es/Img/favicon.ico?v=9c017e88b153">
+        <link rel="apple-touch-icon" href="https://cdn.sstatic.net/Sites/es/Img/apple-touch-icon.png?v=7739871010e6">
+        <link rel="image_src" href="https://cdn.sstatic.net/Sites/es/Img/apple-touch-icon.png?v=7739871010e6"> 
+        <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow en español" href="https://es.stackoverflow.com/opensearch.xml">
+        <link rel="canonical" href="https://es.stackoverflow.com/questions/85750/c%c3%b3mo-evitar-inyecci%c3%b3n-de-sql-en-asp-net">
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://es.stackoverflow.com/questions/85750/c%c3%b3mo-evitar-inyecci%c3%b3n-de-sql-en-asp-net">
+        <meta property="og:site_name" content="Stack Overflow en español">
+        <meta property="og:image" itemprop="image primaryImageOfPage" content="https://cdn.sstatic.net/Sites/es/Img/apple-touch-icon@2.png?v=62634cce9d6c">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:domain" content="es.stackoverflow.com">
+        <meta name="twitter:site" content="@esStackOverflow">
+        <meta name="twitter:creator" content="@esStackOverflow">
+        <meta name="twitter:title" property="og:title" itemprop="name" content="¿Cómo evitar inyección de sql en asp.net?">
+        <meta name="twitter:description" property="og:description" itemprop="description" content="Para evitar ataques de este tipo, ya que son muy frecuentes hoy en día. ¿Qué debo hacer en mi código para evitar la inyección SQL?">
+
+        <script src="./c# - ¿Cómo evitar inyección de sql en asp.net_ - Stack Overflow en español_files/rules-p-c1rF4kxgLUzNc.js.descargar" async=""></script><script async="" src="./c# - ¿Cómo evitar inyección de sql en asp.net_ - Stack Overflow en español_files/quant.js.descargar"></script><script async="" src="./c# - ¿Cómo evitar inyección de sql en asp.net_ - Stack Overflow en español_files/beacon.js.descargar"></script><script async="" src="./c# - ¿Cómo evitar inyección de sql en asp.net_ - Stack Overflow en español_files/analytics.js.descargar"></script><script src="./c# - ¿Cómo evitar inyección de sql en asp.net_ - Stack Overflow en español_files/jquery.min.js.descargar"></script>
+        <script src="./c# - ¿Cómo evitar inyección de sql en asp.net_ - Stack Overflow en español_files/stub.es.js.descargar"></script>
+    
+        <link rel="stylesheet" type="text/css" href="./c# - ¿Cómo evitar inyección de sql en asp.net_ - Stack Overflow en español_files/stacks.css">
+        <link rel="stylesheet" type="text/css" href="./c# - ¿Cómo evitar inyección de sql en asp.net_ - Stack Overflow en español_files/primary.css">
+
+    
+            <link rel="alternate" type="application/atom+xml" title="Fuente de la pregunta&quot;¿Cómo evitar inyección de sql en asp.net?&quot;" href="https://es.stackoverflow.com/feeds/question/85750">
+            <meta name="twitter:app:country" content="US">
+            <meta name="twitter:app:name:iphone" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:iphone" content="871299723">
+            <meta name="twitter:app:url:iphone" content="se-zaphod://es.stackoverflow.com/questions/85750/c%C3%B3mo-evitar-inyecci%C3%B3n-de-sql-en-asp-net">
+            <meta name="twitter:app:name:ipad" content="Stack Exchange iOS">
+            <meta name="twitter:app:id:ipad" content="871299723">
+            <meta name="twitter:app:url:ipad" content="se-zaphod://es.stackoverflow.com/questions/85750/c%C3%B3mo-evitar-inyecci%C3%B3n-de-sql-en-asp-net">
+            <meta name="twitter:app:name:googleplay" content="Stack Exchange Android">
+            <meta name="twitter:app:url:googleplay" content="http://es.stackoverflow.com/questions/85750/c%C3%B3mo-evitar-inyecci%C3%B3n-de-sql-en-asp-net">
+            <meta name="twitter:app:id:googleplay" content="com.stackexchange.marvin">
+        <script>
+            StackExchange.ready(function () {
+
+                    StackExchange.using("snippets", function () {
+                        StackExchange.snippets.initSnippetRenderer();
+                    });
+                    
+                StackExchange.using("postValidation", function () {
+                    StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+                });
+
+
+                StackExchange.question.init({showAnswerHelp:true,totalCommentCount:2,shownCommentCount:2,questionId:85750});
+
+                styleCode();
+
+                    StackExchange.realtime.subscribeToQuestion('637', '85750');
+                    StackExchange.using("gps", function () { StackExchange.gps.trackOutboundClicks('#content', '.post-text'); });
+
+                
+                
+            });
+        </script>
+
+        
+        
+        
+        
+        
+        
+        
+
+
+    <script>
+        StackExchange.ready(function () {
+            StackExchange.realtime.init('wss://qa.sockets.stackexchange.com');
+                StackExchange.realtime.subscribeToReputationNotifications('637');
+        StackExchange.realtime.subscribeToTopBarNotifications('637');
+        });
+    </script>
+    <script>
+        StackExchange.init({"locale":"es","serverTime":1591572235,"routeName":"Questions/Show","stackAuthUrl":"https://stackauth.com","networkMetaHostname":"meta.stackexchange.com","site":{"name":"Stack Overflow en español","description":"Preguntas y respuestas para programadores y profesionales de la informática","isNoticesTabEnabled":true,"enableNewTagCreationWarning":false,"insertSpaceAfterNameTabCompletion":false,"id":637,"childUrl":"https://es.meta.stackoverflow.com","negativeVoteScoreFloor":null,"enableSocialMediaInSharePopup":true,"protocol":"https"},"user":{"fkey":"c5f405883f3b402b9f9a9f72ea377d36fac2d409c6ca5ba8b8f49d63159c0d14","tid":"0c667128-e2aa-9932-aa82-dd1823a0192d","rep":0,"isAnonymous":true,"isAnonymousNetworkWide":true},"realtime":{"newest":true,"active":true,"tagged":true,"staleDisconnectIntervalInHours":0},"events":{"postType":{"question":1},"postEditionSection":{"title":1,"body":2,"tags":3}},"story":{"minCompleteBodyLength":75,"likedTagsMaxLength":300,"dislikedTagsMaxLength":300},"jobPreferences":{"maxNumDeveloperRoles":2,"maxNumIndustries":4},"svgIconPath":"https://cdn.sstatic.net/Img/svg-icons","svgIconHash":"ef75c8ced19a"}, {"userProfile":{},"userMessaging":{"showNewFeatureNotice":true},"tags":{"allowNonAsciiTags":true},"subscriptions":{"defaultMaxTrueUpSeats":1000},"snippets":{"renderDomain":"stacksnippets.net","snippetsEnabled":true},"slack":{"sidebarAdDismissCookie":"slack-sidebar-ad","sidebarAdDismissCookieExpirationDays":60.0},"site":{"allowImageUploads":true,"enableImgurHttps":true,"enableUserHovercards":true,"forceHttpsImages":true,"styleCode":true},"paths":{},"monitoring":{"clientTimingsAbsoluteTimeout":30000,"clientTimingsDebounceTimeout":1000},"mentions":{"maxNumUsersInDropdown":50},"markdown":{"asteriskIntraWordEmphasis":true},"flags":{"allowRetractingCommentFlags":true,"allowRetractingFlags":true},"comments":{},"accounts":{"currentPasswordRequiredForChangingStackIdPassword":true}});
+        StackExchange.using.setCacheBreakers({"js/adops.es.js":"22a9bd59b1e9","js/ask.es.js":"2f2874ea5250","js/begin-edit-event.es.js":"7f52eac9bfd0","js/events.es.js":"fa849907a591","js/explore-qlist.es.js":"22610455f68f","js/full-anon.es.js":"ca4f40e51977","js/full.es.js":"7c6300093855","js/help.es.js":"e0aa95e09038","js/inline-tag-editing.es.js":"4855c9172842","js/keyboard-shortcuts.es.js":"0f82a5742d53","js/mobile.es.js":"5b1c8acee6ae","js/moderator.es.js":"04979158e2a2","js/postCollections-transpiled.es.js":"ef2154bde2fa","js/post-validation.es.js":"19aa48846fa4","js/prettify-full.es.js":"7f3b32b8abf8","js/question-editor.es.js":"","js/review.es.js":"eefb16f7d974","js/revisions.es.js":"640a645a6e38","js/tageditor.es.js":"cf7b5f97bc23","js/tageditornew.es.js":"f17963308dcd","js/tagsuggestions.es.js":"385b390b061d","js/wmd.es.js":"33c0655cdde1","js/snippet-javascript-codemirror.es.js":"38dfd058aa7b"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    <noscript id="noscript-css"><style>body,.top-bar{margin-top:1.9em}</style></noscript>
+    <script async="" src="./c# - ¿Cómo evitar inyección de sql en asp.net_ - Stack Overflow en español_files/full-anon.es.js.descargar"></script><script src="./c# - ¿Cómo evitar inyección de sql en asp.net_ - Stack Overflow en español_files/pubads_impl_2020060103.js.descargar" async=""></script><script async="" src="./c# - ¿Cómo evitar inyección de sql en asp.net_ - Stack Overflow en español_files/post-validation.es.js.descargar"></script><script async="" src="./c# - ¿Cómo evitar inyección de sql en asp.net_ - Stack Overflow en español_files/prettify-full.es.js.descargar"></script><link rel="prefetch" href="https://ab956a2e102fe650f29d924b3c2dd2ac.safeframe.googlesyndication.com/safeframe/1-0-37/html/container.html"><link rel="prefetch" href="https://tpc.googlesyndication.com/safeframe/1-0-37/html/container.html"></head>
+    <body class="question-page unified-theme">
+    <div id="notify-container"></div>
+    <div id="custom-header"></div>
+        
+<header class="top-bar js-top-bar top-bar__network _fixed">
+    <div class="wmx12 mx-auto grid ai-center h100" role="menubar">
+        <div class="-main grid--cell">
+                <a href="https://es.stackoverflow.com/questions/85750/c%C3%B3mo-evitar-inyecci%C3%B3n-de-sql-en-asp-net#" class="left-sidebar-toggle p0 ai-center jc-center js-left-sidebar-toggle" role="menuitem" aria-haspopup="true" aria-controls="left-sidebar" aria-expanded="false"><span class="ps-relative"></span></a>
+                <div class="topbar-dialog leftnav-dialog js-leftnav-dialog dno">
+                    <div class="left-sidebar js-unpinned-left-sidebar" data-can-be="left-sidebar" data-is-here-when="sm"></div>
+                </div>
+                    <a href="https://es.stackoverflow.com/" class="-logo js-gps-track" data-gps-track="top_nav.click({is_current:false, location:2, destination:8})">
+                        <span class="-img _glyph">Stack Overflow en español</span>
+                    </a>
+
+
+
+        </div>
+
+
+            <form id="search" role="search" action="https://es.stackoverflow.com/search" method="get" class="grid--cell fl-grow1 searchbar px12 js-searchbar " autocomplete="off">
+                    <div class="ps-relative">
+                        <input name="q" type="text" placeholder="Buscar…" value="" autocomplete="off" maxlength="240" class="s-input s-input__search js-search-field " aria-label="Buscar" aria-controls="top-search" data-controller="s-popover" data-action="focus-&gt;s-popover#show" data-s-popover-placement="bottom-start">
+                        <svg aria-hidden="true" class="s-input-icon s-input-icon__search svg-icon iconSearch" width="18" height="18" viewBox="0 0 18 18"><path d="M18 16.5l-5.14-5.18h-.35a7 7 0 10-1.19 1.19v.35L16.5 18l1.5-1.5zM12 7A5 5 0 112 7a5 5 0 0110 0z"></path></svg>
+                        <div class="s-popover p0 wmx100 wmn4 sm:wmn-initial js-top-search-popover s-popover--arrow__tl" id="top-search" role="menu">
+    <div class="js-spinner p24 grid ai-center jc-center d-none">
+        <div class="s-spinner s-spinner__sm fc-orange-400">
+            <div class="v-visible-sr">Loading…</div>
+        </div>
+    </div>
+
+    <span class="v-visible-sr js-screen-reader-info"></span>
+    <div class="js-ac-results overflow-y-auto hmx3 d-none"></div>
+
+    <div class="js-search-hints" aria-describedby="Tips for searching"></div>
+</div>
+                    </div>
+            </form>
+        
+        
+
+<ol class="overflow-x-auto ml-auto -secondary grid ai-center list-reset h100 user-logged-out" role="presentation">
+        <li class="-item searchbar-trigger"><a href="https://es.stackoverflow.com/questions/85750/c%C3%B3mo-evitar-inyecci%C3%B3n-de-sql-en-asp-net#" class="-link js-searchbar-trigger" role="button" aria-label="Buscar" aria-haspopup="true" aria-controls="search" title="Clic para mostrar la búsqueda"><svg aria-hidden="true" class="svg-icon iconSearch" width="18" height="18" viewBox="0 0 18 18"><path d="M18 16.5l-5.14-5.18h-.35a7 7 0 10-1.19 1.19v.35L16.5 18l1.5-1.5zM12 7A5 5 0 112 7a5 5 0 0110 0z"></path></svg></a></li>
+        <li class="-item inbox-button-item">
+            <a href="https://es.stackoverflow.com/questions/85750/c%C3%B3mo-evitar-inyecci%C3%B3n-de-sql-en-asp-net#" class="-link js-inbox-button" aria-label="Bandeja de entrada" title="Mensajes recientes de la bandeja de entrada" role="menuitem" aria-haspopup="true" aria-expanded="false" data-unread-count="0">
+                <svg aria-hidden="true" class="svg-icon iconInbox" width="20" height="18" viewBox="0 0 20 18"><path d="M4.63 1h10.56a2 2 0 011.94 1.35L20 10.79V15a2 2 0 01-2 2H2a2 2 0 01-2-2v-4.21l2.78-8.44c.25-.8 1-1.36 1.85-1.35zm8.28 12l2-2h2.95l-2.44-7.32a1 1 0 00-.95-.68H5.35a1 1 0 00-.95.68L1.96 11h2.95l2 2h6z"></path></svg>
+                <span class="indicator-badge js-unread-count _important d-none">0</span>
+            </a>
+        </li>
+        <li class="-item achievements-button-item">
+            <a href="https://es.stackoverflow.com/questions/85750/c%C3%B3mo-evitar-inyecci%C3%B3n-de-sql-en-asp-net#" class="-link js-achievements-button" data-unread-class="_highlighted-positive" aria-label="Achievements" title="Logros recientes: reputación, medallas y privilegios obtenidos" role="menuitem" aria-haspopup="true" aria-expanded="false" data-unread-count="0" data-lit-up="false">
+                <svg aria-hidden="true" class="svg-icon iconAchievements" width="18" height="18" viewBox="0 0 18 18"><path d="M15 2V1H3v1H0v4c0 1.6 1.4 3 3 3v1c.4 1.5 3 2.6 5 3v2H5s-1 1.5-1 2h10c0-.4-1-2-1-2h-3v-2c2-.4 4.6-1.5 5-3V9c1.6-.2 3-1.4 3-3V2h-3zM3 7c-.5 0-1-.5-1-1V4h1v3zm8.4 2.5L9 8 6.6 9.4l1-2.7L5 5h3l1-2.7L10 5h2.8l-2.3 1.8 1 2.7h-.1zM16 6c0 .5-.5 1-1 1V4h1v2z"></path></svg>
+                <span class="indicator-badge js-unread-count _positive d-none">+0</span>
+            </a>
+        </li>
+        <li class="-item help-button-item">
+            <a href="https://es.stackoverflow.com/questions/85750/c%C3%B3mo-evitar-inyecci%C3%B3n-de-sql-en-asp-net#" class="-link js-help-button" title="Centro de ayuda y otros recursos" role="menuitem" aria-haspopup="true" aria-controls="topbar-help-dialog" data-ga="[&quot;top navigation&quot;,&quot;help menu click&quot;,null,null,null]"><svg aria-hidden="true" class="svg-icon iconHelp" width="18" height="18" viewBox="0 0 18 18"><path d="M9 1a8 8 0 100 16A8 8 0 009 1zm.81 12.13c-.02.71-.55 1.15-1.24 1.13-.66-.02-1.17-.49-1.15-1.2.02-.72.56-1.18 1.22-1.16.7.03 1.2.51 1.17 1.23zM11.77 8c-.3.34-.65.65-1.02.91l-.53.37c-.26.2-.42.43-.5.69a4 4 0 00-.09.75c0 .05-.03.16-.18.16H7.88c-.16 0-.18-.1-.18-.15.03-.66.12-1.21.4-1.66.4-.49.88-.9 1.43-1.22.16-.12.28-.25.38-.39a1.34 1.34 0 00.02-1.71c-.24-.31-.51-.46-1.03-.46-.51 0-.8.26-1.02.6-.21.33-.18.73-.18 1.1H5.75c0-1.38.35-2.25 1.1-2.76.52-.35 1.17-.5 1.93-.5 1 0 1.79.18 2.49.71.64.5.98 1.18.98 2.12 0 .57-.2 1.05-.48 1.44z"></path></svg></a>
+        </li>
+        <div class="topbar-dialog help-dialog js-help-dialog dno" id="topbar-help-dialog" role="menu">
+            <div class="modal-content">
+                <ul>
+                        <li>
+                            <a href="https://es.stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })" data-ga="[&quot;top navigation&quot;,&quot;tour submenu click&quot;,null,null,null]">
+                                Recorrido
+                                <span class="item-summary">
+                                    Comienza aquí para acceder a una breve descripción general del sitio
+                                </span>
+                            </a>
+                        </li>
+                    <li>
+                        <a href="https://es.stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })" data-ga="[&quot;top navigation&quot;,&quot;help center&quot;,null,null,null]">
+                            Centro de Ayuda
+                            <span class="item-summary">
+                                Respuestas detalladas para cualquier pregunta que puedas tener
+                            </span>
+                        </a>
+                    </li>
+                                <li>
+                                    <a href="https://es.meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })" data-ga="[&quot;top navigation&quot;,&quot;meta submenu click&quot;,null,null,null]">
+                                        Meta
+                                        <span class="item-summary">
+                                            Analizar el funcionamiento y las políticas de este sitio
+                                        </span>
+                                    </a>
+                                </li>
+                            <li>
+                                <a href="https://stackoverflow.com/company/about" class="js-gps-track" data-gps-track="help_popup.click({ item_type:6 })" data-ga="[&quot;top navigation&quot;,&quot;about us submenu click&quot;,null,null,null]">
+                                    Sobre nosotros
+                                    <span class="item-summary">
+                                        Aprende más sobre Stack Overflow, la empresa
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://stackoverflowbusiness.com/?ref=topbar_help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:7 })" data-ga="[&quot;top navigation&quot;,&quot;business submenu click&quot;,null,null,null]">
+                                    Negocios
+                                    <span class="item-summary">
+                                        Aprende más sobre cómo contratar desarrolladores o publicitarte con nosotros
+                                    </span>
+                                </a>
+                            </li>
+                </ul>
+            </div>
+        </div>
+        <li class="-item site-switcher-item">
+            <a href="https://stackexchange.com/" class="-link js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" aria-label="Site switcher" title="Lista de los 177 sitios de Stack Exchange" role="menuitem" aria-haspopup="true" aria-expanded="false" data-ga="[&quot;top navigation&quot;,&quot;stack exchange click&quot;,null,null,null]">
+                <svg aria-hidden="true" class="svg-icon iconStackExchange" width="18" height="18" viewBox="0 0 18 18"><path d="M15 1H3a2 2 0 00-2 2v2h16V3a2 2 0 00-2-2zM1 13c0 1.1.9 2 2 2h8v3l3-3h1a2 2 0 002-2v-2H1v2zm16-7H1v4h16V6z"></path></svg>
+            </a>
+        </li>
+
+            <li class="-ctas">
+                            <a href="https://es.stackoverflow.com/users/login?ssrc=head&amp;returnurl=https%3a%2f%2fes.stackoverflow.com%2fquestions%2f85750%2fc%25C3%25B3mo-evitar-inyecci%25C3%25B3n-de-sql-en-asp-net" class="login-link s-btn s-btn__filled py8 js-gps-track" rel="nofollow" data-gps-track="login.click" data-ga="[&quot;top navigation&quot;,&quot;login button click&quot;,null,null,null]">Iniciar sesión</a>
+                            <a href="https://es.stackoverflow.com/users/signup?ssrc=head&amp;returnurl=https%3a%2f%2fes.stackoverflow.com%2fquestions%2f85750%2fc%25C3%25B3mo-evitar-inyecci%25C3%25B3n-de-sql-en-asp-net" class="login-link s-btn s-btn__primary py8" rel="nofollow" data-ga="[&quot;sign up&quot;,&quot;Sign Up Navigation&quot;,&quot;Header&quot;,null,null]">Registrarse</a>
+
+            </li>
+
+    <li class="js-topbar-dialog-corral" role="presentation">
+            
+
+    <div class="topbar-dialog siteSwitcher-dialog dno" role="menu">
+        <div class="header">
+            <h3>
+                <a href="https://es.stackoverflow.com/">comunidad actual</a>
+            </h3>
+        </div>
+        <div class="modal-content bg-powder-050">
+            <ul class="current-site">
+                    <li class="grid">
+                            <div class="fl1">
+                <a href="https://es.stackoverflow.com/" class="current-site-link site-link js-gps-track grid gs8 gsx" data-id="637" data-gps-track="site_switcher.click({ item_type:3 })">
+        <div class="favicon favicon-es site-icon grid--cell" title="Stack Overflow en español"></div>
+        <span class="grid--cell fl1">
+            Stack Overflow en español
+        </span>
+    </a>
+
+    </div>
+    <div class="related-links">
+            <a href="https://es.stackoverflow.com/help" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:14 })">ayuda</a>
+            <a href="https://chat.stackexchange.com/?tab=site&amp;host=es.stackoverflow.com" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+    </div>
+
+                    </li>
+                    <li class="related-site grid">
+                            <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                            <a href="https://es.meta.stackoverflow.com/" class=" site-link js-gps-track grid gs8 gsx" data-id="638" data-gps-track="site.switch({ target_site:638, item_type:3 }),site_switcher.click({ item_type:4 })">
+        <div class="favicon favicon-esmeta site-icon grid--cell" title="Stack Overflow Meta en español"></div>
+        <span class="grid--cell fl1">
+            Stack Overflow Meta en español
+        </span>
+    </a>
+
+                    </li>
+            </ul>
+        </div>
+
+        <div class="header" id="your-communities-header">
+            <h3>
+tus comunidades            </h3>
+
+        </div>
+        <div class="modal-content" id="your-communities-section">
+
+                <div class="call-to-login">
+<a href="https://es.stackoverflow.com/users/signup?ssrc=site_switcher&amp;returnurl=https%3a%2f%2fes.stackoverflow.com%2fquestions%2f85750%2fc%25C3%25B3mo-evitar-inyecci%25C3%25B3n-de-sql-en-asp-net" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Regístrate</a> o <a href="https://es.stackoverflow.com/users/login?ssrc=site_switcher&amp;returnurl=https%3a%2f%2fes.stackoverflow.com%2fquestions%2f85750%2fc%25C3%25B3mo-evitar-inyecci%25C3%25B3n-de-sql-en-asp-net" class="login-link js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">inicia sesión</a> para personalizar tu lista.                </div>
+        </div>
+
+        <div class="header">
+            <h3><a href="https://stackexchange.com/sites">más comunidades Stack Exchange</a>
+            </h3>
+            <a href="https://stackoverflow.blog/" class="fr">blog de la empresa</a>
+        </div>
+        <div class="modal-content">
+                <div class="child-content"></div>
+        </div>        
+    </div>
+
+    </li>
+</ol>
+    </div>
+</header>
+    <div id="js-gdpr-consent-banner" class="p8 ff-sans ps-fixed b0 l0 r0 z-banner" role="banner" aria-hidden="false" style="background-color: #3b4045; color: white;"> 
+        <div class="wmx8 mx-auto grid grid__center" role="alertdialog" aria-describedby="notice-message">
+            <div class="grid--cell mr12" aria-label="notice-message">
+                <p class="mb0 lh-lg">
+                    Al usar este sitio, reconoces haber leido y entendido nuestra <a class="s-link s-link__inherit td-underline fc-white" target="_blank" href="https://stackoverflow.com/legal/cookie-policy">Política de Cookies</a>, <a class="s-link s-link__inherit td-underline fc-white" target="_blank" href="https://stackoverflow.com/legal/privacy-policy">Política de Privacidad</a>, y nuestros <a class="s-link s-link__inherit td-underline fc-white" target="_blank" href="https://stackoverflow.com/legal/terms-of-service/public">Términos de Servicio</a>.
+                </p>
+            </div>
+            <div class="grid--cell">
+                <a class="s-btn s-btn__muted s-btn__icon js-notice-close" aria-label="notice-dismiss">
+                    <svg aria-hidden="true" class="svg-icon iconClear" width="18" height="18" viewBox="0 0 18 18"><path d="M15 4.41L13.59 3 9 7.59 4.41 3 3 4.41 7.59 9 3 13.59 4.41 15 9 10.41 13.59 15 15 13.59 10.41 9 15 4.41z"></path></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        StackExchange.ready(function () { StackExchange.topbar.init(); });
+StackExchange.scrollPadding.setPaddingTop(50, 10);    </script>
+
+
+
+            
+
+        
+    
+
+<div class="py24 bg-black-750 fc-black-200 sm:pt24 sm:pb24 ps-relative js-dismissable-hero">
+    <div class="px12 grid ai-center jc-center mx-auto wmx12 sm:fd-column">
+        <div class="grid--cell wmx3 fs-body2 mr64 md:mr32 sm:mr0 sm:ta-center sm:mr0 sm:ta-center">
+            <p>Stack Overflow en español es un sitio de preguntas y respuestas para programadores y profesionales de la informática. Solo te toma un minuto registrarte.</p>
+
+            <a href="https://es.stackoverflow.com/users/signup?ssrc=hero&amp;returnurl=https%3a%2f%2fes.stackoverflow.com%2fquestions%2f85750%2fc%25C3%25B3mo-evitar-inyecci%25C3%25B3n-de-sql-en-asp-net" class="s-btn s-btn__primary">Regístrate para unirte a esta comunidad</a>
+        </div>
+        <div class="grid fd-column ai-center wmn3 sm:wmn-initial sm:mt32 hero-background">
+            <div class="grid ai-center mb24 sm:mb16">
+                <div class="grid--cell mr16">
+                    <img width="31" src="./c# - ¿Cómo evitar inyección de sql en asp.net_ - Stack Overflow en español_files/anonymousHeroQuestions.svg">
+                </div>
+                <div class="grid--cell">
+                    Cualquiera puede formular una pregunta
+                </div>
+            </div>
+            <div class="grid ai-center mb24 sm:mb16">
+                <div class="grid--cell mr16">
+                    <img width="35" src="./c# - ¿Cómo evitar inyección de sql en asp.net_ - Stack Overflow en español_files/anonymousHeroAnswers.svg">
+                </div>
+                <div class="grid--cell">
+                    Cualquiera puede responder
+                </div>
+            </div>
+            <div class="grid ai-center">
+                <div class="grid--cell mr16">
+                    <img width="24" src="./c# - ¿Cómo evitar inyección de sql en asp.net_ - Stack Overflow en español_files/anonymousHeroUpvote.svg">
+                </div>
+                <div class="grid--cell wmx2">
+                    Se vota a favor de las mejores respuestas, y éstas suben a los primeros puestos
+                </div>
+            </div>
+        </div>
+            <div class="grid--cell as-start md:ps-absolute t8 r8">
+                <button class="s-btn s-btn__muted p8 js-dismiss">
+                    <svg aria-hidden="true" class="svg-icon iconClear" width="18" height="18" viewBox="0 0 18 18"><path d="M15 4.41L13.59 3 9 7.59 4.41 3 3 4.41 7.59 9 3 13.59 4.41 15 9 10.41 13.59 15 15 13.59 10.41 9 15 4.41z"></path></svg>
+                </button>
+            </div>
+    </div>
+</div>
+
+<script>
+    StackExchange.ready(function () {
+        StackExchange.Hero.init("nso", "a");
+
+        var location = 0;
+        if ($("body").hasClass("questions-page")) {
+            location = 1;
+        } else if ($("body").hasClass("question-page")) {
+            location = 1;
+        } else if ($("body").hasClass("faq-page")) {
+            location = 5;
+        } else if ($("body").hasClass("home-page")) {
+            location = 3;
+        }
+
+        $('.js-cta-button').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: 'cta', location: location }, true);
+            });
+        });
+
+        // TODO: we should review the class names and whatnot in use here. Older heroes use id selectors, the newer
+        // sticky question hero on SO has a .js-dismiss class instead, but it's apparently not used anywhere... 
+        // It's not great. Ideally we'd have a set of classes in the partials above that would correspond to 
+        // the behaviours we want here in a more clear way. 
+
+        // sticky question-page hero at the bottom of the page on SO
+        $('.js-dismiss').on('click', function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "close", location: location }, true);
+            });
+            StackExchange.Hero.dismiss();
+            $(".js-dismissable-hero").fadeOut("fast");
+        });
+    });
+</script>
+
+
+
+    <div class="container">
+            
+
+<div id="left-sidebar" data-is-here-when="md lg" class="left-sidebar js-pinned-left-sidebar ps-relative">
+    <div class="left-sidebar--sticky-container js-sticky-leftnav">
+        <nav role="navigation">
+            <ol class="nav-links">
+        <li class="">
+            <a href="https://es.stackoverflow.com/" class="pl8 js-gps-track nav-links--link" data-gps-track="top_nav.click({is_current:false, location:2, destination:8})">
+Inicio            </a>
+        </li>
+                <li>
+                    <ol class="nav-links">
+                                <li class=" youarehere">
+            <a id="nav-questions" href="https://es.stackoverflow.com/questions" class="pl8 js-gps-track nav-links--link" data-gps-track="top_nav.click({is_current:true, location:2, destination:1})">
+Preguntas            </a>
+        </li>
+
+        <li class="">
+            <a id="nav-tags" href="https://es.stackoverflow.com/tags" class="pl8 js-gps-track nav-links--link" data-gps-track="top_nav.click({is_current:false, location:2, destination:2})">
+Etiquetas            </a>
+        </li>
+        <li class="">
+            <a id="nav-users" href="https://es.stackoverflow.com/users" class="pl8 js-gps-track nav-links--link" data-gps-track="top_nav.click({is_current:false, location:2, destination:3})">
+Usuarios            </a>
+        </li>
+        <li class="">
+            <a id="nav-unanswered" href="https://es.stackoverflow.com/unanswered" class="pl8 js-gps-track nav-links--link" data-gps-track="top_nav.click({is_current:false, location:2, destination:5})">
+Sin responder            </a>
+        </li>
+                    </ol>
+                </li>
+            </ol>
+        </nav>
+    </div>
+
+
+
+</div>
+
+
+
+        <div id="content" class="snippet-hidden">
+
+            
+<div itemprop="mainEntity" itemscope="" itemtype="http://schema.org/Question">
+    <link itemprop="image" href="https://cdn.sstatic.net/Sites/es/Img/apple-touch-icon.png?v=7739871010e6">
+
+    <div class="inner-content clearfix">
+
+        
+
+            <div id="question-header" class="grid sm:fd-column">
+                        <h1 itemprop="name" class="grid--cell fs-headline1 fl1 ow-break-word mb8"><a href="https://es.stackoverflow.com/questions/85750/c%c3%b3mo-evitar-inyecci%c3%b3n-de-sql-en-asp-net" class="question-hyperlink">¿Cómo evitar inyección de sql en asp.net?</a></h1>
+
+                <div class="ml12 aside-cta grid--cell print:d-none sm:ml0 sm:mb12 sm:order-first sm:as-end">
+                    
+    <a href="https://es.stackoverflow.com/questions/ask" class="ws-nowrap s-btn s-btn__primary">
+        Formular una pregunta
+    </a>
+
+                </div>
+            </div>
+            <div class="grid fw-wrap pb8 mb16 bb bc-black-2">
+                    <div class="grid--cell ws-nowrap mr16 mb8" title="2017-07-09 04:14:58Z">
+                        <span class="fc-light mr2">Formulada</span>
+                        <time itemprop="dateCreated" datetime="2017-07-09T04:14:58">hace 2 años y 11 meses</time>
+                    </div>
+                        <div class="grid--cell ws-nowrap mr16 mb8">
+                            <span class="fc-light mr2">Activa</span>
+                            <a href="https://es.stackoverflow.com/questions/85750/c%C3%B3mo-evitar-inyecci%C3%B3n-de-sql-en-asp-net?lastactivity" class="s-link s-link__inherit" title="2017-07-11 17:01:29Z">hace 2 años y 11 meses</a>
+                        </div>
+                    <div class="grid--cell ws-nowrap mb8" title="Vista 3,516 veces">
+                        <span class="fc-light mr2">Vista</span>
+                        4k veces
+                    </div>
+            </div>
+            <div id="mainbar" role="main" aria-label="preguntas y respuestas">
+
+                
+<div class="question" data-questionid="85750" id="question">
+    <style>.everyoneloves__top-leaderboard:empty,.everyoneloves__mid-leaderboard:empty,.everyoneloves__bot-mid-leaderboard:empty{
+            margin-bottom:0;
+}
+</style>
+<div id="dfp-tlb" class="everyonelovesstackoverflow everyoneloves__top-leaderboard" style="min-height: auto; height: auto; display: none;"></div>
+
+    <div class="post-layout">
+        <div class="votecell post-layout--left">
+            <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="85750">
+        <button class="js-vote-up-btn grid--cell s-btn s-btn__unset c-pointer" title="Esta pregunta demuestra trabajo de investigación; es útil y clara" aria-pressed="false" aria-label="voto a favor" data-selected-classes="fc-theme-primary"><svg aria-hidden="true" class="m0 svg-icon iconArrowUpLg" width="36" height="36" viewBox="0 0 36 36"><path d="M2 26h32L18 10 2 26z"></path></svg></button>
+        <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" itemprop="upvoteCount" data-value="1">1</div>
+        <button class="js-vote-down-btn grid--cell s-btn s-btn__unset c-pointer" title="Esta pregunta no parece tener un trabajo de investigación; es confusa o poco útil" aria-pressed="false" aria-label="votar en contra" data-selected-classes="fc-theme-primary"><svg aria-hidden="true" class="m0 svg-icon iconArrowDownLg" width="36" height="36" viewBox="0 0 36 36"><path d="M2 10h32L18 26 2 10z"></path></svg></button>
+
+        <button class="js-bookmark-btn s-btn s-btn__unset c-pointer py4 js-gps-track" title="Marcar como pregunta favorita." aria-pressed="false" aria-label="favorito" data-selected-classes="fc-yellow-600" data-gps-track="post.click({ item: 1, priv: 0, post_type: 1 })">
+            <svg aria-hidden="true" class="svg-icon iconBookmark" width="18" height="18" viewBox="0 0 18 18"><path d="M6 1a2 2 0 00-2 2v14l5-4 5 4V3a2 2 0 00-2-2H6zm3.9 3.83h2.9l-2.35 1.7.9 2.77L9 7.59l-2.35 1.7.9-2.76-2.35-1.7h2.9L9 2.06l.9 2.77z"></path></svg>
+            <div class="js-bookmark-count mt4 d-none" data-value=""></div>
+        </button>
+    
+
+    
+        <a class="js-post-issue grid--cell s-btn s-btn__unset c-pointer py6 mx-auto" href="https://es.stackoverflow.com/posts/85750/timeline" data-shortcut="T" title="Línea de tiempo"><svg aria-hidden="true" class="mln2 mr0 svg-icon iconHistory" width="19" height="18" viewBox="0 0 19 18"><path d="M3 9a8 8 0 113.73 6.77L8.2 14.3A6 6 0 105 9l3.01-.01-4 4-4-4h3L3 9zm7-4h1.01L11 9.36l3.22 2.1-.6.93L10 10V5z"></path></svg></a>
+
+</div>
+
+        </div>
+
+        
+
+<div class="postcell post-layout--right">
+    
+    <div class="post-text" itemprop="text">
+                    
+<p>Para evitar ataques de este tipo, ya que son muy frecuentes hoy en día. ¿Qué debo hacer en mi código para evitar la inyección SQL?</p>
+    </div>
+
+        <div class="post-taglist grid gs4 gsy fd-column">
+            <div class="grid ps-relative d-block">
+                <a href="https://es.stackoverflow.com/questions/tagged/c%23" class="post-tag js-gps-track" title="mostrar preguntas con la etiqueta &quot;c#&quot;" rel="tag">c#</a> <a href="https://es.stackoverflow.com/questions/tagged/asp.net" class="post-tag js-gps-track" title="mostrar preguntas con la etiqueta &quot;asp.net&quot;" rel="tag">asp.net</a> <a href="https://es.stackoverflow.com/questions/tagged/.net" class="post-tag js-gps-track" title="mostrar preguntas con la etiqueta &quot;.net&quot;" rel="tag">.net</a> 
+            </div>
+        </div>
+
+    <div class="mb0 ">
+        <div class="mt16 grid gs8 gsy fw-wrap jc-end ai-start pt4">
+            <div class="grid--cell mr16" style="flex: 1 1 100px;">
+                
+
+<div class="post-menu">
+    <a href="https://es.stackoverflow.com/q/85750" rel="nofollow" itemprop="url" class="js-share-link js-gps-track" title="enlace corto permanente a esta pregunta" data-gps-track="post.click({ item: 2, priv: 0, post_type: 1 })" data-controller="se-share-sheet s-popover" data-se-share-sheet-title="Comparte un enlace a esta pregunta" data-se-share-sheet-subtitle="" data-se-share-sheet-post-type="question" data-se-share-sheet-social="facebook twitter " data-se-share-sheet-location="1" data-s-popover-placement="bottom-start" aria-controls="se-share-sheet-0" data-action=" s-popover#toggle se-share-sheet#preventNavigation s-popover:show-&gt;se-share-sheet#willShow s-popover:shown-&gt;se-share-sheet#didShow">compartir</a><div class="s-popover z-dropdown" style="width: unset; max-width: 28em;" id="se-share-sheet-0"><div class="s-popover--arrow"></div><div><span class="js-title fw-bold">Comparte un enlace a esta pregunta</span> <span class="js-subtitle"></span></div><div class="my8"><input type="text" class="js-input s-input wmn3 sm:wmn-initial" readonly=""></div><div class="d-flex jc-space-between mbn4"><button class="js-copy-link-btn s-btn s-btn__link">Copiar enlace</button><div class="js-social-container"></div></div></div>
+        <span class="lsep">|</span>
+                <a href="https://es.stackoverflow.com/posts/85750/edit" class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 1 })" title="">mejorar esta pregunta</a>
+        <span class="lsep">|</span>
+    <button id="btnFollowPost-85750" class="s-btn s-btn__link fc-black-400 h:fc-black-700 pb2 js-follow-post js-follow-question js-gps-track" role="button" data-gps-track="post.click({ item: 14, priv: 0, post_type: 1 })" data-controller="s-tooltip " data-s-tooltip-placement="bottom" data-s-popover-placement="bottom" aria-controls="" aria-describedby="--stacks-s-tooltip-chi3bgig">
+        seguir
+    </button><div id="--stacks-s-tooltip-chi3bgig" class="s-popover s-popover__tooltip pe-none" aria-hidden="true" role="tooltip">Sigue esta pregunta para recibir notificaciones<div class="s-popover--arrow"></div></div>
+        <span class="lsep">|</span>
+</div>
+
+            </div>
+
+                <div class="post-signature grid--cell">
+<div class="user-info user-hover">
+    <div class="user-action-time">
+        <a href="https://es.stackoverflow.com/posts/85750/revisions" title="mostrar todas las ediciones realizadas a esta publicación" class="js-gps-track" data-gps-track="post.click({ item: 4, priv: 0, post_type: 1 })">editada <span title="2017-07-09 04:25:00Z" class="relativetime">el 9 jul. 17 a las 4:25</span></a>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://es.stackoverflow.com/users/250/alvaro-montoro"><div class="gravatar-wrapper-32"><img src="./c# - ¿Cómo evitar inyección de sql en asp.net_ - Stack Overflow en español_files/n1doi.jpg" alt="" width="32" height="32" class="bar-sm"></div></a>
+    </div>
+    <div class="user-details">
+        <a href="https://es.stackoverflow.com/users/250/alvaro-montoro">Alvaro Montoro</a><span class="mod-flair " title="moderador">♦</span>
+        <div class="-flair">
+            <span class="reputation-score" title="puntuaci&amp;#243;n de reputaci&amp;#243;n de 46,717" dir="ltr">46.7k</span><span title="19 medallas de oro" aria-hidden="true"><span class="badge1"></span><span class="badgecount">19</span></span><span class="v-visible-sr">19 medallas de oro</span><span title="86 medallas de plata" aria-hidden="true"><span class="badge2"></span><span class="badgecount">86</span></span><span class="v-visible-sr">86 medallas de plata</span><span title="159 medallas de bronce" aria-hidden="true"><span class="badge3"></span><span class="badgecount">159</span></span><span class="v-visible-sr">159 medallas de bronce</span>
+        </div>
+    </div>
+</div>                </div>
+            <div class="post-signature owner grid--cell">
+                <div class="user-info ">
+    <div class="user-action-time">
+        formulada <span title="2017-07-09 04:14:58Z" class="relativetime">el 9 jul. 17 a las 4:14</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://es.stackoverflow.com/users/50737/criss-ramone"><div class="gravatar-wrapper-32"><img src="./c# - ¿Cómo evitar inyección de sql en asp.net_ - Stack Overflow en español_files/picture" alt="" width="32" height="32" class="bar-sm"></div></a>
+    </div>
+    <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+        <a href="https://es.stackoverflow.com/users/50737/criss-ramone">Criss Ramone</a><span class="d-none" itemprop="name">Criss Ramone</span>
+        <div class="-flair">
+            <span class="reputation-score" title="puntuaci&amp;#243;n de reputaci&amp;#243;n de " dir="ltr">13</span><span title="1 medalla de plata" aria-hidden="true"><span class="badge2"></span><span class="badgecount">1</span></span><span class="v-visible-sr">1 medalla de plata</span><span title="3 medallas de bronce" aria-hidden="true"><span class="badge3"></span><span class="badgecount">3</span></span><span class="v-visible-sr">3 medallas de bronce</span>
+        </div>
+    </div>
+</div>
+
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+
+                <div class="post-layout--right">
+        <div id="comments-85750" class="comments js-comments-container bt bc-black-2 mt12 " data-post-id="85750" data-min-length="15">
+            <ul class="comments-list js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <li id="comment-157688" class="comment js-comment " data-comment-id="157688">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score js-comment-edit-hide">
+            </div>
+        </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div class="comment-body js-comment-edit-hide">
+                
+                <span class="comment-copy">Para evitar inyección SQL debes hacer uso de <b>consultas preparadas</b>, a las cuales les debes <b>pasar parámetros</b>. Podrías especificar más sobre tu código quizás para ayudarte a blindarlo, o por otra parte investigar más sobre las consultas preparadas en asp.net.</span>
+                
+–&nbsp;<a href="https://es.stackoverflow.com/users/8873/agustin-m" title="1,229 reputación" class="comment-user">Agustin M.</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://es.stackoverflow.com/questions/85750/c%C3%B3mo-evitar-inyecci%C3%B3n-de-sql-en-asp-net#comment157688_85750"><span title="2017-07-09 04:43:12Z , Licencia: CC BY-SA 3.0" class="relativetime-clean">el 9 jul. 17 a las 4:43</span></a></span>
+            </div>
+        </div>
+    </li>
+    <li id="comment-157694" class="comment js-comment " data-comment-id="157694">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score js-comment-edit-hide">
+            </div>
+        </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div class="comment-body js-comment-edit-hide">
+                
+                <span class="comment-copy">El caso es que yo trabajo con linq y C# en Visual Studio 2015, y el asisten de roles de .Net y como está parte es algo delicado a nivel de seguridad, quiero saber la magnitud del problema cuando se llegará a presentar y que la aplicación web este lista para este tipo de situación</span>
+                
+–&nbsp;<a href="https://es.stackoverflow.com/users/50737/criss-ramone" title="13 reputación" class="comment-user owner">Criss Ramone</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://es.stackoverflow.com/questions/85750/c%C3%B3mo-evitar-inyecci%C3%B3n-de-sql-en-asp-net#comment157694_85750"><span title="2017-07-09 06:52:27Z , Licencia: CC BY-SA 3.0" class="relativetime-clean">el 9 jul. 17 a las 6:52</span></a></span>
+            </div>
+        </div>
+    </li>
+
+            </ul>
+	    </div>
+
+        <div id="comments-link-85750" data-rep="50" data-anon="true">
+                    <a class="js-add-link comments-link disabled-link" title="Utiliza los comentarios para pedir más información o para sugerir mejoras. Evita responder a preguntas en los comentarios." href="https://es.stackoverflow.com/questions/85750/c%C3%B3mo-evitar-inyecci%C3%B3n-de-sql-en-asp-net#" role="button">añade un comentario</a>
+                <span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expandir para mostrar todos los comentarios de esta publicación" href="https://es.stackoverflow.com/questions/85750/c%C3%B3mo-evitar-inyecci%C3%B3n-de-sql-en-asp-net#" onclick="" role="button"></a>
+        </div>         
+    </div>
+    </div>
+</div>
+
+
+
+                <div id="answers">
+
+                    <a name="tab-top"></a>
+                    <div id="answers-header">
+                        <div class="answers-subheader grid ai-center mb8">
+                            <div class="grid--cell fl1">
+                                <h2 class="mb0" data-answercount="3">
+                                        3 respuestas
+                                    <span style="display:none;" itemprop="answerCount">3</span>
+                                </h2>
+                            </div>
+                            <div class="grid--cell">
+                                <div class=" grid s-btn-group js-filter-btn">
+        <a class="grid--cell s-btn s-btn__muted s-btn__outlined" href="https://es.stackoverflow.com/questions/85750/c%c3%b3mo-evitar-inyecci%c3%b3n-de-sql-en-asp-net?answertab=active#tab-top" data-nav-xhref="" title="Respuestas con la actividad más reciente primero" data-value="active" data-shortcut="A">
+            Activo</a>
+        <a class="grid--cell s-btn s-btn__muted s-btn__outlined" href="https://es.stackoverflow.com/questions/85750/c%c3%b3mo-evitar-inyecci%c3%b3n-de-sql-en-asp-net?answertab=oldest#tab-top" data-nav-xhref="" title="Respuestas en el orden en que fueron proporcionadas" data-value="oldest" data-shortcut="O">
+            Más antiguo</a>
+        <a class="youarehere is-selected grid--cell s-btn s-btn__muted s-btn__outlined" href="https://es.stackoverflow.com/questions/85750/c%c3%b3mo-evitar-inyecci%c3%b3n-de-sql-en-asp-net?answertab=votes#tab-top" data-nav-xhref="" title="Respuestas con la puntuación más alta primero" data-value="votes" data-shortcut="V">
+            Votos</a>
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                                          
+<a name="85951"></a>
+<div id="answer-85951" class="answer accepted-answer" data-answerid="85951" itemprop="acceptedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+    <div class="post-layout">
+        <div class="votecell post-layout--left">
+            <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="85951">
+        <button class="js-vote-up-btn grid--cell s-btn s-btn__unset c-pointer" title="Esta respuesta es útil" aria-pressed="false" aria-label="voto a favor" data-selected-classes="fc-theme-primary"><svg aria-hidden="true" class="m0 svg-icon iconArrowUpLg" width="36" height="36" viewBox="0 0 36 36"><path d="M2 26h32L18 10 2 26z"></path></svg></button>
+        <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" itemprop="upvoteCount" data-value="3">3</div>
+        <button class="js-vote-down-btn grid--cell s-btn s-btn__unset c-pointer" title="Esta respuesta no es útil" aria-pressed="false" aria-label="votar en contra" data-selected-classes="fc-theme-primary"><svg aria-hidden="true" class="m0 svg-icon iconArrowDownLg" width="36" height="36" viewBox="0 0 36 36"><path d="M2 10h32L18 26 2 10z"></path></svg></button>
+
+    
+            <div class="js-accepted-answer-indicator grid--cell fc-green-500 ta-center py4" title="El propietario de la pregunta aceptó esta respuesta como la mejor el 10 jul. 17 a las 17:49" tabindex="0" role="note" aria-label="aceptada">
+                <svg aria-hidden="true" class="svg-icon iconCheckmarkLg" width="36" height="36" viewBox="0 0 36 36"><path d="M6 14l8 8L30 6v8L14 30l-8-8v-8z"></path></svg>
+            </div>
+
+    
+        <a class="js-post-issue grid--cell s-btn s-btn__unset c-pointer py6 mx-auto" href="https://es.stackoverflow.com/posts/85951/timeline" data-shortcut="T" title="Línea de tiempo"><svg aria-hidden="true" class="mln2 mr0 svg-icon iconHistory" width="19" height="18" viewBox="0 0 19 18"><path d="M3 9a8 8 0 113.73 6.77L8.2 14.3A6 6 0 105 9l3.01-.01-4 4-4-4h3L3 9zm7-4h1.01L11 9.36l3.22 2.1-.6.93L10 10V5z"></path></svg></a>
+
+</div>
+
+        </div>
+
+        
+
+<div class="answercell post-layout--right">
+    
+    <div class="post-text" itemprop="text">
+<p>Lo importante para evitar la inyección sql es que los parámetros de la consulta que utilices no se concatenen en el texto de la consulta así:</p>
+
+<pre class="lang-cs prettyprint prettyprinted" style=""><code><span class="kwd">var</span><span class="pln"> comm </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">SqlCommand</span><span class="pun">(</span><span class="str">"Select * from Tabla where nombre = "</span><span class="pln"> </span><span class="pun">+</span><span class="pln"> txtnombre</span><span class="pun">.</span><span class="typ">Text</span><span class="pun">);</span></code></pre>
+
+<p>sino que se agreguen como parametros sql así:</p>
+
+<pre class="lang-cs prettyprint prettyprinted" style=""><code><span class="kwd">var</span><span class="pln"> comm </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">SqlCommand</span><span class="pun">(</span><span class="str">"Select * from Tabla where nombre = ?"</span><span class="pun">);</span><span class="pln">
+comm</span><span class="pun">.</span><span class="typ">Parameters</span><span class="pun">.</span><span class="typ">Add</span><span class="pun">(</span><span class="kwd">new</span><span class="pln"> </span><span class="typ">SqlParameter</span><span class="pun">(</span><span class="str">"nombre"</span><span class="pun">,</span><span class="pln"> txtnombre</span><span class="pun">.</span><span class="typ">Text</span><span class="pun">));</span></code></pre>
+
+<p>de esta manera ADO.net maneja la seguridad de los textos ingresados como parámetro y evitas que se inyecte sql no deseado en tu aplicación.</p>
+    </div>
+    <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+        <time itemprop="dateCreated" datetime="2017-07-10T14:32:38"></time>
+        <div class="grid--cell mr16" style="flex: 1 1 100px;">
+            
+
+<div class="post-menu">
+    <a href="https://es.stackoverflow.com/a/85951" rel="nofollow" itemprop="url" class="js-share-link js-gps-track" title="enlace corto permanente a esta respuesta" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-controller="se-share-sheet s-popover" data-se-share-sheet-title="Comparte un enlace a esta respuesta" data-se-share-sheet-subtitle="" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter " data-se-share-sheet-location="2" data-s-popover-placement="bottom-start" aria-controls="se-share-sheet-1" data-action=" s-popover#toggle se-share-sheet#preventNavigation s-popover:show-&gt;se-share-sheet#willShow s-popover:shown-&gt;se-share-sheet#didShow">compartir</a><div class="s-popover z-dropdown" style="width: unset; max-width: 28em;" id="se-share-sheet-1"><div class="s-popover--arrow"></div><div><span class="js-title fw-bold">Comparte un enlace a esta respuesta</span> <span class="js-subtitle"></span></div><div class="my8"><input type="text" class="js-input s-input wmn3 sm:wmn-initial" readonly=""></div><div class="d-flex jc-space-between mbn4"><button class="js-copy-link-btn s-btn s-btn__link">Copiar enlace</button><div class="js-social-container"></div></div></div>
+        <span class="lsep">|</span>
+                <a href="https://es.stackoverflow.com/posts/85951/edit" class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" title="">mejorar esta respuesta</a>
+        <span class="lsep">|</span>
+    <button id="btnFollowPost-85951" class="s-btn s-btn__link fc-black-400 h:fc-black-700 pb2 js-follow-post js-follow-answer js-gps-track" role="button" data-gps-track="post.click({ item: 14, priv: 0, post_type: 2 })" data-controller="s-tooltip " data-s-tooltip-placement="bottom" data-s-popover-placement="bottom" aria-controls="" aria-describedby="--stacks-s-tooltip-tvqpqo6k">
+        seguir
+    </button><div id="--stacks-s-tooltip-tvqpqo6k" class="s-popover s-popover__tooltip pe-none" aria-hidden="true" role="tooltip">Sigue esta respuesta para recibir notificaciones<div class="s-popover--arrow"></div></div>
+        <span class="lsep">|</span>
+</div>
+
+        </div>
+
+
+    <div class="post-signature grid--cell fl0">
+        <div class="user-info user-hover">
+    <div class="user-action-time">
+        respondida <span title="2017-07-10 14:32:38Z" class="relativetime">el 10 jul. 17 a las 14:32</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://es.stackoverflow.com/users/50884/diego-cofr%c3%a9"><div class="gravatar-wrapper-32"><img src="./c# - ¿Cómo evitar inyección de sql en asp.net_ - Stack Overflow en español_files/9d1a21dd7325b6acb81d998a79b4172c.png" alt="" width="32" height="32" class="bar-sm"></div></a>
+    </div>
+    <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+        <a href="https://es.stackoverflow.com/users/50884/diego-cofr%c3%a9">Diego Cofré</a><span class="d-none" itemprop="name">Diego Cofré</span>
+        <div class="-flair">
+            <span class="reputation-score" title="puntuaci&amp;#243;n de reputaci&amp;#243;n de " dir="ltr">66</span><span title="4 medallas de bronce" aria-hidden="true"><span class="badge3"></span><span class="badgecount">4</span></span><span class="v-visible-sr">4 medallas de bronce</span>
+        </div>
+    </div>
+</div>
+
+    </div>
+    </div>
+    
+</div>
+
+
+                <div class="post-layout--right">
+        <div id="comments-85951" class="comments js-comments-container bt bc-black-2 mt12  dno" data-post-id="85951" data-min-length="15">
+            <ul class="comments-list js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+            </ul>
+	    </div>
+
+        <div id="comments-link-85951" data-rep="50" data-anon="true">
+                    <a class="js-add-link comments-link disabled-link" title="Utiliza los comentarios para pedir más información o para sugerir mejoras. Evita los comentarios como “+1” o “gracias”." href="https://es.stackoverflow.com/questions/85750/c%C3%B3mo-evitar-inyecci%C3%B3n-de-sql-en-asp-net#" role="button">añade un comentario</a>
+                <span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expandir para mostrar todos los comentarios de esta publicación" href="https://es.stackoverflow.com/questions/85750/c%C3%B3mo-evitar-inyecci%C3%B3n-de-sql-en-asp-net#" onclick="" role="button"></a>
+        </div>         
+    </div>
+    </div>
+</div>
+
+<div id="dfp-mlb" class="everyonelovesstackoverflow everyoneloves__mid-leaderboard" style="min-height: auto; height: auto; display: none;"></div>
+                                          
+<a name="86270"></a>
+<div id="answer-86270" class="answer" data-answerid="86270" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+    <div class="post-layout">
+        <div class="votecell post-layout--left">
+            <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="86270">
+        <button class="js-vote-up-btn grid--cell s-btn s-btn__unset c-pointer" title="Esta respuesta es útil" aria-pressed="false" aria-label="voto a favor" data-selected-classes="fc-theme-primary"><svg aria-hidden="true" class="m0 svg-icon iconArrowUpLg" width="36" height="36" viewBox="0 0 36 36"><path d="M2 26h32L18 10 2 26z"></path></svg></button>
+        <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" itemprop="upvoteCount" data-value="1">1</div>
+        <button class="js-vote-down-btn grid--cell s-btn s-btn__unset c-pointer" title="Esta respuesta no es útil" aria-pressed="false" aria-label="votar en contra" data-selected-classes="fc-theme-primary"><svg aria-hidden="true" class="m0 svg-icon iconArrowDownLg" width="36" height="36" viewBox="0 0 36 36"><path d="M2 10h32L18 26 2 10z"></path></svg></button>
+
+    
+            <div class="js-accepted-answer-indicator grid--cell fc-green-500 ta-center py4 d-none" title="cargando cuándo se aceptó esta respuesta..." tabindex="0" role="note" aria-label="aceptada">
+                <svg aria-hidden="true" class="svg-icon iconCheckmarkLg" width="36" height="36" viewBox="0 0 36 36"><path d="M6 14l8 8L30 6v8L14 30l-8-8v-8z"></path></svg>
+            </div>
+
+    
+        <a class="js-post-issue grid--cell s-btn s-btn__unset c-pointer py6 mx-auto" href="https://es.stackoverflow.com/posts/86270/timeline" data-shortcut="T" title="Línea de tiempo"><svg aria-hidden="true" class="mln2 mr0 svg-icon iconHistory" width="19" height="18" viewBox="0 0 19 18"><path d="M3 9a8 8 0 113.73 6.77L8.2 14.3A6 6 0 105 9l3.01-.01-4 4-4-4h3L3 9zm7-4h1.01L11 9.36l3.22 2.1-.6.93L10 10V5z"></path></svg></a>
+
+</div>
+
+        </div>
+
+        
+
+<div class="answercell post-layout--right">
+    
+    <div class="post-text" itemprop="text">
+<p>Lo mejor es utilizar Parámetros, de esta manera no podrán manipular  tus Querys a través de los Controles, aca dejo un ejemplo:</p>
+
+<p><code>Es te método es  más recomendable para evitar inyecciones de SQL.</code></p>
+
+<pre class="lang-cs prettyprint prettyprinted" style=""><code><span class="pln">        </span><span class="kwd">private</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> </span><span class="typ">AntiInyecc</span><span class="pun">()</span><span class="pln">
+    </span><span class="pun">{</span><span class="pln">
+       </span><span class="typ">SqlConnection</span><span class="pln"> conexion</span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">SqlConnection</span><span class="pun">(</span><span class="str">"TuCadena de Conexion"</span><span class="pun">);</span><span class="pln">
+
+        </span><span class="kwd">string</span><span class="pln"> </span><span class="typ">SqlString</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="str">"Insert Into tbl_Datos (Folio,Dia,Nombre) Values"</span><span class="pln"> </span><span class="pun">+</span><span class="pln">
+              </span><span class="str">"(@folio,@dia,@nomb)"</span><span class="pun">;</span><span class="pln">
+        using </span><span class="pun">(</span><span class="typ">SqlCommand</span><span class="pln"> cmd </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">SqlCommand</span><span class="pun">(</span><span class="typ">SqlString</span><span class="pun">,</span><span class="pln"> conexion</span><span class="pun">))</span><span class="pln">
+        </span><span class="pun">{</span><span class="pln">
+            cmd</span><span class="pun">.</span><span class="typ">CommandType</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="typ">CommandType</span><span class="pun">.</span><span class="typ">Text</span><span class="pun">;</span><span class="pln">
+            cmd</span><span class="pun">.</span><span class="typ">Parameters</span><span class="pun">.</span><span class="typ">AddWithValue</span><span class="pun">(</span><span class="str">"@folio"</span><span class="pun">,</span><span class="pln"> lblID</span><span class="pun">.</span><span class="typ">Text</span><span class="pun">);</span><span class="pln">
+            cmd</span><span class="pun">.</span><span class="typ">Parameters</span><span class="pun">.</span><span class="typ">AddWithValue</span><span class="pun">(</span><span class="str">"@dia"</span><span class="pun">,</span><span class="pln"> textBox1</span><span class="pun">.</span><span class="typ">Text</span><span class="pun">);</span><span class="pln">
+            cmd</span><span class="pun">.</span><span class="typ">Parameters</span><span class="pun">.</span><span class="typ">AddWithValue</span><span class="pun">(</span><span class="str">"@nomb"</span><span class="pun">,</span><span class="pln"> textBox2</span><span class="pun">.</span><span class="typ">Text</span><span class="pun">);</span><span class="pln">
+            cn</span><span class="pun">.</span><span class="typ">Open</span><span class="pun">();</span><span class="pln">
+            cmd</span><span class="pun">.</span><span class="typ">ExecuteNonQuery</span><span class="pun">();</span><span class="pln">
+            cn</span><span class="pun">.</span><span class="typ">Close</span><span class="pun">();</span><span class="pln">
+        </span><span class="pun">}</span><span class="pln">
+    </span><span class="pun">}</span></code></pre>
+    </div>
+    <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+        <time itemprop="dateCreated" datetime="2017-07-11T17:01:29"></time>
+        <div class="grid--cell mr16" style="flex: 1 1 100px;">
+            
+
+<div class="post-menu">
+    <a href="https://es.stackoverflow.com/a/86270" rel="nofollow" itemprop="url" class="js-share-link js-gps-track" title="enlace corto permanente a esta respuesta" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-controller="se-share-sheet s-popover" data-se-share-sheet-title="Comparte un enlace a esta respuesta" data-se-share-sheet-subtitle="" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter " data-se-share-sheet-location="2" data-s-popover-placement="bottom-start" aria-controls="se-share-sheet-2" data-action=" s-popover#toggle se-share-sheet#preventNavigation s-popover:show-&gt;se-share-sheet#willShow s-popover:shown-&gt;se-share-sheet#didShow">compartir</a><div class="s-popover z-dropdown" style="width: unset; max-width: 28em;" id="se-share-sheet-2"><div class="s-popover--arrow"></div><div><span class="js-title fw-bold">Comparte un enlace a esta respuesta</span> <span class="js-subtitle"></span></div><div class="my8"><input type="text" class="js-input s-input wmn3 sm:wmn-initial" readonly=""></div><div class="d-flex jc-space-between mbn4"><button class="js-copy-link-btn s-btn s-btn__link">Copiar enlace</button><div class="js-social-container"></div></div></div>
+        <span class="lsep">|</span>
+                <a href="https://es.stackoverflow.com/posts/86270/edit" class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" title="">mejorar esta respuesta</a>
+        <span class="lsep">|</span>
+    <button id="btnFollowPost-86270" class="s-btn s-btn__link fc-black-400 h:fc-black-700 pb2 js-follow-post js-follow-answer js-gps-track" role="button" data-gps-track="post.click({ item: 14, priv: 0, post_type: 2 })" data-controller="s-tooltip " data-s-tooltip-placement="bottom" data-s-popover-placement="bottom" aria-controls="" aria-describedby="--stacks-s-tooltip-evm9wpbb">
+        seguir
+    </button><div id="--stacks-s-tooltip-evm9wpbb" class="s-popover s-popover__tooltip pe-none" aria-hidden="true" role="tooltip">Sigue esta respuesta para recibir notificaciones<div class="s-popover--arrow"></div></div>
+        <span class="lsep">|</span>
+</div>
+
+        </div>
+
+
+    <div class="post-signature grid--cell fl0">
+        <div class="user-info user-hover">
+    <div class="user-action-time">
+        respondida <span title="2017-07-11 17:01:29Z" class="relativetime">el 11 jul. 17 a las 17:01</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://es.stackoverflow.com/users/24529/carlosr93"><div class="gravatar-wrapper-32"><img src="./c# - ¿Cómo evitar inyección de sql en asp.net_ - Stack Overflow en español_files/35386b5467ab1b8e76cf3aa9fa5f6280" alt="" width="32" height="32" class="bar-sm"></div></a>
+    </div>
+    <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+        <a href="https://es.stackoverflow.com/users/24529/carlosr93">CarlosR93</a><span class="d-none" itemprop="name">CarlosR93</span>
+        <div class="-flair">
+            <span class="reputation-score" title="puntuaci&amp;#243;n de reputaci&amp;#243;n de " dir="ltr">306</span><span title="5 medallas de plata" aria-hidden="true"><span class="badge2"></span><span class="badgecount">5</span></span><span class="v-visible-sr">5 medallas de plata</span><span title="18 medallas de bronce" aria-hidden="true"><span class="badge3"></span><span class="badgecount">18</span></span><span class="v-visible-sr">18 medallas de bronce</span>
+        </div>
+    </div>
+</div>
+
+    </div>
+    </div>
+    
+</div>
+
+
+                <div class="post-layout--right">
+        <div id="comments-86270" class="comments js-comments-container bt bc-black-2 mt12  dno" data-post-id="86270" data-min-length="15">
+            <ul class="comments-list js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+            </ul>
+	    </div>
+
+        <div id="comments-link-86270" data-rep="50" data-anon="true">
+                    <a class="js-add-link comments-link disabled-link" title="Utiliza los comentarios para pedir más información o para sugerir mejoras. Evita los comentarios como “+1” o “gracias”." href="https://es.stackoverflow.com/questions/85750/c%C3%B3mo-evitar-inyecci%C3%B3n-de-sql-en-asp-net#" role="button">añade un comentario</a>
+                <span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expandir para mostrar todos los comentarios de esta publicación" href="https://es.stackoverflow.com/questions/85750/c%C3%B3mo-evitar-inyecci%C3%B3n-de-sql-en-asp-net#" onclick="" role="button"></a>
+        </div>         
+    </div>
+    </div>
+</div>
+
+                                          
+<a name="85753"></a>
+<div id="answer-85753" class="answer" data-answerid="85753" itemprop="suggestedAnswer" itemscope="" itemtype="http://schema.org/Answer">
+    <div class="post-layout">
+        <div class="votecell post-layout--left">
+            <div class="js-voting-container grid fd-column ai-stretch gs4 fc-black-200" data-post-id="85753">
+        <button class="js-vote-up-btn grid--cell s-btn s-btn__unset c-pointer" title="Esta respuesta es útil" aria-pressed="false" aria-label="voto a favor" data-selected-classes="fc-theme-primary"><svg aria-hidden="true" class="m0 svg-icon iconArrowUpLg" width="36" height="36" viewBox="0 0 36 36"><path d="M2 26h32L18 10 2 26z"></path></svg></button>
+        <div class="js-vote-count grid--cell fc-black-500 fs-title grid fd-column ai-center" itemprop="upvoteCount" data-value="0">0</div>
+        <button class="js-vote-down-btn grid--cell s-btn s-btn__unset c-pointer" title="Esta respuesta no es útil" aria-pressed="false" aria-label="votar en contra" data-selected-classes="fc-theme-primary"><svg aria-hidden="true" class="m0 svg-icon iconArrowDownLg" width="36" height="36" viewBox="0 0 36 36"><path d="M2 10h32L18 26 2 10z"></path></svg></button>
+
+    
+            <div class="js-accepted-answer-indicator grid--cell fc-green-500 ta-center py4 d-none" title="cargando cuándo se aceptó esta respuesta..." tabindex="0" role="note" aria-label="aceptada">
+                <svg aria-hidden="true" class="svg-icon iconCheckmarkLg" width="36" height="36" viewBox="0 0 36 36"><path d="M6 14l8 8L30 6v8L14 30l-8-8v-8z"></path></svg>
+            </div>
+
+    
+        <a class="js-post-issue grid--cell s-btn s-btn__unset c-pointer py6 mx-auto" href="https://es.stackoverflow.com/posts/85753/timeline" data-shortcut="T" title="Línea de tiempo"><svg aria-hidden="true" class="mln2 mr0 svg-icon iconHistory" width="19" height="18" viewBox="0 0 19 18"><path d="M3 9a8 8 0 113.73 6.77L8.2 14.3A6 6 0 105 9l3.01-.01-4 4-4-4h3L3 9zm7-4h1.01L11 9.36l3.22 2.1-.6.93L10 10V5z"></path></svg></a>
+
+</div>
+
+        </div>
+
+        
+
+<div class="answercell post-layout--right">
+    
+    <div class="post-text" itemprop="text">
+<p>se recomienda usar procedimientos almacenados, pero en caso no quieras usarlo en .NET desde el VS2008 ya existe un nuevo concepto llamado <a href="https://msdn.microsoft.com/en-us/library/bb308959.aspx" rel="nofollow noreferrer">LINQ</a> el cual te permite realizar consultas desde el mismo lenguaje de programación con una sintaxis similar a los "Selects" que realizas en SQLServer pero con la misma seguridad de los procedimientos almacenados.</p>
+
+<p>Saludos!</p>
+    </div>
+    <div class="grid mb0 fw-wrap ai-start jc-end gs8 gsy">
+        <time itemprop="dateCreated" datetime="2017-07-09T04:44:56"></time>
+        <div class="grid--cell mr16" style="flex: 1 1 100px;">
+            
+
+<div class="post-menu">
+    <a href="https://es.stackoverflow.com/a/85753" rel="nofollow" itemprop="url" class="js-share-link js-gps-track" title="enlace corto permanente a esta respuesta" data-gps-track="post.click({ item: 2, priv: 0, post_type: 2 })" data-controller="se-share-sheet s-popover" data-se-share-sheet-title="Comparte un enlace a esta respuesta" data-se-share-sheet-subtitle="" data-se-share-sheet-post-type="answer" data-se-share-sheet-social="facebook twitter " data-se-share-sheet-location="2" data-s-popover-placement="bottom-start" aria-controls="se-share-sheet-3" data-action=" s-popover#toggle se-share-sheet#preventNavigation s-popover:show-&gt;se-share-sheet#willShow s-popover:shown-&gt;se-share-sheet#didShow">compartir</a><div class="s-popover z-dropdown" style="width: unset; max-width: 28em;" id="se-share-sheet-3"><div class="s-popover--arrow"></div><div><span class="js-title fw-bold">Comparte un enlace a esta respuesta</span> <span class="js-subtitle"></span></div><div class="my8"><input type="text" class="js-input s-input wmn3 sm:wmn-initial" readonly=""></div><div class="d-flex jc-space-between mbn4"><button class="js-copy-link-btn s-btn s-btn__link">Copiar enlace</button><div class="js-social-container"></div></div></div>
+        <span class="lsep">|</span>
+                <a href="https://es.stackoverflow.com/posts/85753/edit" class="suggest-edit-post js-gps-track" data-gps-track="post.click({ item: 6, priv: 0, post_type: 2 })" title="">mejorar esta respuesta</a>
+        <span class="lsep">|</span>
+    <button id="btnFollowPost-85753" class="s-btn s-btn__link fc-black-400 h:fc-black-700 pb2 js-follow-post js-follow-answer js-gps-track" role="button" data-gps-track="post.click({ item: 14, priv: 0, post_type: 2 })" data-controller="s-tooltip " data-s-tooltip-placement="bottom" data-s-popover-placement="bottom" aria-controls="" aria-describedby="--stacks-s-tooltip-fso37836">
+        seguir
+    </button><div id="--stacks-s-tooltip-fso37836" class="s-popover s-popover__tooltip pe-none" aria-hidden="true" role="tooltip">Sigue esta respuesta para recibir notificaciones<div class="s-popover--arrow"></div></div>
+        <span class="lsep">|</span>
+</div>
+
+        </div>
+
+
+    <div class="post-signature grid--cell fl0">
+        <div class="user-info ">
+    <div class="user-action-time">
+        respondida <span title="2017-07-09 04:44:56Z" class="relativetime">el 9 jul. 17 a las 4:44</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="https://es.stackoverflow.com/users/3442/johnnytostring"><div class="gravatar-wrapper-32"><img src="./c# - ¿Cómo evitar inyección de sql en asp.net_ - Stack Overflow en español_files/photo.jpg" alt="" width="32" height="32" class="bar-sm"></div></a>
+    </div>
+    <div class="user-details" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+        <a href="https://es.stackoverflow.com/users/3442/johnnytostring">JohnnytoString</a><span class="d-none" itemprop="name">JohnnytoString</span>
+        <div class="-flair">
+            <span class="reputation-score" title="puntuaci&amp;#243;n de reputaci&amp;#243;n de " dir="ltr">1</span>
+        </div>
+    </div>
+</div>
+
+    </div>
+    </div>
+    
+</div>
+
+
+                <div class="post-layout--right">
+        <div id="comments-85753" class="comments js-comments-container bt bc-black-2 mt12 " data-post-id="85753" data-min-length="15">
+            <ul class="comments-list js-comments-list" data-remaining-comments-count="0" data-canpost="false" data-cansee="true" data-comments-unavailable="false" data-addlink-disabled="true">
+
+                        <li id="comment-157718" class="comment js-comment " data-comment-id="157718">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score js-comment-edit-hide">
+                    <span title="cantidad de votos de &#39;comentario útil&#39; recibidos" class="cool">1</span>
+            </div>
+        </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div class="comment-body js-comment-edit-hide">
+                
+                <span class="comment-copy">Los procedimientos almacenados no son suficientes para prevenir la inyección SQL.  LINQ sí es seguro porque parametriza los datos, pero podría ser inseguro si se combina con un método inseguro (p.e.  con un procedimiento almacenado que genere la sentencia dinámicamente)</span>
+                
+–&nbsp;<a href="https://es.stackoverflow.com/users/250/alvaro-montoro" title="46,717 reputación" class="comment-user">Alvaro Montoro<span class="mod-flair " title="moderador">♦</span></a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://es.stackoverflow.com/questions/85750/c%C3%B3mo-evitar-inyecci%C3%B3n-de-sql-en-asp-net#comment157718_85753"><span title="2017-07-09 12:08:38Z , Licencia: CC BY-SA 3.0" class="relativetime-clean">el 9 jul. 17 a las 12:08</span></a></span>
+                        <span title="este comentario se editó 1 vez">
+                            <svg aria-hidden="true" class="va-text-bottom o50 svg-icon iconPencilSm" width="14" height="14" viewBox="0 0 14 14"><path d="M11.1 1.71l1.13 1.12c.2.2.2.51 0 .71L11.1 4.7 9.21 2.86l1.17-1.15c.2-.2.51-.2.71 0zM2 10.12l6.37-6.43 1.88 1.88L3.88 12H2v-1.88z"></path></svg>
+                        </span>
+            </div>
+        </div>
+    </li>
+    <li id="comment-157797" class="comment js-comment " data-comment-id="157797">
+        <div class="js-comment-actions comment-actions">
+            <div class="comment-score js-comment-edit-hide">
+            </div>
+        </div>
+        <div class="comment-text js-comment-text-and-form">
+            <div class="comment-body js-comment-edit-hide">
+                
+                <span class="comment-copy">Entonces el nivel de seguridad es 50%?</span>
+                
+–&nbsp;<a href="https://es.stackoverflow.com/users/50737/criss-ramone" title="13 reputación" class="comment-user owner">Criss Ramone</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="https://es.stackoverflow.com/questions/85750/c%C3%B3mo-evitar-inyecci%C3%B3n-de-sql-en-asp-net#comment157797_85753"><span title="2017-07-09 21:01:28Z , Licencia: CC BY-SA 3.0" class="relativetime-clean">el 9 jul. 17 a las 21:01</span></a></span>
+            </div>
+        </div>
+    </li>
+
+            </ul>
+	    </div>
+
+        <div id="comments-link-85753" data-rep="50" data-anon="true">
+                    <a class="js-add-link comments-link disabled-link" title="Utiliza los comentarios para pedir más información o para sugerir mejoras. Evita los comentarios como “+1” o “gracias”." href="https://es.stackoverflow.com/questions/85750/c%C3%B3mo-evitar-inyecci%C3%B3n-de-sql-en-asp-net#" role="button">añade un comentario</a>
+                <span class="js-link-separator dno">&nbsp;|&nbsp;</span>
+            <a class="js-show-link comments-link dno" title="expandir para mostrar todos los comentarios de esta publicación" href="https://es.stackoverflow.com/questions/85750/c%C3%B3mo-evitar-inyecci%C3%B3n-de-sql-en-asp-net#" onclick="" role="button"></a>
+        </div>         
+    </div>
+    </div>
+</div>
+
+
+                        <a name="new-answer"></a>
+                            <form id="post-form" action="https://es.stackoverflow.com/questions/85750/answer/submit" method="post" class="js-add-answer-component post-form">
+                                <input type="hidden" id="post-id" value="85750">
+                                <input type="hidden" id="qualityBanWarningShown" name="qualityBanWarningShown" value="false">
+                                <input type="hidden" name="referrer" value="https://www.google.com/">
+                                <h2 class="space">
+                                    Tu Respuesta
+                                </h2>
+                                    
+
+    <script>
+        StackExchange.ifUsing("editor", function () {
+            StackExchange.using("externalEditor", function () {
+                StackExchange.using("snippets", function () {
+                    StackExchange.snippets.init();
+                });
+            });
+        }, "code-snippets");
+    </script>
+
+
+<script>
+    StackExchange.ready(function() {
+        var channelOptions = {
+            tags: "".split(" "),
+            id: "637"
+        };
+        initTagRenderer("".split(" "), "".split(" "), channelOptions);
+
+        StackExchange.using("externalEditor", function() {
+            // Have to fire editor after snippets, if snippets enabled
+            if (StackExchange.settings.snippets.snippetsEnabled) {
+                StackExchange.using("snippets", function() {
+                    createEditor();
+                });
+            }
+            else {
+                createEditor();
+            }
+        });
+
+        function createEditor() {
+            StackExchange.prepareEditor({
+                heartbeatType: 'answer',
+                autoActivateHeartbeat: false,
+                convertImagesToLinks: false,
+                noModals: true,
+                showLowRepImageUploadWarning: true,
+                reputationToPostImages: null,
+                bindNavPrevention: true,
+                postfix: "",
+                imageUploader: {
+                brandingHtml: "Impulsado por \u003ca href=\"https://imgur.com/\"\u003e\u003csvg class=\"svg-icon\" width=\"50\" height=\"18\" viewBox=\"0 0 50 18\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"\u003e\u003cpath d=\"M46.1709 9.17788C46.1709 8.26454 46.2665 7.94324 47.1084 7.58816C47.4091 7.46349 47.7169 7.36433 48.0099 7.26993C48.9099 6.97997 49.672 6.73443 49.672 5.93063C49.672 5.22043 48.9832 4.61182 48.1414 4.61182C47.4335 4.61182 46.7256 4.91628 46.0943 5.50789C45.7307 4.9328 45.2525 4.66231 44.6595 4.66231C43.6264 4.66231 43.1481 5.28821 43.1481 6.59048V11.9512C43.1481 13.2535 43.6264 13.8962 44.6595 13.8962C45.6924 13.8962 46.1709 13.2535 46.1709 11.9512V9.17788Z\"/\u003e\u003cpath d=\"M32.492 10.1419C32.492 12.6954 34.1182 14.0484 37.0451 14.0484C39.9723 14.0484 41.5985 12.6954 41.5985 10.1419V6.59049C41.5985 5.28821 41.1394 4.66232 40.1061 4.66232C39.0732 4.66232 38.5948 5.28821 38.5948 6.59049V9.60062C38.5948 10.8521 38.2696 11.5455 37.0451 11.5455C35.8209 11.5455 35.4954 10.8521 35.4954 9.60062V6.59049C35.4954 5.28821 35.0173 4.66232 34.0034 4.66232C32.9703 4.66232 32.492 5.28821 32.492 6.59049V10.1419Z\" /\u003e\u003cpath fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M25.6622 17.6335C27.8049 17.6335 29.3739 16.9402 30.2537 15.6379C30.8468 14.7755 30.9615 13.5579 30.9615 11.9512V6.59049C30.9615 5.28821 30.4833 4.66231 29.4502 4.66231C28.9913 4.66231 28.4555 4.94978 28.1109 5.50789C27.499 4.86533 26.7335 4.56087 25.7005 4.56087C23.1369 4.56087 21.0134 6.57349 21.0134 9.27932C21.0134 11.9852 23.003 13.913 25.3754 13.913C26.5612 13.913 27.4607 13.4902 28.1109 12.6616C28.1109 12.7229 28.1161 12.7799 28.121 12.8346C28.1256 12.8854 28.1301 12.9342 28.1301 12.983C28.1301 14.4373 27.2502 15.2321 25.777 15.2321C24.8349 15.2321 24.1352 14.9821 23.5661 14.7787C23.176 14.6393 22.8472 14.5218 22.5437 14.5218C21.7977 14.5218 21.2429 15.0123 21.2429 15.6887C21.2429 16.7375 22.9072 17.6335 25.6622 17.6335ZM24.1317 9.27932C24.1317 7.94324 24.9928 7.09766 26.1024 7.09766C27.2119 7.09766 28.0918 7.94324 28.0918 9.27932C28.0918 10.6321 27.2311 11.5116 26.1024 11.5116C24.9737 11.5116 24.1317 10.6491 24.1317 9.27932Z\"/\u003e\u003cpath d=\"M16.8045 11.9512C16.8045 13.2535 17.2637 13.8962 18.2965 13.8962C19.3298 13.8962 19.8079 13.2535 19.8079 11.9512V8.12928C19.8079 5.82936 18.4879 4.62866 16.4027 4.62866C15.1594 4.62866 14.279 4.98375 13.3609 5.88013C12.653 5.05154 11.6581 4.62866 10.3573 4.62866C9.34336 4.62866 8.57809 4.89931 7.9466 5.5079C7.58314 4.9328 7.10506 4.66232 6.51203 4.66232C5.47873 4.66232 5.00066 5.28821 5.00066 6.59049V11.9512C5.00066 13.2535 5.47873 13.8962 6.51203 13.8962C7.54479 13.8962 8.0232 13.2535 8.0232 11.9512V8.90741C8.0232 7.58817 8.44431 6.91179 9.53458 6.91179C10.5104 6.91179 10.893 7.58817 10.893 8.94108V11.9512C10.893 13.2535 11.3711 13.8962 12.4044 13.8962C13.4375 13.8962 13.9157 13.2535 13.9157 11.9512V8.90741C13.9157 7.58817 14.3365 6.91179 15.4269 6.91179C16.4027 6.91179 16.8045 7.58817 16.8045 8.94108V11.9512Z\"/\u003e\u003cpath d=\"M3.31675 6.59049C3.31675 5.28821 2.83866 4.66232 1.82471 4.66232C0.791758 4.66232 0.313354 5.28821 0.313354 6.59049V11.9512C0.313354 13.2535 0.791758 13.8962 1.82471 13.8962C2.85798 13.8962 3.31675 13.2535 3.31675 11.9512V6.59049Z\" /\u003e\u003cpath d=\"M1.87209 0.400291C0.843612 0.400291 0 1.1159 0 1.98861C0 2.87869 0.822846 3.57676 1.87209 3.57676C2.90056 3.57676 3.7234 2.87869 3.7234 1.98861C3.7234 1.1159 2.90056 0.400291 1.87209 0.400291Z\" fill=\"#1BB76E\"/\u003e\u003c/svg\u003e\u003c/a\u003e",
+                    contentPolicyHtml: "Contribuciones de los usuarios licenciadas bajo \u003ca href=\"https://stackoverflow.com/help/licensing\"\u003ecc by-sa\u003c/a\u003e \u003ca href=\"https://stackoverflow.com/legal/content-policy\"\u003e(content policy)\u003c/a\u003e",
+                    allowUrls: true
+                },
+                onDemand: true,
+                discardSelector: ".discard-answer"
+                ,immediatelyShowMarkdownHelp:true
+            });
+                    }
+    });
+</script>
+<div id="post-editor" class="post-editor js-post-editor">
+
+    <div class="ps-relative">
+        <div class="wmd-container mb8">
+            <div id="wmd-button-bar" class="wmd-button-bar btr-sm"><ul id="wmd-button-row" class="wmd-button-row"><li id="wmd-bold-button" class="wmd-button" style="left: 0px;"><span style="background-position: 0px -20px;"></span></li><li id="wmd-italic-button" class="wmd-button" style="left: 25px;"><span style="background-position: -20px -20px;"></span></li><li id="wmd-spacer1" class="wmd-spacer" style="left: 50px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-link-button" class="wmd-button" style="left: 75px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-quote-button" class="wmd-button" style="left: 100px;"><span style="background-position: -60px -20px;"></span></li><li id="wmd-code-button" class="wmd-button" style="left: 125px;"><span style="background-position: -80px -20px;"></span></li><li id="wmd-image-button" class="wmd-button" style="left: 150px;"><span style="background-position: -100px -20px;"></span></li><li id="wmd-spacer2" class="wmd-spacer" style="left: 175px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-olist-button" class="wmd-button" style="left: 200px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-ulist-button" class="wmd-button" style="left: 225px;"><span style="background-position: -140px -20px;"></span></li><li id="wmd-heading-button" class="wmd-button" style="left: 250px;"><span style="background-position: -160px -20px;"></span></li><li id="wmd-hr-button" class="wmd-button" style="left: 275px;"><span style="background-position: -180px -20px;"></span></li><li id="wmd-spacer3" class="wmd-spacer" style="left: 300px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-undo-button" class="wmd-button" style="left: 325px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-redo-button" class="wmd-button" style="left: 350px;"><span style="background-position: -220px -20px;"></span></li><li class="wmd-spacer wmd-spacer-max"></li></ul></div>
+            <div class="js-stacks-validation">
+                <div class="ps-relative">
+                    <textarea id="wmd-input" name="post-text" class="wmd-input s-input bar0 js-post-body-field" data-post-type-id="2" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+                </div>
+                <div class="s-input-message mt4 d-none js-stacks-validation-message"></div>
+            </div>
+        </div>
+    </div>
+
+    <aside class="grid ai-start jc-space-between js-answer-help s-notice s-notice__warning pb0 pr4 pt4 mb8 d-none" role="status" aria-hidden="true">
+    <div class="grid--cell pt8">
+        <p>¡Gracias por contribuir en StackOverflow en español con una respuesta!</p>
+<ul><li>Por favor, asegúrate de  <em>responder a la pregunta</em>. ¡Proporciona información y comparte tu investigación!</li></ul>
+<p>Pero <em>evita</em>…</p>
+<ul><li>Pedir ayuda o aclaraciones, o responder a otras respuestas.</li>
+<li>Hacer declaraciones basadas en opiniones; asegúrate de respaldarlas con referencias o con tu propia experiencia personal.</li></ul>
+<p>Para obtener más información, consulta nuestros <a href="https://es.stackoverflow.com/help/how-to-answer">consejos sobre cómo escribir grandes respuestas</a>.</p>
+    </div>
+    <button class="grid--cell js-answer-help-close-btn s-btn s-btn__muted fc-dark">
+        <svg aria-hidden="true" class="svg-icon iconClear" width="18" height="18" viewBox="0 0 18 18"><path d="M15 4.41L13.59 3 9 7.59 4.41 3 3 4.41 7.59 9 3 13.59 4.41 15 9 10.41 13.59 15 15 13.59 10.41 9 15 4.41z"></path></svg>
+    </button>
+</aside>
+
+
+    <div id="draft-saved" class="fc-success float-left h24" style="display:none;">Borrador guardado</div>
+    <div id="draft-discarded" class="fc-error float-left h24" style="display:none;">Borrador descartado</div>
+
+
+
+        <div id="wmd-preview" class="wmd-preview"></div>
+        <div></div>
+        <div class="edit-block">
+            <input id="fkey" name="fkey" type="hidden" value="c5f405883f3b402b9f9a9f72ea377d36fac2d409c6ca5ba8b8f49d63159c0d14">
+            <input id="author" name="author" type="text">
+        </div>
+
+</div>
+
+
+                                <div class="ps-relative">
+                                                <div class="form-item new-post-login p0 my16">
+                <div class="grid gs16 md:fd-column new-login-form">
+                    <div class="grid fd-column w50 md:w-auto gsy gs8 jc-space-between new-login-left">
+                        <h3 class="grid--cell fs-title">Registrarse o <a id="login-link" href="https://es.stackoverflow.com/users/login?ssrc=question_page&amp;returnurl=https%3a%2f%2fes.stackoverflow.com%2fquestions%2f85750%2fc%25c3%25b3mo-evitar-inyecci%25c3%25b3n-de-sql-en-asp-net%23new-answer">iniciar sesión</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="grid--cell s-btn s-btn__muted s-btn__outlined s-btn__icon google-login" data-ga="[&quot;sign up&quot;,&quot;Sign Up Started - Google&quot;,&quot;New Post&quot;,null,null]">
+                            <svg aria-hidden="true" class="native svg-icon iconGoogle" width="18" height="18" viewBox="0 0 18 18"><path d="M16.51 8H8.98v3h4.3c-.18 1-.74 1.48-1.6 2.04v2.01h2.6a7.8 7.8 0 002.38-5.88c0-.57-.05-.66-.15-1.18z" fill="#4285F4"></path><path d="M8.98 17c2.16 0 3.97-.72 5.3-1.94l-2.6-2a4.8 4.8 0 01-7.18-2.54H1.83v2.07A8 8 0 008.98 17z" fill="#34A853"></path><path d="M4.5 10.52a4.8 4.8 0 010-3.04V5.41H1.83a8 8 0 000 7.18l2.67-2.07z" fill="#FBBC05"></path><path d="M8.98 4.18c1.17 0 2.23.4 3.06 1.2l2.3-2.3A8 8 0 001.83 5.4L4.5 7.49a4.77 4.77 0 014.48-3.3z" fill="#EA4335"></path></svg> Regístrate mediante Google
+                        </div>
+                        <div class="grid--cell s-btn s-btn__muted s-btn__icon facebook-login" data-ga="[&quot;sign up&quot;,&quot;Sign Up Started - Facebook&quot;,&quot;New Post&quot;,null,null]">
+                            <svg aria-hidden="true" class="svg-icon iconFacebook" width="18" height="18" viewBox="0 0 18 18"><path d="M3 1a2 2 0 00-2 2v12c0 1.1.9 2 2 2h12a2 2 0 002-2V3a2 2 0 00-2-2H3zm6.55 16v-6.2H7.46V8.4h2.09V6.61c0-2.07 1.26-3.2 3.1-3.2.88 0 1.64.07 1.87.1v2.16h-1.29c-1 0-1.19.48-1.19 1.18V8.4h2.39l-.31 2.42h-2.08V17h-2.5z" fill="#4167B2"></path></svg> Regístrate mediante Facebook
+                        </div>
+                        <div class="grid--cell s-btn s-btn__muted s-btn__outlined s-btn__icon stackexchange-login" data-ga="[&quot;sign up&quot;,&quot;Sign Up Navigation&quot;,&quot;New Post&quot;,null,null]">
+                            <svg aria-hidden="true" class="native svg-icon iconLogoGlyphXSm" width="18" height="18" viewBox="0 0 18 18"><path d="M14 16v-5h2v7H2v-7h2v5h10z" fill="#BCBBBB"></path><path d="M12.09.72l-1.21.9 4.5 6.07 1.22-.9L12.09.71zM5 15h8v-2H5v2zm9.15-5.87L8.35 4.3l.96-1.16 5.8 4.83-.96 1.16zm-7.7-1.47l6.85 3.19.63-1.37-6.85-3.2-.63 1.38zm6.53 5L5.4 11.39l.38-1.67 7.42 1.48-.22 1.46z" fill="#F48024"></path></svg> Regístrate con email y contraseña
+                        </div>
+                    </div>
+                    <input type="hidden" name="use-facebook" class="use-facebook" value="false">
+                    <input type="hidden" name="use-google" class="use-google" value="false">
+                    <button type="button" class="d-none js-submit-openid">Submit</button>
+                    <div class="grid gsy gs8 fd-column w50 md:w-auto new-login-right form-item p0">
+                                <h3 class="grid--cell fs-title">Publicar como invitado</h3>
+            <div class="grid--cell">
+                <div class="grid gs4 gsy fd-column">
+                    <label class="s-label" for="display-name">Nombre</label>
+                    <div class="grid ps-relative">
+                        <input class="s-input" id="display-name" name="display-name" maxlength="30" type="text" value="" tabindex="105" placeholder="">
+                    </div>
+                </div>
+            </div>
+            <div class="grid--cell">
+                <div class="grid gs4 gsy fd-column">
+                    <div class="grid--cell">
+                        <div class="grid gs2 gsy fd-column">
+                            <label class="grid--cell s-label" for="m-address">Correo electrónico</label>
+                            <p class="grid--cell s-description">Requerido, nunca se muestra</p>
+                        </div>
+                    </div>
+                    <div class="grid ps-relative">
+                        <input class="s-input js-post-email-field" id="m-address" name="m-address" type="text" value="" size="40" tabindex="106" placeholder="">
+                    </div>
+                </div>
+            </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', 'https%3a%2f%2fes.stackoverflow.com%2fquestions%2f85750%2fc%25c3%25b3mo-evitar-inyecci%25c3%25b3n-de-sql-en-asp-net%23new-answer', 'question_page');
+                    }
+                );
+            </script>
+            <noscript>
+                        <h3 class="grid--cell fs-title">Publicar como invitado</h3>
+            <div class="grid--cell">
+                <div class="grid gs4 gsy fd-column">
+                    <label class="s-label" for="display-name">Nombre</label>
+                    <div class="grid ps-relative">
+                        <input class="s-input" id="display-name" name="display-name" maxlength="30" type="text" value="" tabindex="105" placeholder="" />
+                    </div>
+                </div>
+            </div>
+            <div class="grid--cell">
+                <div class="grid gs4 gsy fd-column">
+                    <div class="grid--cell">
+                        <div class="grid gs2 gsy fd-column">
+                            <label class="grid--cell s-label" for="m-address">Correo electr&#xF3;nico</label>
+                            <p class="grid--cell s-description">Requerido, nunca se muestra</p>
+                        </div>
+                    </div>
+                    <div class="grid ps-relative">
+                        <input class="s-input js-post-email-field" id="m-address" name="m-address" type="text" value="" size="40" tabindex="106" placeholder="" />
+                    </div>
+                </div>
+            </div>
+
+            </noscript>
+
+                                </div>
+
+                                    <div class="form-submit cbt grid gsx gs4">
+                                        <button id="submit-button" class="grid--cell s-btn s-btn__primary s-btn__icon" type="submit" tabindex="120" autocomplete="off">
+Publica tu respuesta                                        </button>
+                                        <button class="grid--cell s-btn s-btn__danger discard-answer dno">
+                                            Descartar
+                                        </button>
+                                            <p class="privacy-policy-agreement">
+                                                Al pulsar en “Publica tu respuesta”, muestras tu consentimiento a nuestros <a href="https://stackoverflow.com/legal/terms-of-service/public" name="tos" target="_blank" class="-link">términos de servicio</a>, <a href="https://stackoverflow.com/legal/privacy-policy" name="privacy" target="_blank" class="-link">política de privacidad</a> y <a href="https://stackoverflow.com/legal/cookie-policy" name="cookie" target="_blank" class="-link">política de cookies</a><input type="hidden" name="legalLinksShown" value="1">
+                                            </p>
+                                    </div>
+                                    <div class="js-general-error general-error cbt d-none"></div>
+                            </form>
+
+
+
+                            <h2 class="bottom-notice" data-loc="1">
+¿No es la respuesta que buscas? Examina otras preguntas con la etiqueta <a href="https://es.stackoverflow.com/questions/tagged/c%23" class="post-tag" title="mostrar preguntas con la etiqueta &quot;c#&quot;" rel="tag">c#</a> <a href="https://es.stackoverflow.com/questions/tagged/asp.net" class="post-tag" title="mostrar preguntas con la etiqueta &quot;asp.net&quot;" rel="tag">asp.net</a> <a href="https://es.stackoverflow.com/questions/tagged/.net" class="post-tag" title="mostrar preguntas con la etiqueta &quot;.net&quot;" rel="tag">.net</a>  o <a href="https://es.stackoverflow.com/questions/ask">formula tu propia pregunta</a>.                            </h2>
+                </div>
+            </div>
+            <div id="sidebar" class="show-votes" role="complementary" aria-label="barra lateral">
+                
+<div class="s-sidebarwidget s-sidebarwidget__yellow s-anchors s-anchors__grayscale mb16" data-tracker="cb=1">
+                <div class="s-sidebarwidget--header s-sidebarwidget__small-bold-text fc-light d:fc-black-900">
+                    Destacado en Meta
+                </div>
+            <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+    <li class="s-sidebarwidget--item grid">
+        <div class="grid--cell1 fl-shrink0">
+                <a href="https://meta.stackexchange.com/questions/348642/what-posts-should-be-escalated-to-staff-using-status-review-and-how-do-i-esca?cb=1" data-ga="[&quot;community bulletin board&quot;,&quot;Destacado en Meta&quot;,&quot;https://meta.stackexchange.com/questions/348642/what-posts-should-be-escalated-to-staff-using-status-review-and-how-do-i-esca&quot;,null,null]">
+<div class="favicon favicon-stackexchangemeta" title="Meta Stack Exchange"></div>                </a>
+        </div>
+        <div class="grid--cell">
+            <a href="https://meta.stackexchange.com/questions/348642/what-posts-should-be-escalated-to-staff-using-status-review-and-how-do-i-esca?cb=1" class="js-gps-track" title="What posts should be escalated to staff using [status-review], and how do I escalate them?" data-ga="[&quot;community bulletin board&quot;,&quot;Destacado en Meta&quot;,&quot;https://meta.stackexchange.com/questions/348642/what-posts-should-be-escalated-to-staff-using-status-review-and-how-do-i-esca&quot;,null,null]" data-gps-track="communitybulletin.click({ priority: 3, position: 0 })">What posts should be escalated to staff using [status-review], and how do I…</a>
+        </div>
+    </li>
+            </ul>
+            <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+    <li class="s-sidebarwidget--item grid">
+        <div class="grid--cell1 fl-shrink0">
+                <a href="https://meta.stackexchange.com/questions/348746/were-switching-to-commonmark?cb=1" data-ga="[&quot;community bulletin board&quot;,&quot;Destacado en Meta&quot;,&quot;https://meta.stackexchange.com/questions/348746/were-switching-to-commonmark&quot;,null,null]">
+<div class="favicon favicon-stackexchangemeta" title="Meta Stack Exchange"></div>                </a>
+        </div>
+        <div class="grid--cell">
+            <a href="https://meta.stackexchange.com/questions/348746/were-switching-to-commonmark?cb=1" class="js-gps-track" data-ga="[&quot;community bulletin board&quot;,&quot;Destacado en Meta&quot;,&quot;https://meta.stackexchange.com/questions/348746/were-switching-to-commonmark&quot;,null,null]" data-gps-track="communitybulletin.click({ priority: 3, position: 1 })">We're switching to CommonMark</a>
+        </div>
+    </li>
+            </ul>
+            <ul class="s-sidebarwidget--content s-sidebarwidget__items pt0 pr16 pb0 pl16">
+    <li class="s-sidebarwidget--item grid">
+        <div class="grid--cell1 fl-shrink0">
+                <a href="https://es.meta.stackoverflow.com/questions/4713/community-ads-2020?cb=1" data-ga="[&quot;community bulletin board&quot;,&quot;Destacado en Meta&quot;,&quot;https://es.meta.stackoverflow.com/questions/4713/community-ads-2020&quot;,null,null]">
+<div class="favicon favicon-esmeta" title="Stack Overflow Meta en español"></div>                </a>
+        </div>
+        <div class="grid--cell">
+            <a href="https://es.meta.stackoverflow.com/questions/4713/community-ads-2020?cb=1" class="js-gps-track" data-ga="[&quot;community bulletin board&quot;,&quot;Destacado en Meta&quot;,&quot;https://es.meta.stackoverflow.com/questions/4713/community-ads-2020&quot;,null,null]" data-gps-track="communitybulletin.click({ priority: 6, position: 2 })">Community Ads 2020</a>
+        </div>
+    </li>
+            </ul>
+</div>
+
+
+<div id="dfp-tsb" class="everyonelovesstackoverflow everyoneloves__top-sidebar" data-dfp-zone="true"><div id="google_ads_iframe_/248424177/es.stackoverflow.com/sb/question-pages_0__container__" style="border: 0pt none; width: 300px; height: 250px;"></div></div>
+
+                
+                
+
+                    <div class="module sidebar-related">
+                        <h4 id="h-related">Relacionados</h4>
+                        <div class="related js-gps-related-questions" data-tracker="rq=1">
+                            <div class="spacer js-gps-track"><a href="https://es.stackoverflow.com/q/58595?rq=1" title="Puntuación de votos (votos a favor, votos en contra)"><div class="answer-votes answered-accepted default">7</div></a><a href="https://es.stackoverflow.com/questions/58595/traducir-una-consulta-sql-a-linq?rq=1" class="question-hyperlink">Traducir una consulta SQL a LINQ</a></div><div class="spacer js-gps-track"><a href="https://es.stackoverflow.com/q/59035?rq=1" title="Puntuación de votos (votos a favor, votos en contra)"><div class="answer-votes default">1</div></a><a href="https://es.stackoverflow.com/questions/59035/validar-imagen-al-mostrar-asp-net?rq=1" class="question-hyperlink">Validar Imagen al mostrar asp.net</a></div><div class="spacer js-gps-track"><a href="https://es.stackoverflow.com/q/61093?rq=1" title="Puntuación de votos (votos a favor, votos en contra)"><div class="answer-votes answered-accepted default">3</div></a><a href="https://es.stackoverflow.com/questions/61093/registrar-con-variable-de-salida-usando-asp-net-y-sql-server?rq=1" class="question-hyperlink">Registrar con variable de salida usando ASP.Net y SQL Server</a></div><div class="spacer js-gps-track"><a href="https://es.stackoverflow.com/q/98353?rq=1" title="Puntuación de votos (votos a favor, votos en contra)"><div class="answer-votes answered-accepted default">1</div></a><a href="https://es.stackoverflow.com/questions/98353/roles-permisos-asp-net-c-sql-server?rq=1" class="question-hyperlink">Roles, Permisos asp.net c# sql server</a></div><div class="spacer js-gps-track"><a href="https://es.stackoverflow.com/q/110533?rq=1" title="Puntuación de votos (votos a favor, votos en contra)"><div class="answer-votes answered-accepted default">0</div></a><a href="https://es.stackoverflow.com/questions/110533/insert-sql-query-con-ajax-y-asp-net?rq=1" class="question-hyperlink">Insert SQL query con AJAX y ASP.Net</a></div><div class="spacer js-gps-track"><a href="https://es.stackoverflow.com/q/158099?rq=1" title="Puntuación de votos (votos a favor, votos en contra)"><div class="answer-votes answered-accepted default">0</div></a><a href="https://es.stackoverflow.com/questions/158099/c%c3%b3mo-reconectar-ado-con-sql-server-2012?rq=1" class="question-hyperlink">Cómo reconectar ADO con SQL Server 2012</a></div><div class="spacer js-gps-track"><a href="https://es.stackoverflow.com/q/202001?rq=1" title="Puntuación de votos (votos a favor, votos en contra)"><div class="answer-votes answered-accepted default">0</div></a><a href="https://es.stackoverflow.com/questions/202001/insertar-valores-de-cajas-de-texto-c-en-asp-net-a-sql-server?rq=1" class="question-hyperlink">Insertar valores de cajas de texto C# en (ASP.NET) a SQL Server</a></div><div class="spacer js-gps-track"><a href="https://es.stackoverflow.com/q/203344?rq=1" title="Puntuación de votos (votos a favor, votos en contra)"><div class="answer-votes default">0</div></a><a href="https://es.stackoverflow.com/questions/203344/usar-datos-de-una-tabla-para-login?rq=1" class="question-hyperlink">Usar datos de una tabla para login</a></div><div class="spacer js-gps-track"><a href="https://es.stackoverflow.com/q/275137?rq=1" title="Puntuación de votos (votos a favor, votos en contra)"><div class="answer-votes answered-accepted default">0</div></a><a href="https://es.stackoverflow.com/questions/275137/mostrar-campo-de-texto-no-editable-dependiendo-del-rol-asp-net?rq=1" class="question-hyperlink">Mostrar campo de texto no editable dependiendo del rol ASP.NET</a></div>
+                        </div>
+                    </div>
+
+                <div id="hot-network-questions" class="module tex2jax_ignore">
+    <h4>
+        <a href="https://stackexchange.com/questions?tab=hot" class="js-gps-track s-link s-link__inherit" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Preguntas populares en la red
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="https://rpg.stackexchange.com/questions/170069/how-to-describe-that-an-enemy-can-avoid-opportunity-attacks" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to describe that an enemy can avoid opportunity attacks?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-mathematica" title="Mathematica Stack Exchange"></div><a href="https://mathematica.stackexchange.com/questions/223519/label-points-in-a-plot" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:387 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Label points in a plot
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-linguistics" title="Linguistics Stack Exchange"></div><a href="https://linguistics.stackexchange.com/questions/36425/are-synonyms-evidence-of-cultural-merges-between-ethnicities" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:312 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Are synonyms evidence of cultural merges between ethnicities?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-writing" title="Writing Stack Exchange"></div><a href="https://writing.stackexchange.com/questions/51438/how-to-time-big-reveal-and-twist-moments" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:166 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to time "big reveal" and twist moments?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-stats" title="Cross Validated"></div><a href="https://stats.stackexchange.com/questions/470867/main-options-on-how-to-deal-with-imbalanced-data" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:65 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Main options on how to deal with imbalanced data
+                </a>
+
+            </li>
+            <li class="js-hidden" style="">
+                <div class="favicon favicon-stats" title="Cross Validated"></div><a href="https://stats.stackexchange.com/questions/470782/is-it-possible-to-get-z-score-ranging-from-17-to-20" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:65 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    is it possible to get Z-score ranging from -17 to +20
+                </a>
+
+            </li>
+            <li class="js-hidden" style="">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="https://scifi.stackexchange.com/questions/232386/in-years-one-and-three-did-hermione-provide-a-reason-for-staying-in-school-over" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    In years one and three, did Hermione provide a reason for staying in school over Christmas?
+                </a>
+
+            </li>
+            <li class="js-hidden" style="">
+                <div class="favicon favicon-or" title="Operations Research Stack Exchange"></div><a href="https://or.stackexchange.com/questions/4325/how-can-i-deal-with-non-operations-research-managers" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:700 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How can I deal with non-operations research managers?
+                </a>
+
+            </li>
+            <li class="js-hidden" style="">
+                <div class="favicon favicon-blender" title="Blender Stack Exchange"></div><a href="https://blender.stackexchange.com/questions/181652/sunbeams-but-without-blurring-of-the-rest-of-the-scene" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:502 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Sunbeams! But without blurring of the rest of the scene?
+                </a>
+
+            </li>
+            <li class="js-hidden" style="">
+                <div class="favicon favicon-codegolf" title="Code Golf Stack Exchange"></div><a href="https://codegolf.stackexchange.com/questions/205663/is-this-a-half-sort" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:200 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is this a half-sort?
+                </a>
+
+            </li>
+            <li class="js-hidden" style="">
+                <div class="favicon favicon-music" title="Music: Practice &amp; Theory Stack Exchange"></div><a href="https://music.stackexchange.com/questions/100539/converting-a-3-4-melody-to-a-2-4-march-any-tips" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:240 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Converting a 3/4 melody to a 2/4 march, any tips?
+                </a>
+
+            </li>
+            <li class="js-hidden" style="">
+                <div class="favicon favicon-space" title="Space Exploration Stack Exchange"></div><a href="https://space.stackexchange.com/questions/44644/could-the-dream-chaser-or-space-shuttle-fly-have-flown-to-the-moon-with-boosters" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:508 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Could the Dream Chaser or Space Shuttle fly/have flown to the Moon with boosters on the orbiter's side?
+                </a>
+
+            </li>
+            <li class="js-hidden" style="">
+                <div class="favicon favicon-blender" title="Blender Stack Exchange"></div><a href="https://blender.stackexchange.com/questions/181621/why-dont-i-see-the-full-range-of-a-color-ramp-gradient-after-using-modulo" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:502 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why don't I see the full range of a color ramp gradient after using modulo?
+                </a>
+
+            </li>
+            <li class="js-hidden" style="">
+                <div class="favicon favicon-superuser" title="Super User"></div><a href="https://superuser.com/questions/1558637/effects-of-extending-rj11-cable-length-to-modem" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:3 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Effects of extending RJ11 cable length to modem
+                </a>
+
+            </li>
+            <li class="js-hidden" style="">
+                <div class="favicon favicon-space" title="Space Exploration Stack Exchange"></div><a href="https://space.stackexchange.com/questions/44598/is-crew-dragon-flawed-is-it-just-an-improvisation-with-no-future" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:508 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is Crew Dragon flawed? Is it just an improvisation with no future?
+                </a>
+
+            </li>
+            <li class="js-hidden" style="">
+                <div class="favicon favicon-academia" title="Academia Stack Exchange"></div><a href="https://academia.stackexchange.com/questions/150135/is-it-ill-advised-to-make-a-cover-for-your-thesis-in-stem" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:415 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is it ill-advised to make a cover for your thesis in STEM?
+                </a>
+
+            </li>
+            <li class="js-hidden" style="">
+                <div class="favicon favicon-dsp" title="Signal Processing Stack Exchange"></div><a href="https://dsp.stackexchange.com/questions/68137/why-a-pair-of-complex-conjugate-zeros-provide-a-nulling-filter-fir-filter-case" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:295 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why a pair of complex-conjugate zeros provide a nulling filter? (FIR filter case)
+                </a>
+
+            </li>
+            <li class="js-hidden" style="">
+                <div class="favicon favicon-law" title="Law Stack Exchange"></div><a href="https://law.stackexchange.com/questions/52151/if-a-family-member-has-taken-a-possession-of-mine-for-a-long-period-of-time-is-t" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:617 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    If a family member has taken a possession of mine for a long period of time is that theft
+                </a>
+
+            </li>
+            <li class="js-hidden" style="">
+                <div class="favicon favicon-unix" title="Unix &amp; Linux Stack Exchange"></div><a href="https://unix.stackexchange.com/questions/591391/how-can-i-rename-files-by-padding-numbers-anywhere-within-the-filename" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:106 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How can I rename files by padding numbers anywhere within the filename?
+                </a>
+
+            </li>
+            <li class="js-hidden" style="">
+                <div class="favicon favicon-chemistry" title="Chemistry Stack Exchange"></div><a href="https://chemistry.stackexchange.com/questions/134855/why-do-research-papers-mention-experimental-details-in-such-detail" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:431 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why do research papers mention experimental details in such detail?
+                </a>
+
+            </li>
+            <li class="js-hidden" style="">
+                <div class="favicon favicon-opensource" title="Open Source Stack Exchange"></div><a href="https://opensource.stackexchange.com/questions/9937/is-my-software-still-free-if-i-charge-for-its-commercial-use-and-not-for-non-c" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:619 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is my software still "free" if I charge for its commercial use and not for non-commercial use?
+                </a>
+
+            </li>
+            <li class="js-hidden" style="">
+                <div class="favicon favicon-history" title="History Stack Exchange"></div><a href="https://history.stackexchange.com/questions/59675/did-boris-pavlovich-belousov-die-in-1970-or-1976" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:324 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Did Boris Pavlovich Belousov die in 1970 or 1976?
+                </a>
+
+            </li>
+            <li class="js-hidden" style="">
+                <div class="favicon favicon-music" title="Music: Practice &amp; Theory Stack Exchange"></div><a href="https://music.stackexchange.com/questions/100445/melody-using-a-different-scale-than-the-bassline-what-is-it-called" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:240 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Melody using a different scale than the bassline - what is it called?
+                </a>
+
+            </li>
+            <li class="js-hidden" style="">
+                <div class="favicon favicon-dsp" title="Signal Processing Stack Exchange"></div><a href="https://dsp.stackexchange.com/questions/68140/what-is-the-difference-of-windowing-functions-for-fir-filtering" class="js-gps-track question-hyperlink mb0" data-gps-track="site.switch({ item_type:11, target_site:295 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is the difference of windowing functions for FIR filtering?
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+
+                            <div id="feed-link" class="js-feed-link">
+        <a href="https://es.stackoverflow.com/feeds/question/85750" title="Fuente de esta pregunta y sus respuestas">
+            <svg aria-hidden="true" class="fc-orange-400 svg-icon iconRss" width="18" height="18" viewBox="0 0 18 18"><path d="M1 3c0-1.1.9-2 2-2h12a2 2 0 012 2v12a2 2 0 01-2 2H3a2 2 0 01-2-2V3zm14.5 12C15.5 8.1 9.9 2.5 3 2.5V5a10 10 0 0110 10h2.5zm-5 0A7.5 7.5 0 003 7.5V10a5 5 0 015 5h2.5zm-5 0A2.5 2.5 0 003 12.5V15h2.5z"></path></svg>
+            Fuente de la pregunta
+        </a>
+    </div>
+    <aside class="s-modal js-feed-link-modal" tabindex="-1" role="dialog" aria-labelledby="feed-modal-title" aria-describedby="feed-modal-description" aria-hidden="true">
+        <div class="s-modal--dialog js-modal-dialog wmx4" role="document" data-controller="se-draggable">
+            <h1 class="s-modal--header fw-bold js-first-tabbable c-move" id="feed-modal-title" data-target="se-draggable.handle" tabindex="0">
+                Suscribirte al RSS
+            </h1>
+            <div class="grid gs4 gsy fd-column">
+                <div class="grid--cell">
+                    <label class="d-block s-label c-default" for="feed-url">
+                        Fuente de la pregunta
+                        <p class="s-description mt2" id="feed-modal-description">Para suscribirte a esta fuente RSS, copia y pega esta URL en tu lector RSS.</p>
+                    </label>
+                </div>
+                <div class="grid ps-relative">
+                    <input class="s-input" type="text" name="feed-url" id="feed-url" readonly="readonly" value="https://es.stackoverflow.com/feeds/question/85750">
+                    <svg aria-hidden="true" class="s-input-icon fc-orange-400 svg-icon iconRss" width="18" height="18" viewBox="0 0 18 18"><path d="M1 3c0-1.1.9-2 2-2h12a2 2 0 012 2v12a2 2 0 01-2 2H3a2 2 0 01-2-2V3zm14.5 12C15.5 8.1 9.9 2.5 3 2.5V5a10 10 0 0110 10h2.5zm-5 0A7.5 7.5 0 003 7.5V10a5 5 0 015 5h2.5zm-5 0A2.5 2.5 0 003 12.5V15h2.5z"></path></svg>
+                </div>
+            </div>
+            <a class="s-modal--close s-btn s-btn__muted js-modal-close js-last-tabbable" href="https://es.stackoverflow.com/questions/85750/c%C3%B3mo-evitar-inyecci%C3%B3n-de-sql-en-asp-net#" aria-label="Cerrar">
+                <svg aria-hidden="true" class="svg-icon iconClearSm" width="14" height="14" viewBox="0 0 14 14"><path d="M12 3.41L10.59 2 7 5.59 3.41 2 2 3.41 5.59 7 2 10.59 3.41 12 7 8.41 10.59 12 12 10.59 8.41 7 12 3.41z"></path></svg>
+            </a>
+        </div>
+    </aside>
+
+            </div>
+    </div>
+<script>StackExchange.ready(function(){$.get('/posts/85750/ivc/be7c');});</script>
+<noscript><div><img src="/posts/85750/ivc/be7c" class="dno" alt="" width="0" height="0"></div></noscript><div style="display:none" id="prettify-lang">lang-cs</div></div>
+
+
+        </div>
+    </div>
+        
+<script>;try{(function(a){function b(a){return'string'==typeof a?document.getElementById(a):a}function c(a){return a=b(a),!!a&&'none'===getComputedStyle(a).display}function d(a){return!c(a)}function e(a){return!!a}function f(a){return /^\s*$/.test(b(a).innerHTML)}function g(a){var b=a.style;b.height=b.maxHeight=b.minHeight='auto',b.display='none',[].forEach.call(a.children,g)}function h(a,b){var c;return function(){return a&&(c=a.call(b||this,arguments),a=null),c}}function i(a){var b=document.createElement('script');b.src=a,document.body.appendChild(b)}function j(a){return k([],a)}function k(a,b){return a.push=function(a){return b(),delete this.push,this.push(a)},a}function l(){try{return!new Function('return async()=>{};')}catch(a){return!0}}function m(){return'undefined'!=typeof googletag&&!!googletag.apiReady}function n(){m()||(googletag={cmd:j(A)})}function o(){var a=document.createElement('div');a.className='adsbox',a.id='clc-abd',a.style.position='absolute',a.style.pointerEvents='none',a.innerHTML='&nbsp;',document.body.appendChild(a)}function p(){return Object.keys(E.ids)}function r(a){var b=E.ids[a],c=E.slots[b];'function'==typeof c&&(c=c(a));return{path:'/'+B+'/'+D+'/'+b+'/'+C,sizes:c,zone:b}}function q(a){try{var b=a.slot.getSlotElementId(),c=[];b||c.push('id=0');var d=document.getElementById(b);if(!b||d?d.hasAttribute('data-clc-stalled')&&c.push('st=1'):c.push('el=0'),0!==c.length)return void F(c.join('&'));var e=r(b),f=e.zone;if(clc.collapse&&clc.collapse[f]&&a.isEmpty)return g(d),void d.setAttribute('data-clc-ready','true');if(-1!==x.dh.indexOf(a.lineItemId))g(d);else if(a.lineItemId&&(d.setAttribute('data-clc-prefilled','true'),'dfp-msb'==b)){var h=document.getElementById('hireme');g(h)}d.setAttribute('data-clc-ready','true')}catch(a){var i=document.querySelector('#dfp-tsb, #dfp-isb, #clc-tsb');i&&i.setAttribute('data-clc-ready','true'),F('e=1')}}function s(a){return!(clc.collapse&&void 0!==clc.collapse[a])||!!clc.collapse[a]}function t(a,b){'dfp-isb'===a&&b.setTargeting('Sidebar',['Inline']),'dfp-tsb'===a&&b.setTargeting('Sidebar',['Right']);var c=r(a),d=c.path,e=c.sizes,f=c.zone,g=googletag.defineSlot(d,e,a);if(s(f)){var h=!x.ll;g.setCollapseEmptyDiv(!0,h)}g.addService(b),!1}function u(b){var c=a.dfp&&a.dfp.targeting||{};'SystemDefault'===c.ProductVariant&&(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?c.ProductVariant='Dark':c.ProductVariant='Light'),Object.keys(c).forEach(function(a){b.setTargeting(a,c[a])})}function v(a){var g=a.map(b).filter(e);return{eligible:g.filter(f).filter(d),ineligible:g.filter(c)}}function w(b){void 0===b&&(b=p());var c=['dfp-mlb','dfp-smlb'];if(!m())return n(),void googletag.cmd.push(function(){return w(b)});var d=v(b),e=d.eligible,f=d.ineligible;if(f.forEach(g),0!==e.length){x.abd&&o(),googletag.destroySlots();var h=googletag.pubads();x.sf&&(h.setForceSafeFrame(!0),h.setSafeFrameConfig({allowOverlayExpansion:!0,allowPushExpansion:!0,sandbox:!0})),x.ll||h.enableSingleRequest(),a.sreEvent||(h.addEventListener('slotRenderEnded',q),a.sreEvent=!0),u(h);var i=e.filter(function(a){return!x.ll||0>c.indexOf(a.id)}),j=e.filter(function(a){return!!x.ll&&0<=c.indexOf(a.id)});i.forEach(function(a){t(a.id,h),a.setAttribute('data-dfp-zone','true')}),googletag.enableServices(),i.forEach(function(a){googletag.display(a.id)}),x.ll&&(h.enableLazyLoad({fetchMarginPercent:0,renderMarginPercent:0}),j.forEach(function(a){t(a.id,h),a.setAttribute('data-clc-prefilled','true')}),j.forEach(function(a){googletag.display(a.id)}))}}var x=function(a){for(var b=[],c=1;c<arguments.length;c++)b[c-1]=arguments[c];for(var d,e=0,f=b;e<f.length;e++)for(var g in d=f[e],d)a[g]=d[g];return a}({"lib":"https://cdn.sstatic.net/clc/clc.min.js?v=d86ede4e666e","style":"https://cdn.sstatic.net/clc/styles/clc.min.css?v=ac5522400b2d","u":"https://clc.stackoverflow.com/markup.js","wa":true,"kt":2000,"tto":true,"h":"clc.stackoverflow.com","allowed":"^(((talent\\.)?stackoverflow)|(blog\\.codinghorror)|(serverfault|askubuntu)|([^\\.]+\\.stackexchange))\\.com$","wv":true,"al":false,"dh":[5171832659],"abd":true},a.options||{}),y=h(function(){var a=x.lib;l()&&(a=a.replace(/(\.min)?\.js(\?v=[0-9a-fA-F]+)?$/,'.ie$1.js$2')),i(a)}),z=a.cmd||[];Array.isArray(z)&&(0<z.length?y():k(z,y));var A=h(function(){i('https://www.googletagservices.com/tag/js/gpt.js')}),B='248424177',C=/^\/tags\//.test(location.pathname)||/^\/questions\/tagged\//.test(location.pathname)?'tag-pages':/^\/$/.test(location.pathname)||/^\/home/.test(location.pathname)?'home-page':'question-pages',D=location.hostname;var E={slots:{lb:[[728,90]],mlb:[[728,90]],smlb:[[728,90]],bmlb:[[728,90]],sb:function(a){return'dfp-tsb'===a?[[300,250],[300,600]]:[[300,250]]},"tag-sponsorship":[[730,135]],"mobile-below-question":[[320,50],[300,250]],msb:[[300,250],[300,600]]},ids:{"dfp-tlb":'lb',"dfp-mlb":'mlb',"dfp-smlb":'smlb',"dfp-bmlb":'bmlb',"dfp-tsb":'sb',"dfp-isb":'sb',"dfp-tag":'tag-sponsorship',"dfp-msb":'msb',"dfp-m-aq":'mobile-below-question',"clc-tlb":'lb',"clc-mlb":'mlb',"clc-tsb":'sb'}},F=function(a){new Image().src='https://'+x.h+'/stalled.gif?'+a};(function(){var b=x.al;b&&z.push(function(){return a.load()})})(),n(),a.dfp={load:w},a.options=x,a.cmd=z})(this.clc=this.clc||{})}catch(a){window.console.error(a)}</script>    <script>
+        var clc = clc || {};
+        clc.collapse = { sb: !0, 'tag-sponsorship': !0, lb:!0, mlb:!0, smlb:!0, bmlb:!0, 'mobile-below-question':!0};
+        clc.options = clc.options || {};
+        clc.options.sf = !1;
+        clc.options.hb = !1;
+        clc.options.ll = !0;
+        clc.dfp = clc.dfp || {};
+        clc.dfp.targeting = {Registered:['false'],'es.so-tag':['c_sharp','asp.net','.net'],NumberOfAnswers:['3']};
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];
+        googletag.cmd.push(function () { clc.dfp.load(); });
+
+    </script><script src="./c# - ¿Cómo evitar inyección de sql en asp.net_ - Stack Overflow en español_files/gpt.js.descargar"></script>
+
+            <footer id="footer" class="site-footer js-footer" role="contentinfo">
+        <div class="site-footer--container">
+            <nav class="site-footer--nav">
+                    <div class="site-footer--col site-footer--col__visible js-footer-col" data-name="default">
+                        <h5 class="-title"><a href="https://es.stackoverflow.com/">Stack Overflow en español</a></h5>
+                        <ul class="-list js-primary-footer-links">
+                                    <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 2 })" href="https://es.stackoverflow.com/tour">Recorrido</a></li>
+                                <li class="-item"><a href="https://es.stackoverflow.com/help" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 3 })">Ayuda</a></li>
+                                    <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 5 })" href="https://chat.stackexchange.com/?tab=site&amp;host=es.stackoverflow.com">Chat</a></li>
+                            <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 13 })" href="https://es.stackoverflow.com/contact">Contacto</a></li>
+                                <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 14 })" href="https://es.meta.stackoverflow.com/">Comentarios</a></li>
+                                <li class="-item"><a onclick="StackExchange.switchMobile(&quot;on&quot;)" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 12 })">Versión para móvil</a></li>
+                        <li class="-item"><a class="-link" role="button">Deshabilitar diseño adaptable</a></li></ul>
+                    </div>
+                <div class="site-footer--col site-footer--col__visible js-footer-col" data-name="default">
+                    <h5 class="-title"><a class="js-gps-track" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">Empresa</a></h5>
+                    <ul class="-list">
+                            <li class="-item"><a href="https://stackoverflow.com/" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 15})">Stack Overflow</a></li>
+                            <li class="-item"><a href="https://stackoverflowbusiness.com/" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 19 })">Stack Overflow Business</a></li>
+                            <li class="-item"><a href="https://stackoverflow.com/jobs" class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 17})">Developer Jobs</a></li>
+                                <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 1 })" href="https://stackoverflow.com/company/about">Acerca de</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 27 })" href="https://stackoverflow.com/company/press">Prensa</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 7 })" href="https://stackoverflow.com/legal">Legal</a></li>
+                        <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link: 8 })" href="https://stackoverflow.com/legal/privacy-policy">Política de privacidad</a></li>
+                    </ul>
+                </div>
+                <div class="site-footer--col site-footer--categories-nav site-footer--col__visible">
+                    <a href="https://es.stackoverflow.com/questions/85750/c%C3%B3mo-evitar-inyecci%C3%B3n-de-sql-en-asp-net#" class="site-footer--back js-footer-back"><svg aria-hidden="true" class="svg-icon iconArrowLeftAlt" width="18" height="18" viewBox="0 0 18 18"><path d="M10.58 16L12 14.59 6.4 9 12 3.41 10.57 2l-7 7 7 7z"></path></svg></a>
+                    <div>
+                        <h5 class="-title"><a href="https://stackexchange.com/" data-gps-track="footer.click({ location: 2, link: 30 })">Stack Exchange<br> Network</a></h5>
+                        <ul class="-list">
+                            <li class="-item"><a href="https://es.stackoverflow.com/questions/85750/c%C3%B3mo-evitar-inyecci%C3%B3n-de-sql-en-asp-net#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Technology">Technology</a></li>
+                            <li class="-item"><a href="https://es.stackoverflow.com/questions/85750/c%C3%B3mo-evitar-inyecci%C3%B3n-de-sql-en-asp-net#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Life / Arts">Life / Arts</a></li>
+                            <li class="-item"><a href="https://es.stackoverflow.com/questions/85750/c%C3%B3mo-evitar-inyecci%C3%B3n-de-sql-en-asp-net#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Culture / Recreation">Culture / Recreation</a></li>
+                            <li class="-item"><a href="https://es.stackoverflow.com/questions/85750/c%C3%B3mo-evitar-inyecci%C3%B3n-de-sql-en-asp-net#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Science">Science</a></li>
+                            <li class="-item"><a href="https://es.stackoverflow.com/questions/85750/c%C3%B3mo-evitar-inyecci%C3%B3n-de-sql-en-asp-net#" class="-link _expandable js-footer-category-trigger js-gps-track" data-gps-track="footer.click({ location: 2, link: 24 })" data-target="Other">Other</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="site-footer--categories">
+                        <div class="site-footer--col site-footer--category js-footer-col" data-name="Technology">
+        <ul class="-list">
+                <li class="-item"><a href="https://stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                <li class="-item"><a href="https://serverfault.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="system and network administrators">Server Fault</a></li>
+                <li class="-item"><a href="https://superuser.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="computer enthusiasts and power users">Super User</a></li>
+                <li class="-item"><a href="https://webapps.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="power users of web applications">Web Applications</a></li>
+                <li class="-item"><a href="https://askubuntu.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                <li class="-item"><a href="https://webmasters.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="pro webmasters">Webmasters</a></li>
+                <li class="-item"><a href="https://gamedev.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and independent game developers">Game Development</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://tex.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                <li class="-item"><a href="https://softwareengineering.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professionals, academics, and students working within the systems development life cycle">Software Engineering</a></li>
+                <li class="-item"><a href="https://unix.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Linux, FreeBSD and other Un*x-like operating systems">Unix &amp; Linux</a></li>
+                <li class="-item"><a href="https://apple.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                <li class="-item"><a href="https://wordpress.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="WordPress developers and administrators">WordPress Development</a></li>
+                <li class="-item"><a href="https://gis.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                <li class="-item"><a href="https://electronics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://android.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                <li class="-item"><a href="https://security.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="information security professionals">Information Security</a></li>
+                <li class="-item"><a href="https://dba.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                <li class="-item"><a href="https://drupal.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Drupal developers and administrators">Drupal Answers</a></li>
+                <li class="-item"><a href="https://sharepoint.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="SharePoint enthusiasts">SharePoint</a></li>
+                <li class="-item"><a href="https://ux.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="user experience researchers and experts">User Experience</a></li>
+                <li class="-item"><a href="https://mathematica.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Wolfram Mathematica">Mathematica</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://salesforce.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Salesforce administrators, implementation experts, developers and anybody in-between">Salesforce</a></li>
+                <li class="-item"><a href="https://expressionengine.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="administrators, end users, developers and designers for ExpressionEngine® CMS">ExpressionEngine® Answers</a></li>
+                <li class="-item"><a href="https://pt.stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programadores profissionais e entusiastas">Stack Overflow em Português</a></li>
+                <li class="-item"><a href="https://blender.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who use Blender to create 3D graphics, animations, or games">Blender</a></li>
+                <li class="-item"><a href="https://networkengineering.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="network engineers">Network Engineering</a></li>
+                <li class="-item"><a href="https://crypto.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="software developers, mathematicians and others interested in cryptography">Cryptography</a></li>
+                <li class="-item"><a href="https://codereview.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="peer programmer code reviews">Code Review</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://magento.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of the Magento e-Commerce platform">Magento</a></li>
+                <li class="-item"><a href="https://softwarerecs.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people seeking specific software recommendations">Software Recommendations</a></li>
+                <li class="-item"><a href="https://dsp.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="practitioners of the art and science of signal, image and video processing">Signal Processing</a></li>
+                <li class="-item"><a href="https://emacs.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those using, extending or developing Emacs">Emacs</a></li>
+                <li class="-item"><a href="https://raspberrypi.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users and developers of hardware and software for Raspberry Pi">Raspberry Pi</a></li>
+                <li class="-item"><a href="https://ru.stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="программистов">Stack Overflow на русском</a></li>
+                <li class="-item"><a href="https://codegolf.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programming puzzle enthusiasts and code golfers">Code Golf</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://es.stackoverflow.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programadores y profesionales de la informática">Stack Overflow en español</a></li>
+                <li class="-item"><a href="https://ethereum.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="users of Ethereum, the decentralized application platform and smart contract enabled blockchain">Ethereum</a></li>
+                <li class="-item"><a href="https://datascience.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Data science professionals, Machine Learning specialists, and those interested in learning more about the field">Data Science</a></li>
+                <li class="-item"><a href="https://arduino.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="developers of open-source hardware and software that is compatible with Arduino">Arduino</a></li>
+                <li class="-item"><a href="https://bitcoin.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Bitcoin crypto-currency enthusiasts">Bitcoin</a></li>
+                <li class="-item"><a href="https://sqa.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="software quality control experts, automation engineers, and software testers">Software Quality Assurance &amp; Testing</a></li>
+                <li class="-item"><a href="https://sound.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="sound engineers, producers, editors, and enthusiasts">Sound Design</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Technology"><ul class="-list">
+                <li class="-item"><a href="https://windowsphone.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="enthusiasts and power users of Windows Phone OS">Windows Phone</a></li>
+                <li class="-item">
+                    <a href="https://stackexchange.com/sites#technology" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (28)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="site-footer--col site-footer--category js-footer-col" data-name="Life / Arts">
+        <ul class="-list">
+                <li class="-item"><a href="https://photo.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                <li class="-item"><a href="https://scifi.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                <li class="-item"><a href="https://graphicdesign.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                <li class="-item"><a href="https://movies.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="movie and tv enthusiasts">Movies &amp; TV</a></li>
+                <li class="-item"><a href="https://music.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="musicians, students, and enthusiasts">Music: Practice &amp; Theory</a></li>
+                <li class="-item"><a href="https://worldbuilding.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="writers/artists using science, geography and culture to construct imaginary worlds and settings">Worldbuilding</a></li>
+                <li class="-item"><a href="https://video.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="engineers, producers, editors, and enthusiasts spanning the fields of video, and media creation">Video Production</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Life / Arts"><ul class="-list">
+                <li class="-item"><a href="https://cooking.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                <li class="-item"><a href="https://diy.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="contractors and serious DIYers">Home Improvement</a></li>
+                <li class="-item"><a href="https://money.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                <li class="-item"><a href="https://academia.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="academics and those enrolled in higher education">Academia</a></li>
+                <li class="-item"><a href="https://law.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="legal professionals, students, and others with experience or interest in law">Law</a></li>
+                <li class="-item"><a href="https://fitness.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="physical fitness professionals, athletes, trainers, and those providing health-related needs">Physical Fitness</a></li>
+                <li class="-item"><a href="https://gardening.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="gardeners and landscapers">Gardening &amp; Landscaping</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Life / Arts"><ul class="-list">
+                <li class="-item"><a href="https://parenting.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="parents, grandparents, nannies and others with a parenting role">Parenting</a></li>
+                <li class="-item">
+                    <a href="https://stackexchange.com/sites#lifearts" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (10)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="site-footer--col site-footer--category js-footer-col" data-name="Culture / Recreation">
+        <ul class="-list">
+                <li class="-item"><a href="https://english.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                <li class="-item"><a href="https://skeptics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="scientific skepticism">Skeptics</a></li>
+                <li class="-item"><a href="https://judaism.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                <li class="-item"><a href="https://travel.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="road warriors and seasoned travelers">Travel</a></li>
+                <li class="-item"><a href="https://christianity.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                <li class="-item"><a href="https://ell.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="speakers of other languages learning English">English Language Learners</a></li>
+                <li class="-item"><a href="https://japanese.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="students, teachers, and linguists wanting to discuss the finer points of the Japanese language">Japanese Language</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Culture / Recreation"><ul class="-list">
+                <li class="-item"><a href="https://chinese.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="students, teachers, and linguists wanting to discuss the finer points of the Chinese language">Chinese Language</a></li>
+                <li class="-item"><a href="https://french.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="students, teachers, and linguists wanting to discuss the finer points of the French language">French Language</a></li>
+                <li class="-item"><a href="https://german.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="speakers of German wanting to discuss the finer points of the language and translation">German Language</a></li>
+                <li class="-item"><a href="https://hermeneutics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professors, theologians, and those interested in exegetical analysis of biblical texts">Biblical Hermeneutics</a></li>
+                <li class="-item"><a href="https://history.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="historians and history buffs">History</a></li>
+                <li class="-item"><a href="https://spanish.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="linguists, teachers, students and Spanish language enthusiasts in general wanting to discuss the finer points of the language">Spanish Language</a></li>
+                <li class="-item"><a href="https://islam.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="Muslims, experts in Islam, and those interested in learning more about Islam">Islam</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Culture / Recreation"><ul class="-list">
+                <li class="-item"><a href="https://rus.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="лингвистов и энтузиастов русского языка">Русский язык</a></li>
+                <li class="-item"><a href="https://russian.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="students, teachers, and linguists wanting to discuss the finer points of the Russian language">Russian Language</a></li>
+                <li class="-item"><a href="https://gaming.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                <li class="-item"><a href="https://bicycles.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                <li class="-item"><a href="https://rpg.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                <li class="-item"><a href="https://anime.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="anime and manga fans">Anime &amp; Manga</a></li>
+                <li class="-item"><a href="https://puzzling.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those who create, solve, and study puzzles">Puzzling</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Culture / Recreation"><ul class="-list">
+                <li class="-item"><a href="https://mechanics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="mechanics and DIY enthusiast owners of cars, trucks, and motorcycles">Motor Vehicle Maintenance &amp; Repair</a></li>
+                <li class="-item"><a href="https://boardgames.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who like playing board games, designing board games or modifying the rules of existing board games">Board &amp; Card Games</a></li>
+                <li class="-item"><a href="https://bricks.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="LEGO® and building block enthusiasts">Bricks</a></li>
+                <li class="-item"><a href="https://homebrew.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="dedicated home brewers and serious enthusiasts">Homebrewing</a></li>
+                <li class="-item"><a href="https://martialarts.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="students and teachers of all martial arts">Martial Arts</a></li>
+                <li class="-item"><a href="https://outdoors.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people who love being outdoors enjoying nature and wilderness, and learning about the required skills and equipment">The Great Outdoors</a></li>
+                <li class="-item"><a href="https://poker.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="serious players and enthusiasts of poker">Poker</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Culture / Recreation"><ul class="-list">
+                <li class="-item"><a href="https://chess.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="serious players and enthusiasts of chess">Chess</a></li>
+                <li class="-item"><a href="https://sports.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="participants in team and individual sport activities">Sports</a></li>
+                <li class="-item">
+                    <a href="https://stackexchange.com/sites#culturerecreation" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (16)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="site-footer--col site-footer--category js-footer-col" data-name="Science">
+        <ul class="-list">
+                <li class="-item"><a href="https://mathoverflow.net/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional mathematicians">MathOverflow</a></li>
+                <li class="-item"><a href="https://math.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                <li class="-item"><a href="https://stats.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                <li class="-item"><a href="https://cstheory.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                <li class="-item"><a href="https://physics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="active researchers, academics and students of physics">Physics</a></li>
+                <li class="-item"><a href="https://chemistry.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="scientists, academics, teachers, and students in the field of chemistry">Chemistry</a></li>
+                <li class="-item"><a href="https://biology.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="biology researchers, academics, and students">Biology</a></li>
+                    </ul></div><div class="site-footer--col site-footer--category js-footer-col" data-name="Science"><ul class="-list">
+                <li class="-item"><a href="https://cs.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="students, researchers and practitioners of computer science">Computer Science</a></li>
+                <li class="-item"><a href="https://philosophy.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="those interested in the study of the fundamental nature of knowledge, reality, and existence">Philosophy</a></li>
+                <li class="-item"><a href="https://linguistics.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="professional linguists and others with an interest in linguistic research and theory">Linguistics</a></li>
+                <li class="-item"><a href="https://psychology.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="practitioners, researchers, and students in cognitive science, psychology, neuroscience, and psychiatry">Psychology &amp; Neuroscience</a></li>
+                <li class="-item"><a href="https://scicomp.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="scientists using computers to solve scientific problems">Computational Science</a></li>
+                <li class="-item">
+                    <a href="https://stackexchange.com/sites#science" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 26 })">
+                        <strong>
+                            more (10)
+                        </strong>
+                    </a>
+                </li>
+        </ul>
+    </div>
+    <div class="site-footer--col site-footer--category js-footer-col" data-name="Other">
+        <ul class="-list">
+                <li class="-item"><a href="https://meta.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                <li class="-item"><a href="https://stackapps.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                <li class="-item"><a href="https://api.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="programmatic interaction with Stack Exchange sites">API</a></li>
+                <li class="-item"><a href="https://data.stackexchange.com/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 25 })" title="querying Stack Exchange data using SQL">Data</a></li>
+        </ul>
+    </div>
+
+                </div>
+            </nav>
+            <div class="site-footer--copyright fs-fine">
+                <ul class="-list">
+                    <li class="-item"><a class="js-gps-track -link" data-gps-track="footer.click({ location: 2, link:4 })" href="https://stackoverflow.blog/?blb=1">Blog</a></li>
+                    <li class="-item"><a href="https://www.facebook.com/officialstackoverflow/" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 31 })">Facebook</a></li>
+                    <li class="-item"><a href="https://twitter.com/stackoverflow" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 32 })">Twitter</a></li>
+                    <li class="-item"><a href="https://linkedin.com/company/stack-overflow" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 33 })">LinkedIn</a></li>
+                    <li class="-item"><a href="https://www.instagram.com/thestackoverflow" class="-link js-gps-track" data-gps-track="footer.click({ location: 2, link: 36 })">Instagram</a></li>
+                </ul>
+
+                <p class="mt-auto mb24">
+diseño del sitio / logo © 2020 Stack Exchange Inc; contribuciones de los usuarios bajo licencia <a href="https://stackoverflow.com/help/licensing">cc by-sa</a>.                    <span id="svnrev">rev&nbsp;2020.6.5.36984</span>
+                </p>
+            </div>
+        </div>
+
+    </footer>
+
+            <script>StackExchange.ready(function () { StackExchange.responsiveness.addSwitcher(); })</script>
+    <noscript>
+        <div id="noscript-warning">Stack Overflow en espa&#xF1;ol funciona mejor con JavaScript habilitado.
+            <img src="https://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno">
+        </div>
+    </noscript>
+
+        <script>
+(function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function() { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+            })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+            StackExchange.ready(function () {
+
+                StackExchange.ga.init({
+                    sendTitles: true,
+                    tracker: window.ga,
+                    trackingCodes: [
+                        'UA-108242619-5'
+                    ],
+                        checkDimension: 'dimension42'
+                });
+
+
+
+                    StackExchange.ga.setDimension('dimension2', '|c#|asp.net|.net|');
+
+                    StackExchange.ga.setDimension('dimension3', 'Questions/Show');
+
+
+                StackExchange.ga.trackPageView();
+            });
+            /**/
+
+            var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+            (function() {
+                var ssl = 'https:' == document.location.protocol,
+                    s = document.getElementsByTagName('script')[0],
+                    qc = document.createElement('script');
+ qc.async = true;
+                    qc.src = (ssl ? 'https://secure' : 'http://edge') + '.quantserve.com/quant.js';
+                    s.parentNode.insertBefore(qc, s);
+                    _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });/**/
+ var sc = document.createElement('script');
+                    sc.async = true;
+                    sc.src = (ssl ? 'https://sb' : 'http://b') + '.scorecardresearch.com/beacon.js';
+                    s.parentNode.insertBefore(sc, s);
+                    _comscore.push({ c1: "2", c2: "17440561" });            })();
+            
+</script>
+
+    
+    
+    
+<div class="adsbox" id="clc-abd" style="position: absolute; pointer-events: none;">&nbsp;</div></body></html>
