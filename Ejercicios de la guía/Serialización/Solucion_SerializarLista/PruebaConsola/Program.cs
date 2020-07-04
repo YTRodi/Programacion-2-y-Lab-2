@@ -24,6 +24,8 @@ namespace PruebaConsola
             miLista.Items.Add(d02);
             miLista.Items.Add(d03);
 
+            Lista auxLista = new Lista();
+
             string path = Directory.GetCurrentDirectory() + @"\lista.xml";
             try
             {
@@ -44,10 +46,12 @@ namespace PruebaConsola
                 using (XmlTextReader xmlRD = new XmlTextReader(path))
                 {
                     XmlSerializer xmlSer = new XmlSerializer(typeof(Lista));
-                    miLista = (Lista)xmlSer.Deserialize(xmlRD);
+                    //miLista = (Lista)xmlSer.Deserialize(xmlRD);
+                    auxLista = (Lista)xmlSer.Deserialize(xmlRD);
                 }
 
-                Console.WriteLine(miLista.MostrarDatosLista());
+                //Console.WriteLine(miLista.MostrarDatosLista());
+                Console.WriteLine(auxLista.MostrarDatosLista());
                 Console.Beep();
                 Console.Beep(); 
             }
